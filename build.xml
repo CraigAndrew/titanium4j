@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+================================================================================
+#  Copyright (c) 2011-2012 Emitrom, LLC
+#  All rights reserved.
+#
+#  build.xml file to build Titanium4j
+================================================================================
+-->
+<project basedir="." name="titanium4j" default="stage">
+	<!-- Handy for nightly builds -->
+	<tstamp>
+		<format property="timestamp" pattern="yyyyMMddHHmm" locale="en" />
+	</tstamp>
+
+	<!-- Define the basedir explicitly if we want to import this file -->
+	<dirname property="base.dir" file="${ant.file}" />
+
+	<!-- Load build.properties and overwrite any properties set above -->
+	<property file="${base.dir}/build.properties" />
+
+	<!-- Miscelaneous properties -->
+	<property name="src.dir" value="${base.dir}/src" />
+	<property name="lib.dir" value="${base.dir}/lib" />
+	<property name="build.dir" value="${base.dir}/build" />
+	<property name="war.dir" value="${base.dir}/war" />
+	<property name="release.dir" value="${base.dir}/release" />
+	<property name="stage.dir" value="${base.dir}/stage" />
+	<property name="install.file" value="INSTALL" />
+	<property name="license.file" value="LICENSE" />
+	<property name="commercial.license.file" value="Emitrom-Commercial-License-v2.pdf" />
+	<property name="credits.file" value="CREDITS" />
+
+	<!-- Classpath -->
+	<path id="titanium4j.classpath">
+		<pathelement location="${src.dir}" />
+		<pathelement location="${build.dir}" />
+		<fileset dir="${lib.dir}/com.google/gwt" includes="**/*.jar" />
+	</path>
+		
+	<!-- Clean -->
+	<target name="clean" description="Deletes the build and stage directories">
+		<delete dir="${build.dir}" />
+		<delete dir="${stage.dir}" />
+	</target>
+
+	<!-- Prepare -->
+	<target name="prepare">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${stage.dir}" />
+	</target>
+
+	<!-- JavaDocs -->
+	<target name="javadocs" description="Generate Titanium4j Java Docs">
+	  <javadoc
+	           destdir="javadoc"
+	           author="true"
+	           version="true"
+	           use="true"
+	           windowtitle="Titanium4j ${version}"
+	           classpathref="titanium4j.classpath">
+
+	    <fileset dir="${src.dir}/com/emitrom/gwt4/ti/mobile" defaultexcludes="yes">
+	        <include name="**/*.java"/>
+	    </fileset>
+
+	    <doctitle><![CDATA[<h1>Titanium4j ${version}</h1>]]></doctitle>
+	    <bottom><![CDATA[<i>Copyright &#169; 2011-2012 Emitrom LLC. All Rights Reserved.</i>]]></bottom>
+	    <tag name="todo" scope="all" description="To do:"/>
+	    <group title="Titanium4j Framework" packages="com.emitrom.gwt4.ti.mobile"/>	    
+	    <link offline="true" href="http://download.oracle.com/javase/6/docs/api/" packagelistLoc="javadoc/packagelist"/>
+	    <link href="http://developer.java.sun.com/developer/products/xml/docs/api/"/>
+	  </javadoc>
+	</target>
+
+	<!-- Compile -->
+	<target name="javac" description="Compile Java source">
+		<javac srcdir="${src.dir}"
+		 	   classpathref="titanium4j.classpath"
+			   includeantruntime="false" 
+			   encoding="utf-8" 
+			   destdir="${build.dir}" 
+			   source="1.6" 
+			   target="1.6" 
+			   nowarn="true" 
+			   debug="true" 
+			   debuglevel="lines,vars,source">
+
+			<include name="com/emitrom/gwt4/ti/mobile/**/*.java" />
+			<include name="com/google/**/*.java"/>			
+			<exclude name="com/emitrom/gwt4/ti/mobile/**/cloud/**/*.java"/>
+			<exclude name="com/emitrom/gwt4/ti/mobile/**/cloudpush/**/*.java"/>
+	   	</javac>
+
+		<!-- We need to copy the source files, if not GWT will complain -->
+		<copy todir="${build.dir}/com/emitrom/gwt4/ti/mobile">
+			<fileset dir="${src.dir}/com/emitrom/gwt4/ti/mobile" excludes="**/cloud*/**" includes="**/*.java" />
+		</copy>
+				
+		<copy todir="${build.dir}/com/google">
+            <fileset dir="${src.dir}/com/google" includes="**/*.java" />
+        </copy>				
+		
+		<!-- Copy the module files -->
+		<copy todir="${build.dir}/com/emitrom/gwt4/ti/mobile/" file="${src.dir}/com/emitrom/gwt4/ti/mobile/Timobile.gwt.xml" />
+		<copy todir="${build.dir}/com/emitrom/gwt4/ti/mobile/rpc/" file="${src.dir}/com/emitrom/gwt4/ti/mobile/rpc/RPC.gwt.xml" />
+	</target>
+
+	<!-- Build Jar -->
+	<target name="build-titanium" depends="javac" description="Creates the Titanium4j Jar">
+		<jar destfile="${stage.dir}/${ant.project.name}-${version}-${timestamp}.jar">
+			<fileset dir="${build.dir}" />
+		</jar>
+	</target>
+
+	<!-- Stage -->
+	<target name="stage" depends="clean, prepare, build-titanium" description="Stages all files, ready for release">
+		<copy file="${install.file}" tofile="${stage.dir}/${install.file}" />
+		<copy file="${license.file}" tofile="${stage.dir}/${license.file}" />
+		<copy file="${credits.file}" tofile="${stage.dir}/${credits.file}" />
+	</target>
+    	
+	<!-- Release -->
+	<target name="release" depends="stage" description="Creates the Titanium4j .zip file that can be released.">
+		<!--
+		<taskdef resource="proguard/ant/task.properties" classpath="${lib.dir}/net.sourceforge/proguard/4.7/proguard.jar" />
+        <proguard>
+          -libraryjars ${java.home}/../Classes/classes.jar:${lib.dir}/com.google/gwt/2.4/gwt-dev.jar:${lib.dir}/com.google/gwt/2.4/gwt-user.jar
+          -injars      ${stage.dir}/${ant.project.name}-${version}.jar
+          -outjars     ${stage.dir}/${ant.project.name}-${version}-proguard.jar
+    
+    	  -printmapping proguard.map
+    	  -keepparameternames
+          -dontshrink
+        </proguard>
+		-->
+		
+		<move file="${stage.dir}/${ant.project.name}-${version}-${timestamp}.jar" tofile="${stage.dir}/${ant.project.name}-${version}.jar" />
+		        
+        <!-- create the distributable file -->
+        <zip destfile="${release.dir}/${ant.project.name}-${version}.zip" basedir="${stage.dir}" />
+	</target>
+	
+</project>
