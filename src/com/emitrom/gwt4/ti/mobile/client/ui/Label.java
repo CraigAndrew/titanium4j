@@ -30,6 +30,7 @@ public class Label extends View {
 
     public Label() {
         createPeer();
+        setColor(Color.BLACK);
     }
 
     public Label(String text) {

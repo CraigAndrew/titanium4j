@@ -153,10 +153,14 @@ public class Animation extends EventDispatcher {
 		return jso.height;
     }-*/;
 
-    public native void setHeight(double value) /*-{
-		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso.height = value;
-    }-*/;
+    public void setHeight(double value) {
+    	setHeight("" + value);
+    }
+    public native void setHeight(String value) /*-{
+	var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+	jso.height = value;
+	}-*/;
+
 
     /**
      * @return Value of the left property to change during animation

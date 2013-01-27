@@ -23,7 +23,19 @@ import com.emitrom.gwt4.ti.mobile.client.core.ProxyObject;
 import com.emitrom.gwt4.ti.mobile.client.core.Size;
 import com.emitrom.gwt4.ti.mobile.client.core.Unit;
 import com.emitrom.gwt4.ti.mobile.client.core.events.TiEventListener;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.ClickHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.DoubleClickHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.DoubleTapHandler;
 import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.LongClickHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.LongPressHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.SingleTapHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.SwipeHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.TouchEndHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.TouchMoveHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.TouchStartHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.TwoFingerTapHandler;
 import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.UIEventHandler;
 import com.emitrom.gwt4.ti.mobile.client.ui.fx.AnimationConfig;
 import com.emitrom.gwt4.ti.mobile.client.ui.interfaces.Animatable;
@@ -595,6 +607,11 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
 		var obj = jso.rect;
 		return @com.emitrom.gwt4.ti.mobile.client.core.Size::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
+    
+    public native JavaScriptObject getRectangle() /*-{
+		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		return jso.rect;
     }-*/;
 
     /*
@@ -1223,6 +1240,10 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
         this.children.add(view);
         _addNative(view);
     }
+    
+    public void add(IAsView view) {
+    	add(view.asView());
+    }
 
     private native void _addNative(View view) /*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
@@ -1295,12 +1316,17 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * com.emitrom.gwt4.ti.mobile.client.ui.HasWidgets#remove(com.emitrom.gwt4
      * .ti.mobile.client.ui.HasWidgets)
      */
-    @Override
-    public native void remove(View view) /*-{
+    public native void _remove(View view) /*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
 		return jso
 				.remove(view.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()());
     }-*/;
+
+    @Override    
+    public void remove(View view) {
+    	children.remove(view);
+    	_remove(view);
+    }
 
     /*
      * (non-Javadoc)
@@ -1353,15 +1379,20 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * (com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler)
      */
     @Override
-    public native void addClickHandler(InteractionHandler handler)/*-{
+    public native CallbackRegistration addClickHandler(ClickHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.ClickEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.ClickHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/ClickEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.ClickEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::CLICK,
-						function(e) {
-							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-						});
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
     }-*/;
 
     /*
@@ -1372,16 +1403,21 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * (com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler)
      */
     @Override
-    public native void addDoubleClickHandler(InteractionHandler handler)/*-{
+    public native CallbackRegistration addDoubleClickHandler(DoubleClickHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.DoubleClickEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.DoubleClickHandler::onDoubleClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/DoubleClickEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.DoubleClickEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::DOUBLE_CLICK,
-						function(e) {
-							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-						});
-    }-*/;
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
+	}-*/;
 
     /*
      * (non-Javadoc)
@@ -1391,16 +1427,21 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * (com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler)
      */
     @Override
-    public native void addDoubleTapHandler(InteractionHandler handler)/*-{
+    public native CallbackRegistration addDoubleTapHandler(DoubleTapHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.DoubleTapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.DoubleTapHandler::onDoubleTap(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/DoubleTapEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.DoubleTapEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::DOUBLE_TAP,
-						function(e) {
-							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-						});
-    }-*/;
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
+	}-*/;
 
     /*
      * (non-Javadoc)
@@ -1410,16 +1451,21 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * (com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler)
      */
     @Override
-    public native void addLongClickHandler(InteractionHandler handler)/*-{
+    public native CallbackRegistration addLongClickHandler(LongClickHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.LongClickEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.LongClickHandler::onLongClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/LongClickEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.LongClickEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::LONG_CLICK,
-						function(e) {
-							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-						});
-    }-*/;
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
+	}-*/;
 
     /*
      * (non-Javadoc)
@@ -1429,16 +1475,21 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * (com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler)
      */
     @Override
-    public native void addLongPressHandler(InteractionHandler handler)/*-{
+    public native CallbackRegistration addLongPressHandler(LongPressHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.LongPressEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.LongPressHandler::onLongPress(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/LongPressEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.LongPressEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::LONG_PRESS,
-						function(e) {
-							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-						});
-    }-*/;
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
+	}-*/;
 
     /*
      * (non-Javadoc)
@@ -1456,16 +1507,21 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * (com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler)
      */
     @Override
-    public native void addSingleTapHandler(InteractionHandler handler)/*-{
+    public native CallbackRegistration addSingleTapHandler(SingleTapHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.SingleTapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.SingleTapHandler::onSingleTap(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/SingleTapEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.SingleTapEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::SINGLE_TAP,
-						function(e) {
-							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-						});
-    }-*/;
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
+	}-*/;
 
     /*
      * (non-Javadoc)
@@ -1475,16 +1531,21 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * (com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler)
      */
     @Override
-    public native void addSwipeHandler(InteractionHandler handler)/*-{
+    public native CallbackRegistration addSwipeHandler(SwipeHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.SwipeEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.SwipeHandler::onSwipe(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/SwipeEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.SwipeEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::SWIPE,
-						function(e) {
-							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-						});
-    }-*/;
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
+	}-*/;
 
     /*
      * (non-Javadoc)
@@ -1513,16 +1574,21 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * (com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler)
      */
     @Override
-    public native void addTouchEndHandler(InteractionHandler handler)/*-{
+    public native CallbackRegistration addTouchEndHandler(TouchEndHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.TouchEndEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.TouchEndHandler::onTouchEnd(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/TouchEndEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.TouchEndEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::TOUCH_END,
-						function(e) {
-							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-						});
-    }-*/;
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
+	}-*/;
 
     /*
      * (non-Javadoc)
@@ -1532,16 +1598,21 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * (com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler)
      */
     @Override
-    public native void addTouchMoveHandler(InteractionHandler handler)/*-{
+    public native CallbackRegistration addTouchMoveHandler(TouchMoveHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.TouchMoveEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.TouchMoveHandler::onTouchMove(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/TouchMoveEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.TouchMoveEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::TOUCH_MOVE,
-						function(e) {
-							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-						});
-    }-*/;
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
+	}-*/;
 
     /*
      * (non-Javadoc)
@@ -1551,16 +1622,21 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * (com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler)
      */
     @Override
-    public native void addTouchStartHandler(InteractionHandler handler)/*-{
+    public native CallbackRegistration addTouchStartHandler(TouchStartHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.TouchStartEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.TouchStartHandler::onTouchStart(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/TouchStartEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.TouchStartEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::TOUCH_START,
-						function(e) {
-							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-						});
-    }-*/;
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
+	}-*/;
 
     /*
      * (non-Javadoc)
@@ -1570,16 +1646,21 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * (com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler)
      */
     @Override
-    public native void addTwoFingerTapHandler(InteractionHandler handler)/*-{
+    public native CallbackRegistration addTwoFingerTapHandler(TwoFingerTapHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.TwoFingerTapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.TwoFingerTapHandler::onTwoFingerTap(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/TwoFingerTapEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.TwoFingerTapEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::TWO_FINGER_TAP,
-						function(e) {
-							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-						});
-    }-*/;
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
+	}-*/;
 
     @Override
     public void createPeer() {
@@ -1770,7 +1851,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
             children.get(i).updateWith(_getChildrenAt(i));
         }
     }
-
+    
     private native JavaScriptObject _getChildren()/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
 		return jso.children;
@@ -1783,9 +1864,9 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
 
     private native int getChildCount()/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		return jso.children.lenght;
+			return jso.children.length;
     }-*/;
-
+    
     protected void updateWith(JavaScriptObject obj) {
         jsObj = obj;
     }
@@ -1793,6 +1874,29 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     @Override
     public void setTransform(Object transform) {
 
+    }
+    
+    /**
+     * Removes all children views
+     */
+    public void clear() {
+    	for (View c : children) {
+    		remove(c);
+    	}
+    }
+    
+    /**
+     * Removes all children views and adds the view
+     * @param v		The view to add
+     */
+    public void setView(View v) {
+//    	clear();
+//    	add(v);
+    	setJsObj(v.getJsObj());
+    }
+    
+    public void setView(IAsView v) {
+    	setView(v.asView());
     }
 
 }

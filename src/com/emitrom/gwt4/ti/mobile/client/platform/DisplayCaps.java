@@ -88,5 +88,14 @@ public class DisplayCaps extends EventDispatcher {
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
 		jso.platformWidth = value;
 	}-*/;
+	
+	public native double getLogicalDensityFactor() /*-{
+		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		if (jso.logicalDensityFactor) {
+			return jso.logicalDensityFactor;
+		} else {
+			return 1.0;
+		}
+	}-*/;
 
 }

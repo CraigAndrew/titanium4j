@@ -49,5 +49,10 @@ public class ScrollableViewEvent extends UIEvent {
 		var toReturn = @com.emitrom.gwt4.ti.mobile.client.ui.View::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
+    
+    public final native double getCurrentPageAsFloat() /*-{
+		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		return jso.currentPageAsFloat;
+    }-*/;
 
 }

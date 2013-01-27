@@ -17,6 +17,7 @@ package com.emitrom.gwt4.ti.mobile.client.ui;
 
 import com.emitrom.gwt4.ti.mobile.client.core.ProxyObject;
 import com.emitrom.gwt4.ti.mobile.client.core.events.EventDispatcher;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration;
 import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.DialogClickHandler;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArrayString;
@@ -150,16 +151,22 @@ public class OptionDialog extends EventDispatcher {
 		return jso.show();
     }-*/;
 
-    public native void addClickHandler(DialogClickHandler handler)/*-{
+    public native CallbackRegistration addClickHandler(DialogClickHandler handler) /*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
-				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::CLICK,
-						function(e) {
+		var listener = function(e) {
 							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.dialog.DialogClickEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.DialogClickHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/dialog/DialogClickEvent;)(eventObject);
-						});
-    }-*/;
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.ClickEvent::EVENT_NAME;
+		var v = jso
+				.addEventListener(
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
+	}-*/;
+    
 
     private void createPeer() {
         jsObj = UI.createOptionDialog();
