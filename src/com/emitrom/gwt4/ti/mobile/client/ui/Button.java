@@ -16,7 +16,7 @@
 package com.emitrom.gwt4.ti.mobile.client.ui;
 
 import com.emitrom.gwt4.ti.mobile.client.core.ProxyObject;
-import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.ClickHandler;
 import com.emitrom.gwt4.ti.mobile.client.ui.interfaces.HasColor;
 import com.emitrom.gwt4.ti.mobile.client.ui.interfaces.HasFont;
 import com.emitrom.gwt4.ti.mobile.client.ui.interfaces.HasImage;
@@ -44,9 +44,9 @@ public class Button extends View implements HasColor, HasFont, HasLabel, HasStyl
         jsObj = obj;
     }
 
-    public Button(String label, InteractionHandler interactionHandler) {
+    public Button(String label, ClickHandler clickHandler) {
         this(label);
-        addClickHandler(interactionHandler);
+        addClickHandler(clickHandler);
     }
 
     /*

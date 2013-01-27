@@ -18,6 +18,7 @@ package com.emitrom.gwt4.ti.mobile.client.ui;
 import java.util.List;
 
 import com.emitrom.gwt4.ti.mobile.client.core.ProxyObject;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration;
 import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.TableViewHandler;
 import com.emitrom.gwt4.ti.mobile.client.data.TableViewBaseModel;
 import com.google.gwt.core.client.JavaScriptObject;
@@ -588,16 +589,23 @@ public class TableView extends View {
 						properties);
     }-*/;
 
-    public native void addRowSelectionHandler(TableViewHandler handler)/*-{
+    public native CallbackRegistration addRowSelectionHandler(TableViewHandler handler)
+    /*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
-				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::CLICK,
-						function(e) {
+		var listener = function(e) {
 							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.tableview.TableViewEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.TableViewHandler::onEvent(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/tableview/TableViewEvent;)(eventObject);
-						});
-    }-*/;
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.ClickEvent::EVENT_NAME;
+		var v = jso
+				.addEventListener(
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
+	}-*/;
+    
 
     public native void addDeleteHandler(TableViewHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();

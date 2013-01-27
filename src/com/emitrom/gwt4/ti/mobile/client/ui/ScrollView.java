@@ -35,6 +35,32 @@ import com.google.gwt.core.client.JavaScriptObject;
  */
 public class ScrollView extends View {
 
+	public static enum ScrollType {
+		HORIZONTAL("horizontal"),
+		VERTICAL("vertical");
+		
+		private final String value;
+		private ScrollType(String value) {
+			this.value = value;
+		}
+		
+		public String getValue() {
+			return value;
+		}
+		
+		static ScrollType scrollFromValue(String value) {
+			ScrollType ret = HORIZONTAL;
+			for (ScrollType s : ScrollType.values()) {
+				if (s.getValue().equals(value)) {
+					ret = s;
+					break;
+				}
+			}
+			return ret;
+		}
+	}
+	
+	
     public ScrollView() {
         createPeer();
     }
@@ -171,15 +197,23 @@ public class ScrollView extends View {
      * 
      * @platforms android
      */
-    public native String getScrollType() /*-{
+    public native String _getScrollType() /*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
 		return jso.scrollType;
     }-*/;
 
-    public native void setScrollType(String value) /*-{
+    public native void _setScrollType(String value) /*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
 		jso.scrollType = value;
     }-*/;
+    
+    public ScrollType getScrollType() {
+    	return ScrollType.scrollFromValue(_getScrollType());
+    }
+    
+    public void setScrollType(ScrollType type) {
+    	_setScrollType(type.getValue());
+    }
 
     /**
      * @return Boolean to indicate whether the horizontal scroll indicator is

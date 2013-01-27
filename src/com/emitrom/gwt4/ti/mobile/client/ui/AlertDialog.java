@@ -21,7 +21,7 @@ import com.emitrom.gwt4.ti.mobile.client.core.ProxyObject;
 import com.emitrom.gwt4.ti.mobile.client.core.events.EventDispatcher;
 import com.emitrom.gwt4.ti.mobile.client.core.events.TiEvent;
 import com.emitrom.gwt4.ti.mobile.client.core.events.TiEventListener;
-import com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent;
+import com.emitrom.gwt4.ti.mobile.client.core.events.ui.ClickEvent;
 import com.emitrom.gwt4.ti.mobile.client.ui.interfaces.Displayable;
 import com.emitrom.gwt4.ti.mobile.client.ui.interfaces.HasMessage;
 import com.emitrom.gwt4.ti.mobile.client.ui.interfaces.HasSimpleClickHandler;
@@ -266,7 +266,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      */
     @Override
     public void addClickHandler(TiEventListener<TiEvent> handler) {
-        this.addEventListener(InteractionEvent.CLICK, handler);
+        this.addEventListener(ClickEvent.EVENT_NAME, handler);
     }
 
     public static AlertDialog from(ProxyObject proxy) {

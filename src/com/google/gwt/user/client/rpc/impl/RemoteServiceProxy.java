@@ -39,6 +39,7 @@ import com.google.gwt.user.client.rpc.impl.RequestCallbackAdapter.ResponseReader
  * 
  * For internal use only.
  */
+@SuppressWarnings({ "rawtypes", "unchecked","unused" })
 public abstract class RemoteServiceProxy implements SerializationStreamFactory, ServiceDefTarget, HasRpcToken {
 
     /**
@@ -65,9 +66,9 @@ public abstract class RemoteServiceProxy implements SerializationStreamFactory, 
         /**
          * Finishes the serialization.
          */
-        public Request finish(AsyncCallback callback, ResponseReader responseHeader) throws SerializationException {
+		public Request finish(AsyncCallback callback, ResponseReader responseHeader) throws SerializationException {
             String payload = streamWriter.toString();
-            boolean toss = statsContext.isStatsAvailable()
+			boolean toss = statsContext.isStatsAvailable()
                             && statsContext.stats(statsContext.timeStat(fullServiceName, "requestSerialized"));
             return doInvoke(responseHeader, fullServiceName, statsContext, payload, callback);
         }

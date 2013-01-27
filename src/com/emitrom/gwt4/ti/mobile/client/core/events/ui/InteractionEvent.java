@@ -21,18 +21,20 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class InteractionEvent extends TiEvent {
 
-    public static String CLICK = "click";
-    public static String LONG_CLICK = "longclick";
-    public static String DOUBLE_CLICK = "dblclick";
-    public static final String DOUBLE_TAP = "doubletap";
-    public static final String SINGLE_TAP = "singletap";
-    public static final String TWO_FINGER_TAP = "twofingertap";
-    public static final String LONG_PRESS = "longpress";
-    public static final String SWIPE = "swipe";
+//    public static final String CLICK = "click";
+//    public static final String LONG_CLICK = "longclick";
+//    public static final String DOUBLE_CLICK = "dblclick";
+//    public static final String DOUBLE_TAP = "doubletap";
+//    public static final String SINGLE_TAP = "singletap";
+//    public static final String TWO_FINGER_TAP = "twofingertap";
+//    public static final String LONG_PRESS = "longpress";
+//    public static final String SWIPE = "swipe";
     public static final String TOUCH_CANCEL = "touchcancel";
     public static final String TOUCH_END = "touchend";
-    public static final String TOUCH_MOVE = "touchmove";
-    public static final String TOUCH_START = "touchstart";
+//    public static final String TOUCH_MOVE = "touchmove";
+//    public static final String TOUCH_START = "touchstart";
+    
+    public static String EVENT_NAME = "undefined";
 
     protected InteractionEvent() {
 
