@@ -282,6 +282,38 @@ public abstract class DOMImpl {
     public native String getTagName(Element elem) /*-{
 		return elem.tagName;
     }-*/;
+    
+    
+    /* MIKE HACK */
+    public Element getNextSiblingElement() {
+    	return null;
+    }
+    
+    public Element getPreviousSiblingElement() {
+    	return null;
+    }
+
+    public Element getPreviousSiblingElement(Element e) {
+    	return null;
+    }
+
+    public String getNumericStyleProperty(String s, String t) {
+    	return "0";
+    }
+
+    public String getNumericStyleProperty(Style s, String t) {
+    	return "0";
+    }
+    
+    public String getStyleProperty(String s, String t) {
+    	return "";
+    }
+
+    public String getStyleProperty(Style s, String t) {
+    	return "";
+    }
+    
+    /* </MIKE HACK>*/
 
     public native JsArray<Touch> getTargetTouches(NativeEvent evt) /*-{
 		return evt.targetTouches;
