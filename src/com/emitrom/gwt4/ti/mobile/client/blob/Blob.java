@@ -16,6 +16,7 @@
 package com.emitrom.gwt4.ti.mobile.client.blob;
 
 import com.emitrom.gwt4.ti.mobile.client.core.JsoHelper;
+import com.emitrom.gwt4.ti.mobile.client.core.Size;
 import com.emitrom.gwt4.ti.mobile.client.core.events.EventDispatcher;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -87,6 +88,62 @@ public class Blob extends EventDispatcher {
     public native String toStringValue() /*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
 		return jso.toString();
+    }-*/;
+    
+
+    /**
+     * Get the dimensions of an image file
+     * @return	A Size object, with with and height as members
+     */
+    public native Size getImageFileDimensions() /*-{
+		var blob = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		
+		if (blob.width && blob.height) {
+			var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.Size::new(DD)(blob.width, blob.height);
+			return toReturn;
+		} else {
+			var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.Size::new();
+			return toReturn;
+		}
+    }-*/;
+    
+    /**
+     * Get the width of an image file
+     * @return		0 if the file is not an image file, otherwise the width in pixels
+     */
+    public native int getWidth() /*-{
+    	var blob = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		return (blob.width ? blob.width : 0);
+    }-*/;
+    
+    /**
+     * Get the height of the image file
+     * @return		0 if the file is not an image file, otherwise the height in pixels
+     */
+    public native int getHeight() /*-{	
+    	var blob = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		return (blob.height ? blob.height : 0);
+    }-*/;
+    
+    /**
+     * Crop an image blob and return the cropped blob
+     * The original blob will remain unaltered (a copy on write)
+     * @param x			How far from the left in the image the crop should start
+     * @param y			How far from the top in the image the crop should start
+     * @param height	The height of the cropped blob
+     * @param width		The width of the cropped blob
+     * @return			The cropped blob image
+     */
+    public native Blob imageAsCropped(int x, int y, int height, int width) /*-{
+    	var blob = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+    	var dict = {};
+    	dict.height = height;
+    	dict.width = width;
+    	dict.x = x;
+    	dict.y = y;
+		var ret = blob.imageAsCropped(dict);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.blob.Blob::new(Lcom/google/gwt/core/client/JavaScriptObject;)(ret);
+		return toReturn;
     }-*/;
 
 }

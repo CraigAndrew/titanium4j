@@ -18,6 +18,7 @@ package com.emitrom.gwt4.ti.mobile.client.core.events;
 import com.emitrom.gwt4.ti.mobile.client.blob.Blob;
 import com.emitrom.gwt4.ti.mobile.client.network.TCPSocket;
 
+@SuppressWarnings("deprecation")
 public class ReadEvent extends TiEvent {
 
     public static final String READ = "read";

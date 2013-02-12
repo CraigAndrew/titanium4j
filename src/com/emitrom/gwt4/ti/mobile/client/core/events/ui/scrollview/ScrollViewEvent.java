@@ -21,7 +21,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class ScrollViewEvent extends UIEvent {
 
-    public static final String SCROLL = "scroll";
+    public static final String EVENT_NAME = "scroll";
 
     protected ScrollViewEvent() {
 
@@ -41,10 +41,12 @@ public class ScrollViewEvent extends UIEvent {
 
     /**
      * boolean to indicate if the scroll is decelerating
+     * *iOS + web
      */
     public final native boolean isDecelerating() /*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		return jso.decelerating;
+		return (jso.decelerating ? jso.decelerating : true);
     }-*/;
+    
 
 }

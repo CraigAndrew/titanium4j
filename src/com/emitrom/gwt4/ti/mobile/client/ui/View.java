@@ -1890,13 +1890,10 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * @param v		The view to add
      */
     public void setView(View v) {
-//    	clear();
-//    	add(v);
     	setJsObj(v.getJsObj());
     }
     
     public void setView(IAsView v) {
     	setView(v.asView());
     }
-
 }

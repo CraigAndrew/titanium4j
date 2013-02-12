@@ -156,7 +156,7 @@ public class MenuItem extends EventDispatcher {
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::CLICK,
+						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.ClickEvent::EVENT_NAME,
 						function(e) {
 							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/InteractionEvent;)(eventObject);

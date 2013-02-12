@@ -16,7 +16,8 @@
 package com.emitrom.gwt4.ti.mobile.client.ui;
 
 import com.emitrom.gwt4.ti.mobile.client.core.events.EventDispatcher;
-import com.emitrom.gwt4.ti.mobile.client.core.handlers.EventHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.PostLayoutEventHandler;
 
 /**
  * Base class of all ui objects. Any subclass if this class muss implement the
@@ -31,14 +32,20 @@ public abstract class UIObject extends EventDispatcher {
      * 
      * @param handler
      */
-    public native void addPostLayoutHandler(EventHandler handler)/*-{
+    public native CallbackRegistration addPostLayoutHandler(PostLayoutEventHandler handler) /*-{
+    	
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
-				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.TiEvent::POST_LAYOUT,
-						function(e) {
+		var listener = function(e) {
 							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.TiEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.EventHandler::onEvent(Lcom/emitrom/gwt4/ti/mobile/client/core/events/TiEvent;)(eventObject);
-						});
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.PostLayoutEventHandler::onPostLayout(Lcom/emitrom/gwt4/ti/mobile/client/core/events/TiEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.TiEvent::POST_LAYOUT;
+		var v = jso
+				.addEventListener(
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+						
     }-*/;
 }

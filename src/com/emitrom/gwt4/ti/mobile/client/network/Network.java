@@ -26,6 +26,7 @@ import com.google.gwt.user.client.rpc.ServiceDefTarget;
  * The top level network module. the network module is used accessing networking
  * related functionality.
  */
+@SuppressWarnings("deprecation")
 public class Network extends TiModule {
 
     public static final String INADDR_ANY = INADDR_ANY();

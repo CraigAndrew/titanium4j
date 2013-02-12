@@ -37,6 +37,7 @@ import com.google.gwt.core.client.JavaScriptObject;
  * 
  * Available on iOs only
  */
+@SuppressWarnings("deprecation")
 public class BonjourService extends EventDispatcher {
 
     private BonjourService() {
