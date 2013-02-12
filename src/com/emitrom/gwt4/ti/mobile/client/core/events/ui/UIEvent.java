@@ -74,5 +74,10 @@ public class UIEvent extends TiEvent {
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
 		return jso.x;
     }-*/;
+    
+    public native void cancelBubble(boolean shouldCancel) /*-{
+		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		jso.cancelBubble = shouldCancel;
+    }-*/;
 
 }
