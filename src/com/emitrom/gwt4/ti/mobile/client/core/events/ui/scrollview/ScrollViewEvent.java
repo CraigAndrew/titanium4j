@@ -21,7 +21,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 
 public class ScrollViewEvent extends UIEvent {
 
-    public static final String SCROLL = "scroll";
+    public static final String EVENT_NAME = "scroll";
 
     protected ScrollViewEvent() {
 
