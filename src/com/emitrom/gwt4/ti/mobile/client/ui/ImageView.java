@@ -298,9 +298,10 @@ public class ImageView extends View {
     /**
      * Return the image as a blob object
      */
-    public native void toBlob() /*-{
+    public native Blob toBlob() /*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso.toBlob();
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.blob.Blob::new(Lcom/google/gwt/core/client/JavaScriptObject;)(jso.toBlob());
+		return toReturn;
     }-*/;
 
     public native void addChangeHandler(ImageActionHandler handler)/*-{
@@ -355,4 +356,20 @@ public class ImageView extends View {
     public static ImageView from(ProxyObject proxy) {
         return new ImageView(proxy.getJsObj());
     }
+    
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.emitrom.gwt4.ti.mobile.client.ui.HasBlob#toImage()
+     * Watch out as Android returns the actual Blob on blob.media
+     */
+    @Override
+    public native Blob toImage() /*-{
+		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		var obj = jso.toImage();
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.blob.Blob::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+		return toReturn;
+    }-*/;
+
 }
