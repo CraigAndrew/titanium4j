@@ -17,7 +17,10 @@ package com.emitrom.gwt4.ti.mobile.client.ui;
 
 import com.emitrom.gwt4.ti.mobile.client.core.ProxyObject;
 import com.emitrom.gwt4.ti.mobile.client.core.Unit;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration;
 import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.ScaleHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.ScrollViewDragEndHandler;
+import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.ScrollViewDragStartHandler;
 import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.ScrollViewScrollHandler;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -277,6 +280,7 @@ public class ScrollView extends View {
      * @param y the y point within the view
      */
     public native void scrollTo(double x, double y) /*-{
+		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
 		jso.scrollTo(x, y);
     }-*/;
 
@@ -284,26 +288,73 @@ public class ScrollView extends View {
         scrollTo(point.getX(), point.getY());
     }
 
-    public native void addScrollHandler(ScrollViewScrollHandler handler)/*-{
+    /**
+     * Add a scroll event handler to this scroll view
+     * @param handler		The handler
+     * @return				The callback registration object
+     */
+    public native CallbackRegistration addScrollHandler(ScrollViewScrollHandler handler)/*-{
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
-				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.scrollview.ScrollViewEvent::SCROLL,
-						function(e) {
+		var listener = function(e) {
 							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.scrollview.ScrollViewEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.ScrollViewScrollHandler::onScroll(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/scrollview/ScrollViewEvent;)(eventObject);
-						});
-    }-*/;
-
-    public native void addScaleHandler(ScaleHandler handler)/*-{
-		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+						};
+						
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.scrollview.ScrollViewEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.gwt4.ti.mobile.client.core.events.ui.ScaleEvent::SCALE,
-						function(e) {
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+    }-*/;
+    
+    
+    
+    public native CallbackRegistration addScaleHandler(ScaleHandler handler)/*-{
+		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		var listener = function(e) {
 							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.ScaleEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.ScaleHandler::onScale(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/ScaleEvent;)(eventObject);
-						});
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.ScaleEvent::SCALE;
+		var v = jso
+				.addEventListener(
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+    }-*/;
+
+    public native CallbackRegistration addDragStartHandler(ScrollViewDragStartHandler handler) /*-{		
+    	var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.scrollview.ScrollViewDragStartEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.ScrollViewDragStartHandler::onDragStart(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/scrollview/ScrollViewDragStartEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.scrollview.ScrollViewDragStartEvent::EVENT_NAME;
+		var v = jso
+				.addEventListener(
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+    }-*/;
+    
+
+    public native CallbackRegistration addDragEndHandler(ScrollViewDragEndHandler handler) /*-{		
+    	var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		var listener = function(e) {
+							var eventObject = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.scrollview.ScrollViewDragEndEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.ScrollViewDragEndHandler::onDragEnd(Lcom/emitrom/gwt4/ti/mobile/client/core/events/ui/scrollview/ScrollViewDragEndEvent;)(eventObject);
+						};
+		var name = @com.emitrom.gwt4.ti.mobile.client.core.events.ui.scrollview.ScrollViewDragEndEvent::EVENT_NAME;
+		var v = jso
+				.addEventListener(
+						name,
+						listener);
+		var toReturn = @com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/gwt4/ti/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
     }-*/;
 
     @Override
