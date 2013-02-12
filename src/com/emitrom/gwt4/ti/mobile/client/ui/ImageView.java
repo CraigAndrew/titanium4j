@@ -19,9 +19,11 @@ import com.emitrom.gwt4.ti.mobile.client.blob.Blob;
 import com.emitrom.gwt4.ti.mobile.client.core.ProxyObject;
 import com.emitrom.gwt4.ti.mobile.client.core.handlers.ui.ImageActionHandler;
 import com.emitrom.gwt4.ti.mobile.client.filesystem.File;
+import com.emitrom.gwt4.ti.mobile.client.filesystem.FileSystem;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 import com.google.gwt.core.client.JsArrayString;
+import com.google.gwt.resources.client.ImageResource;
 
 /**
  * An image view is used to display an image or a series of images in an
@@ -154,7 +156,35 @@ public class ImageView extends View {
 		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
 		jso.image = value.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
     }-*/;
-
+    
+    /**
+     * Set the image of the image view, using an GWT image resource, the file's url.
+     * Clip is to clip it according to the detail in the image resource. 
+     * @param resource	The image resource
+     * @param url		The file's url
+     * @param clip		Whether to clip the image
+     */
+    public void setImage(ImageResource resource, String url, boolean clip) {
+		File f = FileSystem.get().getFile(url);
+		if (f.exists()) {
+			if (!clip) {
+				setImage(f);
+			} else {
+				setImage(f.read(), resource);
+			}	
+		}
+    }
+    
+    /**
+     * Set the image of the image view according to a blob, and then clip it using
+     * a GWT image resource.
+     * @param blob		The blob
+     * @param resource	The resource
+     */
+    public void setImage(Blob blob, ImageResource resource) {
+    	setImage(blob.imageAsCropped(resource.getLeft(), resource.getTop(), resource.getHeight(), resource.getWidth()));
+    }
+    
     /**
      * @return Array of images (either as string url, blob or file) to display
      *         in an animation
