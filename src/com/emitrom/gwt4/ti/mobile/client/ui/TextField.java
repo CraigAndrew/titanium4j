@@ -698,6 +698,24 @@ public class TextField extends View {
 						});
     }-*/;
 
+    /**
+     * Set whether the input field's text should be masked
+     * @param masked		True if the text should be masked
+     */
+    public native void setPasswordMask(boolean masked) /*-{
+		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		jso.passwordMask = masked;
+    }-*/;
+    
+    /**
+     * Get whether the input field's text should be masked
+     * @return				True if the text is masked.
+     */
+    public native boolean getPasswordMask() /*-{
+		var jso = this.@com.emitrom.gwt4.ti.mobile.client.core.ProxyObject::getJsObj()();
+		return (jso.passwordMask ? jso.passwordMask : false);
+    }-*/;
+    
     @Override
     public void createPeer() {
         jsObj = UI.createTextField();
