@@ -15,7 +15,7 @@
  **************************************************************************/
 package com.google.gwt.user.client.rpc;
 
-import com.emitrom.gwt4.ti.mobile.client.platform.Platform;
+import com.emitrom.ti4j.mobile.client.platform.Platform;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.http.client.RequestCallback;

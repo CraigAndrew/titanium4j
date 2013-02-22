@@ -15,7 +15,7 @@
  */
 package com.google.gwt.http.client;
 
-import com.emitrom.gwt4.ti.mobile.client.core.Timer;
+import com.emitrom.ti4j.mobile.client.core.Timer;
 import com.google.gwt.xhr.client.XMLHttpRequest;
 
 /**

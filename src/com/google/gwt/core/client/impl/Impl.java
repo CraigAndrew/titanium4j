@@ -15,7 +15,7 @@
  */
 package com.google.gwt.core.client.impl;
 
-import com.emitrom.gwt4.ti.mobile.client.core.Timer;
+import com.emitrom.ti4j.mobile.client.core.Timer;
 import com.google.gwt.core.client.Duration;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.JavaScriptObject;

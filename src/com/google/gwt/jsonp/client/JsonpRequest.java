@@ -15,8 +15,8 @@
  */
 package com.google.gwt.jsonp.client;
 
-import com.emitrom.gwt4.ti.mobile.client.core.Utils;
-import com.emitrom.gwt4.ti.mobile.client.core.json.JSON;
+import com.emitrom.ti4j.mobile.client.core.Utils;
+import com.emitrom.ti4j.mobile.client.core.json.JSON;
 import com.google.gwt.core.client.JavaScriptException;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.Scheduler;

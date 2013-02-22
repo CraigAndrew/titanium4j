@@ -15,8 +15,8 @@
  **************************************************************************/
 package com.google.gwt.xhr.client;
 
-import com.emitrom.gwt4.ti.mobile.client.core.Utils;
-import com.emitrom.gwt4.ti.mobile.client.network.Network;
+import com.emitrom.ti4j.mobile.client.core.Utils;
+import com.emitrom.ti4j.mobile.client.network.Network;
 import com.google.gwt.core.client.JavaScriptObject;
 
 /**

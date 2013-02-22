@@ -15,9 +15,9 @@
  **************************************************************************/
 package com.emitrom.client;
 
-import com.emitrom.gwt4.ti.mobile.client.api.API;
-import com.emitrom.gwt4.ti.mobile.client.core.TiEntryPoint;
-import com.emitrom.gwt4.ti.mobile.client.ui.Window;
+import com.emitrom.ti4j.mobile.client.api.API;
+import com.emitrom.ti4j.mobile.client.core.TiEntryPoint;
+import com.emitrom.ti4j.mobile.client.ui.Window;
 import com.google.gwt.core.client.GWT;
 
 /**

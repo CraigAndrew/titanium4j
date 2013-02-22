@@ -18,7 +18,7 @@ package com.google.gwt.http.client;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.emitrom.gwt4.ti.mobile.client.core.Utils;
+import com.emitrom.ti4j.mobile.client.core.Utils;
 import com.google.gwt.core.client.JavaScriptException;
 import com.google.gwt.xhr.client.ReadyStateChangeHandler;
 import com.google.gwt.xhr.client.XMLHttpRequest;

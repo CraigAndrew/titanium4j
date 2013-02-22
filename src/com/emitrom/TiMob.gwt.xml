@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module rename-to='timob'>
   
-   <inherits name='com.emitrom.gwt4.ti.mobile.Timobile'/>
+   <inherits name='com.emitrom.ti4j.mobile.Timobile'/>
    <!--inherits name="com.google.gwt.logging.Logging"/-->
   
   
