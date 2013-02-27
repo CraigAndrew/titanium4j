@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.image.ImageEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface ImageActionHandler {
+public interface ImageActionHandler extends EventHandler {
     public void onEvent(ImageEvent event);
 }

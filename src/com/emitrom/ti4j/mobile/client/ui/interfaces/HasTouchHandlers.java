@@ -15,17 +15,20 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui.interfaces;
 
-import com.emitrom.ti4j.mobile.client.core.events.TiEventListener;
-import com.emitrom.ti4j.mobile.client.core.events.TouchEvent;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.CallbackRegistration;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.TouchCancelHandler;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.TouchEndHandler;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.TouchMoveHandler;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.TouchStartHandler;
 
 public interface HasTouchHandlers {
 
-    public abstract void addTouchCancelHandler(TiEventListener<TouchEvent> handler);
+    public abstract CallbackRegistration addTouchCancelHandler(TouchCancelHandler handler);
 
-    public abstract void addTouchEndHandler(TiEventListener<TouchEvent> handler);
+    public abstract CallbackRegistration addTouchEndHandler(TouchEndHandler handler);
 
-    public abstract void addTouchMoveHandler(TiEventListener<TouchEvent> handler);
+    public abstract CallbackRegistration addTouchMoveHandler(TouchMoveHandler handler);
 
-    public abstract void addTouchStartHandler(TiEventListener<TouchEvent> handler);
+    public abstract CallbackRegistration addTouchStartHandler(TouchStartHandler handler);
 
 }

@@ -144,27 +144,37 @@ public interface HasInteractionHandler {
 						
 	}-*/;
 
-    public void addTouchCancelHandler(InteractionHandler handler)/*-{
-                                                                 var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-                                                                 jso
-                                                                 .addEventListener(
-                                                                 @com.emitrom.ti4j.mobile.client.core.events.ui.InteractionEvent::TOUCH_CANCEL,
-                                                                 function(e) {
-                                                                 var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-                                                                 handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/ti4j/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-                                                                 });
-                                                                 }-*/;
+    public CallbackRegistration addTouchCancelHandler(InteractionHandler handler)/*-{
+		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var listener = function(e) {
+							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.TouchCancelEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.TouchCancelHandler::onCancel(Lcom/emitrom/ti4j/mobile/client/core/events/ui/TouchCancelEvent;)(eventObject);
+						};
+		var name = @com.emitrom.ti4j.mobile.client.core.events.ui.TouchCancelEvent::EVENT_NAME;
+		var v = jso
+				.addEventListener(
+						name,
+						listener);
+		var toReturn = @com.emitrom.ti4j.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/ti4j/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+	}-*/;
 
-    public CallbackRegistration addTouchEndHandler(TouchEndHandler handler)/*-{
-                                                              var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-                                                              jso
-                                                              .addEventListener(
-                                                              @com.emitrom.ti4j.mobile.client.core.events.ui.InteractionEvent::TOUCH_END,
-                                                              function(e) {
-                                                              var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-                                                              handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/ti4j/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-                                                              });
-                                                              }-*/;
+
+    public CallbackRegistration addTouchEndHandler(TouchEndHandler handler) /*-{
+			var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+			var listener = function(e) {
+								var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.TouchEndEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+								handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.TouchEndHandler::onTouchEnd(Lcom/emitrom/ti4j/mobile/client/core/events/ui/TouchEndEvent;)(eventObject);
+							};
+			var name = @com.emitrom.ti4j.mobile.client.core.events.ui.TouchEndEvent::EVENT_NAME;
+			var v = jso
+					.addEventListener(
+							name,
+							listener);
+			var toReturn = @com.emitrom.ti4j.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/ti4j/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+			return toReturn;
+							
+		}-*/;
 
     public CallbackRegistration addTouchMoveHandler(TouchMoveHandler handler)/*-{
 		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();

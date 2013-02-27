@@ -17,8 +17,10 @@
 package com.emitrom.ti4j.mobile.client.core.events.loading;
 
 import com.emitrom.ti4j.mobile.client.core.events.TiEvent;
+import com.emitrom.ti4j.mobile.client.core.handlers.loading.LoadHandler;
 import com.emitrom.ti4j.mobile.client.ui.Point;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class LoadEvent extends TiEvent {
 
@@ -27,6 +29,18 @@ public class LoadEvent extends TiEvent {
     public static String LOAD_STATE = "loadstate";
     public static String COMPLETE = "complete";
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<LoadHandler> TYPE = new Type<LoadHandler>(LOAD, null);
+	public static Type<LoadHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<LoadHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     protected LoadEvent() {
 
     }

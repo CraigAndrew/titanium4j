@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.geolocation;
 
 import com.emitrom.ti4j.mobile.client.core.events.geolocation.GeoErrorEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface GeoErrorHandler {
+public interface GeoErrorHandler extends EventHandler {
     public void onError(GeoErrorEvent event);
 }

@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.SearchBarEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface SearchBarHandler {
+public interface SearchBarHandler extends EventHandler {
     public void onEvent(SearchBarEvent event);
 }

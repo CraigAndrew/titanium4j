@@ -15,11 +15,11 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui.interfaces;
 
-import com.emitrom.ti4j.mobile.client.core.events.SwipeEvent;
-import com.emitrom.ti4j.mobile.client.core.events.TiEventListener;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.CallbackRegistration;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.SwipeHandler;
 
 public interface HasSwipeHandlers {
 
-    public abstract void addSwipeHandler(TiEventListener<SwipeEvent> handler);
+    public abstract CallbackRegistration addSwipeHandler(SwipeHandler handler);
 
 }

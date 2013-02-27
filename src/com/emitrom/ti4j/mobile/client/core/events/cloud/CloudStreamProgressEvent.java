@@ -16,13 +16,28 @@
 package com.emitrom.ti4j.mobile.client.core.events.cloud;
 
 import com.emitrom.ti4j.mobile.client.core.events.TiEvent;
+import com.emitrom.ti4j.mobile.client.core.handlers.cloud.CloudStreamHandler;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 /**
  * Argument passed to the callback as a request is transmitted or received.
  */
 public class CloudStreamProgressEvent extends TiEvent {
 
+
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<CloudStreamHandler> TYPE = new Type<CloudStreamHandler>("cloudstream", null);
+	public static Type<CloudStreamHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<CloudStreamHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     CloudStreamProgressEvent(JavaScriptObject obj) {
         jsObj = obj;
     }

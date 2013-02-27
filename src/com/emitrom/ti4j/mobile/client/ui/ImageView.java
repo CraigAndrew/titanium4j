@@ -34,10 +34,15 @@ import com.google.gwt.resources.client.ImageResource;
  */
 public class ImageView extends View {
 
+	private ImageResource resource = null;
+	private boolean clipped = false;
+	private boolean pathIsDirectory = false;
+	private String path = "";
+	
     public ImageView() {
         createPeer();
     }
-
+    
     ImageView(JavaScriptObject proxy) {
         jsObj = proxy;
     }
@@ -371,5 +376,33 @@ public class ImageView extends View {
 		var toReturn = @com.emitrom.ti4j.mobile.client.blob.Blob::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
-
+    
+    private void setUpResourceImage() {
+    	if (path != null
+    			&& resource != null
+    			) {
+    		path = path + (pathIsDirectory ? resource.getSafeUri().asString().substring(4) : "");
+    		setImage(resource, path, clipped);
+    	}
+    }
+    
+    public void setPath(String path) {
+		this.path = path;
+		setUpResourceImage();
+	}
+    
+    public void setResource(ImageResource resource) {
+		this.resource = resource;
+		setUpResourceImage();
+	}
+    
+    public void setClipped(boolean clipped) {
+		this.clipped = clipped;
+		setUpResourceImage();
+	}
+    
+    public void setPathIsDirectory(boolean pathIsDirectory) {
+		this.pathIsDirectory = pathIsDirectory;
+		setUpResourceImage();
+	}
 }

@@ -15,6 +15,8 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events.geolocation;
 
-public interface GeolocationHandler {
+import com.google.gwt.event.shared.EventHandler;
+
+public interface GeolocationHandler extends EventHandler {
     public void onEvent(LocationEvent event);
 }

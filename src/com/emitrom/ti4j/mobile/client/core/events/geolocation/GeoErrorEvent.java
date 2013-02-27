@@ -16,14 +16,29 @@
 package com.emitrom.ti4j.mobile.client.core.events.geolocation;
 
 import com.emitrom.ti4j.mobile.client.core.events.ErrorEvent;
+import com.emitrom.ti4j.mobile.client.core.handlers.geolocation.GeoErrorHandler;
 import com.emitrom.ti4j.mobile.client.ui.Point;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class GeoErrorEvent extends ErrorEvent {
 
     protected GeoErrorEvent() {
 
     }
+
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<GeoErrorHandler> TYPE = new Type<GeoErrorHandler>("geoerror", null);
+	public static Type<GeoErrorHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<GeoErrorHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
 
     private GeoErrorEvent(JavaScriptObject obj) {
         jsObj = obj;

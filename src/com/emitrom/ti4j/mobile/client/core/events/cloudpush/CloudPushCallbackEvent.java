@@ -15,10 +15,22 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events.cloudpush;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.cloudpush.CloudPushCallbackHandler;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class CloudPushCallbackEvent extends CloudPushEvent {
 
+
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<CloudPushCallbackHandler> TYPE = new Type<CloudPushCallbackHandler>("cloudpushcallback", null);
+	
+	public static Type<CloudPushCallbackHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     CloudPushCallbackEvent(JavaScriptObject obj) {
         super(obj);
     }

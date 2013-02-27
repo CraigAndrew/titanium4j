@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.InteractionEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface InteractionHandler {
+public interface InteractionHandler extends EventHandler {
     public void onClick(InteractionEvent event);
 }

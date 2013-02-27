@@ -15,11 +15,10 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui.interfaces;
 
-import com.emitrom.ti4j.mobile.client.core.events.PressEvent;
-import com.emitrom.ti4j.mobile.client.core.events.TiEventListener;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.LongPressHandler;
 
 public interface HasPressHandlers {
 
-    public abstract void addLongpressHandler(TiEventListener<PressEvent> handler);
+    public abstract void addLongpressHandler(LongPressHandler handler);
 
 }

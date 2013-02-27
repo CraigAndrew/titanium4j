@@ -1,10 +1,24 @@
 package com.emitrom.ti4j.mobile.client.core.events.ui;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.ClickHandler;
 import com.emitrom.ti4j.mobile.client.ui.Point;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class ClickEvent extends InteractionEvent {
 	public static String EVENT_NAME = "click";
+
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<ClickHandler> TYPE = new Type<ClickHandler>(EVENT_NAME, null);
+	public static Type<ClickHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<ClickHandler> getAssociatedType() {
+		return TYPE;
+	}
 	
 	protected ClickEvent() {
 		

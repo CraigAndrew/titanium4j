@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.dialog.DialogClickEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface DialogClickHandler {
+public interface DialogClickHandler extends EventHandler{
     public void onClick(DialogClickEvent event);
 }

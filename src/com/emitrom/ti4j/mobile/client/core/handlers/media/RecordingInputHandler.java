@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.media;
 
 import com.emitrom.ti4j.mobile.client.core.events.RecordingInputEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface RecordingInputHandler {
+public interface RecordingInputHandler extends EventHandler {
     public void onEvent(RecordingInputEvent event);
 }

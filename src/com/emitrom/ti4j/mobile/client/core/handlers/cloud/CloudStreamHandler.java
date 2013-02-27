@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.cloud;
 
 import com.emitrom.ti4j.mobile.client.core.events.cloud.CloudStreamProgressEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface CloudStreamHandler {
+public interface CloudStreamHandler extends EventHandler {
     public void onEvent(CloudStreamProgressEvent event);
 }

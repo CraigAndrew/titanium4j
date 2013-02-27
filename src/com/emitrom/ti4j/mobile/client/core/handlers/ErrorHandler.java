@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers;
 
 import com.emitrom.ti4j.mobile.client.core.events.ErrorEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface ErrorHandler {
+public interface ErrorHandler extends EventHandler{
     public void onError(ErrorEvent event);
 }

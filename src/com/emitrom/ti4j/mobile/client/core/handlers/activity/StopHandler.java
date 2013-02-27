@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.activity;
 
 import com.emitrom.ti4j.mobile.client.core.events.activity.ActivityEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface StopHandler {
+public interface StopHandler extends EventHandler {
     public void onStop(ActivityEvent event);
 }

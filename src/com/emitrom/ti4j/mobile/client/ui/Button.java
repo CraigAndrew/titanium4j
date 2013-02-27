@@ -25,11 +25,12 @@ import com.emitrom.ti4j.mobile.client.ui.interfaces.HasStyle;
 import com.emitrom.ti4j.mobile.client.ui.style.Font;
 import com.emitrom.ti4j.mobile.client.ui.style.Position;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.user.client.ui.HasText;
 
 /**
  * A Button Component
  */
-public class Button extends View implements HasColor, HasFont, HasLabel, HasStyle, HasImage {
+public class Button extends View implements HasColor, HasFont, HasLabel, HasStyle, HasImage, HasText {
 
     public Button() {
         createPeer();
@@ -300,5 +301,15 @@ public class Button extends View implements HasColor, HasFont, HasLabel, HasStyl
     public static Button from(ProxyObject proxy) {
         return new Button(proxy.getJsObj());
     }
+
+	@Override
+	public String getText() {
+		return getTitle();
+	}
+
+	@Override
+	public void setText(String text) {
+		setTitle(text);
+	}
 
 }

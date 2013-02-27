@@ -15,12 +15,27 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.activity.CreateHandler;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class CreateEvent extends TiEvent {
 
     public static final String CREATE = "create";
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<CreateHandler> TYPE = new Type<CreateHandler>(CREATE, null);
+	public static Type<CreateHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<CreateHandler> getAssociatedType() {
+		return TYPE;
+	}
+    
+    
     protected CreateEvent() {
 
     }

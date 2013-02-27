@@ -24,6 +24,7 @@ import com.emitrom.ti4j.mobile.client.ui.style.Font;
 import com.emitrom.ti4j.mobile.client.ui.style.Position;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
+import com.google.gwt.user.client.ui.HasText;
 
 /**
  * * A TextField is created by the method
@@ -36,7 +37,7 @@ import com.google.gwt.core.client.JsArray;
  * Both Text Areas and Text Fields can control the buttons displayed in a button
  * bar above the keyboard when it's visible.
  */
-public class TextField extends View {
+public class TextField extends View implements HasText {
 
     public TextField() {
         createPeer();
@@ -724,5 +725,15 @@ public class TextField extends View {
     public static TextField from(ProxyObject obj) {
         return new TextField(obj.getJsObj());
     }
+
+	@Override
+	public String getText() {
+		return getValue();
+	}
+
+	@Override
+	public void setText(String text) {
+		setValue(text);
+	}
 
 }

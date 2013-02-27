@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.media;
 
 import com.emitrom.ti4j.mobile.client.core.events.media.PlayEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface StateChangeHandler {
+public interface StateChangeHandler extends EventHandler {
     public void onStateChange(PlayEvent event);
 }

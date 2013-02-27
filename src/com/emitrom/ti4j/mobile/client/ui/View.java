@@ -16,6 +16,7 @@
 package com.emitrom.ti4j.mobile.client.ui;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.emitrom.ti4j.mobile.client.blob.Blob;
@@ -59,7 +60,7 @@ import com.google.gwt.core.client.JavaScriptObject;
  * the method {@link com.emitrom.ti4j.mobile.client.ui.UI.createView} .
  */
 public class View extends UIObject implements HasWidgets, Animatable, HasAnchor, HasBackground, HasBorder, Focusable,
-                HasBoxSize, HasBlob, Displayable, HasInteractionHandler, HasUIHandler, HasChildren {
+                HasBoxSize, HasBlob, Displayable, HasInteractionHandler, HasUIHandler, HasChildren, HasWidgets.ForIsWidget {
 
     public View() {
         createPeer();
@@ -664,7 +665,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
 		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
 		return jso.height;
     }-*/;
-
+    
     /**
      * Sets the position of this view relative to his parent. This method will
      * set the top, right, bottom and left postion of the view
@@ -1555,16 +1556,20 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * (com.emitrom.ti4j.mobile.client.core.handlers.ui.InteractionHandler)
      */
     @Override
-    public native void addTouchCancelHandler(InteractionHandler handler)/*-{
+    public native CallbackRegistration addTouchCancelHandler(InteractionHandler handler) /*-{
 		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso
+		var listener = function(e) {
+							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.TouchCancelEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.TouchCancelHandler::onCancel(Lcom/emitrom/ti4j/mobile/client/core/events/ui/TouchCancelEvent;)(eventObject);
+						};
+		var name = @com.emitrom.ti4j.mobile.client.core.events.ui.TouchCancelEvent::EVENT_NAME;
+		var v = jso
 				.addEventListener(
-						@com.emitrom.ti4j.mobile.client.core.events.ui.InteractionEvent::TOUCH_CANCEL,
-						function(e) {
-							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/ti4j/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
-						});
-    }-*/;
+						name,
+						listener);
+		var toReturn = @com.emitrom.ti4j.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/ti4j/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
+		return toReturn;
+	}-*/;
 
     /*
      * (non-Javadoc)
@@ -1890,10 +1895,27 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * @param v		The view to add
      */
     public void setView(View v) {
+    	clear();
     	setJsObj(v.getJsObj());
     }
     
     public void setView(IAsView v) {
     	setView(v.asView());
     }
+
+	@Override
+	public Iterator<View> iterator() {
+		return getChildren().iterator();
+	}
+	
+	@Override
+	public void add(IsWidget w) {
+		add(w.asWidget());
+	}
+	
+	public boolean remove(IsWidget w) {
+		boolean hasChild = getChildren().contains(w.asWidget());
+		remove(w.asWidget());
+		return hasChild;
+	};
 }

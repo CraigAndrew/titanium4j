@@ -15,12 +15,26 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.media.LineChangeHandler;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class LineChangeEvent extends TiEvent {
 
     public static final String LINE_CHANGE = "linechange";
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<LineChangeHandler> TYPE = new Type<LineChangeHandler>(LINE_CHANGE, null);
+	public static Type<LineChangeHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<LineChangeHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     protected LineChangeEvent() {
 
     }

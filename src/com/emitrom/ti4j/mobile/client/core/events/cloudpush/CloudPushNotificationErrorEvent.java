@@ -15,14 +15,28 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events.cloudpush;
 
+import com.emitrom.ti4j.mobile.client.cloudpush.CloudPushNotificationErrorHandler;
 import com.emitrom.ti4j.mobile.client.core.events.TiEvent;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 /**
  * An event object passed to the retrieveDeviceToken error callback.
  */
 public class CloudPushNotificationErrorEvent extends TiEvent {
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<CloudPushNotificationErrorHandler> TYPE = new Type<CloudPushNotificationErrorHandler>("cloudpushnotificationerror", null);
+	public static Type<CloudPushNotificationErrorHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<CloudPushNotificationErrorHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     public CloudPushNotificationErrorEvent(JavaScriptObject obj) {
         jsObj = obj;
     }

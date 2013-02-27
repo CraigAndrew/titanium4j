@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.media.audio;
 
 import com.emitrom.ti4j.mobile.client.core.events.media.audio.SoundCompleteEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface SoundCompleteHandler {
+public interface SoundCompleteHandler extends EventHandler {
     public void onSoundComplete(SoundCompleteEvent event);
 }

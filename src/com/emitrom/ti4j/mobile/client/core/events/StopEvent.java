@@ -15,10 +15,25 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.activity.StopHandler;
+import com.google.gwt.event.dom.client.DomEvent.Type;
+
 public class StopEvent extends TiEvent {
 
     public static final String STOP = "stop";
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<StopHandler> TYPE = new Type<StopHandler>(STOP, null);
+	public static Type<StopHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<StopHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     protected StopEvent() {
 
     }

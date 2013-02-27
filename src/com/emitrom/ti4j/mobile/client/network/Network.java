@@ -146,7 +146,6 @@ public class Network extends TiModule {
 			// function called when an error occurs, including a timeout
 			onerror : function(e) {
 				Ti.API.debug(e.error);
-				alert('error');
 			}
 		});
 		var toReturn = @com.emitrom.ti4j.mobile.client.network.HTTPClient::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);

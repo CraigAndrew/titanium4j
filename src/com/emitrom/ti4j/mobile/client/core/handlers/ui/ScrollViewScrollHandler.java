@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.scrollview.ScrollViewEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface ScrollViewScrollHandler {
+public interface ScrollViewScrollHandler extends EventHandler {
     public void onScroll(ScrollViewEvent event);
 }

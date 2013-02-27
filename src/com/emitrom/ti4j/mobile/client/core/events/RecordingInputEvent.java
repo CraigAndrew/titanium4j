@@ -15,12 +15,26 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.media.RecordingInputHandler;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class RecordingInputEvent extends TiEvent {
 
     public static final String RECORDING_INPUT = "recordinginput";
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<RecordingInputHandler> TYPE = new Type<RecordingInputHandler>(RECORDING_INPUT, null);
+	public static Type<RecordingInputHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<RecordingInputHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     protected RecordingInputEvent() {
 
     }

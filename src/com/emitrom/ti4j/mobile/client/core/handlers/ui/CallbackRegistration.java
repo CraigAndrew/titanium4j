@@ -2,6 +2,7 @@ package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.ui.UIObject;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.shared.HandlerRegistration;
 
 /**
  * A callback registration object, created so that an event listener
@@ -9,7 +10,7 @@ import com.google.gwt.core.client.JavaScriptObject;
  * @author mvniekerk
  *
  */
-public class CallbackRegistration {
+public class CallbackRegistration implements HandlerRegistration{
 	
 	private final UIObject uiObject;
 	private final String actionString;
@@ -37,6 +38,11 @@ public class CallbackRegistration {
 	
 	public JavaScriptObject getJso() {
 		return functionJso;
+	}
+	
+	@Override
+	public void removeHandler() {
+		unregister();
 	}
 	
 	/**

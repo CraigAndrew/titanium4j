@@ -49,7 +49,11 @@ public class TiEvent extends ProxyObject {
 		jso.stopPropagation();
     }-*/;
 
-    public native String getType() /*-{
+    /**
+     * Changed from getType to getEventType, due to UIBinder clashes
+     * @return
+     */
+    public native String getEventType() /*-{
 		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
 		return jso.type;
     }-*/;

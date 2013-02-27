@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.activity;
 
 import com.emitrom.ti4j.mobile.client.core.events.activity.ActivityEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface PauseHandler {
+public interface PauseHandler extends EventHandler {
     public void onPause(ActivityEvent event);
 }

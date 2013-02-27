@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.intent;
 
 import com.emitrom.ti4j.mobile.client.core.events.android.NewIntentEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface NewIntentHandler {
+public interface NewIntentHandler extends EventHandler {
     public void onNewIntent(NewIntentEvent event);
 }

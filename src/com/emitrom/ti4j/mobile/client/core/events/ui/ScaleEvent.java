@@ -16,12 +16,26 @@
 
 package com.emitrom.ti4j.mobile.client.core.events.ui;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.ScaleHandler;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class ScaleEvent extends UIEvent {
 
     public static final String SCALE = "scale";
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<ScaleHandler> TYPE = new Type<ScaleHandler>(SCALE, null);
+	public static Type<ScaleHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<ScaleHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     protected ScaleEvent() {
 
     }

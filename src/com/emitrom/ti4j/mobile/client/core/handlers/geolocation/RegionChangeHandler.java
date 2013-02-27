@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.geolocation;
 
 import com.emitrom.ti4j.mobile.client.core.events.RegionEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface RegionChangeHandler {
+public interface RegionChangeHandler extends EventHandler {
     public void onRegionChange(RegionEvent event);
 }

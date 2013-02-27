@@ -1,10 +1,24 @@
 package com.emitrom.ti4j.mobile.client.core.events.ui;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.SwipeHandler;
 import com.emitrom.ti4j.mobile.client.ui.Point;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class SwipeEvent extends InteractionEvent {
 	public static String EVENT_NAME = "swipe";
+
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<SwipeHandler> TYPE = new Type<SwipeHandler>(EVENT_NAME, null);
+	public static Type<SwipeHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<SwipeHandler> getAssociatedType() {
+		return TYPE;
+	}
 	
 	public enum SWIPE_DIRECTION {
 		RIGHT_TO_LEFT,

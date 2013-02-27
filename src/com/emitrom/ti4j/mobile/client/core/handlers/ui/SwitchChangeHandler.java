@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.SwitchEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface SwitchChangeHandler {
+public interface SwitchChangeHandler extends EventHandler {
     public void onChange(SwitchEvent event);
 }

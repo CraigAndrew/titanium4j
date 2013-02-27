@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.tab.TabEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface TabGroupHandler {
+public interface TabGroupHandler extends EventHandler {
     public void onEvent(TabEvent event);
 }

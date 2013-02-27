@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.media.audio;
 
 import com.emitrom.ti4j.mobile.client.core.events.media.audio.SoundResumeEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface SoundResumeHandler {
+public interface SoundResumeHandler extends EventHandler {
     public void onSoundResume(SoundResumeEvent event);
 }

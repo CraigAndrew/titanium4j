@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.UIEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface ChangeHandler {
+public interface ChangeHandler extends EventHandler{
     public void onChange(UIEvent event);
 }

@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.tableview.TableViewEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface TableViewHandler {
+public interface TableViewHandler extends EventHandler {
     public void onEvent(TableViewEvent event);
 }

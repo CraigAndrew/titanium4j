@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.webview.WebViewEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface WebViewHandler {
+public interface WebViewHandler extends EventHandler {
     public void onEvent(WebViewEvent event);
 }

@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.media;
 
 import com.emitrom.ti4j.mobile.client.core.events.media.ProgressEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface ProgressHandler {
+public interface ProgressHandler extends EventHandler {
     public void onProgess(ProgressEvent event);
 }

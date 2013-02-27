@@ -16,12 +16,26 @@
 
 package com.emitrom.ti4j.mobile.client.core.events.ui;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.SearchBarHandler;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class SearchBarEvent extends UIEvent {
-
+	//TODO verify this field...
     public static final String SCALE = "scale";
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<SearchBarHandler> TYPE = new Type<SearchBarHandler>(SCALE, null);
+	public static Type<SearchBarHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<SearchBarHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     protected SearchBarEvent() {
 
     }

@@ -1,10 +1,24 @@
 package com.emitrom.ti4j.mobile.client.core.events.ui;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.DoubleTapHandler;
 import com.emitrom.ti4j.mobile.client.ui.Point;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class DoubleTapEvent extends InteractionEvent{
 	public static String EVENT_NAME = "doubletap";
+
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<DoubleTapHandler> TYPE = new Type<DoubleTapHandler>(EVENT_NAME, null);
+	public static Type<DoubleTapHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<DoubleTapHandler> getAssociatedType() {
+		return TYPE;
+	}
 	
 	protected DoubleTapEvent() {
 		

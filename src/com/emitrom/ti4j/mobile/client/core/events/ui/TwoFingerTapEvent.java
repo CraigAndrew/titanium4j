@@ -1,9 +1,23 @@
 package com.emitrom.ti4j.mobile.client.core.events.ui;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.TwoFingerTapHandler;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class TwoFingerTapEvent extends InteractionEvent {
 	public static String EVENT_NAME = "twofingertap";
+
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<TwoFingerTapHandler> TYPE = new Type<TwoFingerTapHandler>(EVENT_NAME, null);
+	public static Type<TwoFingerTapHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<TwoFingerTapHandler> getAssociatedType() {
+		return TYPE;
+	}
 	
 	protected TwoFingerTapEvent() {
 		

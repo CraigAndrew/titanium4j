@@ -15,22 +15,41 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui.interfaces;
 
+import java.util.Iterator;
+
+import com.emitrom.ti4j.mobile.client.ui.IsWidget;
 import com.emitrom.ti4j.mobile.client.ui.View;
 
-public interface HasWidgets {
+public interface HasWidgets extends Iterable<View>{
 
+	  /**
+	   * Extends this interface with convenience methods to handle {@link IsWidget}.
+	   */
+	  interface ForIsWidget extends HasWidgets {
+	    void add(IsWidget w);
+
+	    boolean remove(IsWidget w);
+	  }
+	
     /**
      * Add a child to the view hierarchy
      * 
      * @param view the view to add to this views hierarchy
      */
-    public abstract void add(View view);
+    public void add(View view);
 
     /**
      * Remove a previously add view from the view hierarchy
      * 
      * @param view the view to remove from this views hierarchy
      */
-    public abstract void remove(View view);
+    public void remove(View view);
+    
+    /**
+     * Removes all children
+     */
+    public void clear();
+    
+    public Iterator<View> iterator();
 
 }

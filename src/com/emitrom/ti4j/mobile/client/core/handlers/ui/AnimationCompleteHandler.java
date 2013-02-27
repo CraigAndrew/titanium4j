@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.CompleteEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface AnimationCompleteHandler {
+public interface AnimationCompleteHandler extends EventHandler {
     public void onComplete(CompleteEvent event);
 }

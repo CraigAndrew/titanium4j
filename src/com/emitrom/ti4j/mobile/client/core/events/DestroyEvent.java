@@ -15,12 +15,26 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.activity.DestroyHandler;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class DestroyEvent extends TiEvent {
 
     public static final String DESTROY = "destroy";
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<DestroyHandler> TYPE = new Type<DestroyHandler>(DESTROY, null);
+	public static Type<DestroyHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<DestroyHandler> getAssociatedType() {
+		return TYPE;
+	}
+    
     protected DestroyEvent() {
 
     }

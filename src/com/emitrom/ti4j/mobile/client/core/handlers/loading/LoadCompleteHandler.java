@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.loading;
 
 import com.emitrom.ti4j.mobile.client.core.events.loading.LoadEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface LoadCompleteHandler {
+public interface LoadCompleteHandler extends EventHandler {
     public void onLoadComplete(LoadEvent event);
 }

@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.media.video;
 
 import com.emitrom.ti4j.mobile.client.core.events.media.video.VideoEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface VideoCompleteHandler {
+public interface VideoCompleteHandler extends EventHandler {
     public void onComplete(VideoEvent event);
 }

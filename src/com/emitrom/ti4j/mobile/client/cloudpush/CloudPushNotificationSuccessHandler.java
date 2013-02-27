@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.cloudpush;
 
 import com.emitrom.ti4j.mobile.client.core.events.cloudpush.CloudPushNotificationSuccessEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface CloudPushNotificationSuccessHandler {
+public interface CloudPushNotificationSuccessHandler extends EventHandler{
     public void onSuccess(CloudPushNotificationSuccessEvent event);
 }

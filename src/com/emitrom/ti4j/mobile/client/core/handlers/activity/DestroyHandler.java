@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.activity;
 
 import com.emitrom.ti4j.mobile.client.core.events.activity.ActivityEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface DestroyHandler {
+public interface DestroyHandler extends EventHandler {
     public void onDestroy(ActivityEvent event);
 }

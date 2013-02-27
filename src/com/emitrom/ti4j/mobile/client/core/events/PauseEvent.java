@@ -15,12 +15,25 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.activity.PauseHandler;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class PauseEvent extends TiEvent {
 
     public static final String PAUSE = "pause";
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<PauseHandler> TYPE = new Type<PauseHandler>(PAUSE, null);
+	public static Type<PauseHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<PauseHandler> getAssociatedType() {
+		return TYPE;
+	}
     protected PauseEvent() {
 
     }

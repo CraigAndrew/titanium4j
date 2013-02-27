@@ -19,10 +19,24 @@ import com.emitrom.ti4j.mobile.client.core.events.TiEvent;
 import com.emitrom.ti4j.mobile.client.geolocation.Coordinates;
 import com.emitrom.ti4j.mobile.client.geolocation.android.LocationProvider;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class LocationEvent extends TiEvent {
 
     public static final String LOCATION = "location";
+    
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<GeolocationHandler> TYPE = new Type<GeolocationHandler>(LOCATION, null);
+	public static Type<GeolocationHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<GeolocationHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
 
     protected LocationEvent() {
 

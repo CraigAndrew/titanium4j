@@ -15,15 +15,17 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui.interfaces;
 
-import com.emitrom.ti4j.mobile.client.core.events.TapEvent;
-import com.emitrom.ti4j.mobile.client.core.events.TiEventListener;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.CallbackRegistration;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.DoubleTapHandler;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.SingleTapHandler;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.TwoFingerTapHandler;
 
 public interface HasTapHandlers {
 
-    public void addDoubleTapHandler(TiEventListener<TapEvent> handler);
+    public CallbackRegistration addDoubleTapHandler(DoubleTapHandler handler);
 
-    public void addSingleTapHandler(TiEventListener<TapEvent> handler);
+    public CallbackRegistration addSingleTapHandler(SingleTapHandler handler);
 
-    public void addTwoFingerTapHandler(TiEventListener<TapEvent> handler);
+    public CallbackRegistration addTwoFingerTapHandler(TwoFingerTapHandler handler);
 
 }

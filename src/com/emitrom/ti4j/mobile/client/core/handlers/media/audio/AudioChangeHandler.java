@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.media.audio;
 
 import com.emitrom.ti4j.mobile.client.core.events.media.audio.ChangeEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface AudioChangeHandler {
+public interface AudioChangeHandler extends EventHandler {
     public void onChange(ChangeEvent event);
 }

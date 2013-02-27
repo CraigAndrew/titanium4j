@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.ChangeEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface CoverFlowIndexChangeHandler {
+public interface CoverFlowIndexChangeHandler extends EventHandler{
      public void onChange(ChangeEvent event);
 }

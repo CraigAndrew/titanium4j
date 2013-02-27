@@ -20,7 +20,7 @@ import com.google.gwt.core.client.JavaScriptObject;
 public class ErrorEvent extends TiEvent {
 
     public static String ERROR = "error";
-
+    
     protected ErrorEvent() {
 
     }

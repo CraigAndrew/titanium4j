@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.ScaleEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface ScaleHandler {
+public interface ScaleHandler extends EventHandler {
     public void onScale(ScaleEvent event);
 }

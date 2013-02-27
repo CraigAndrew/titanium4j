@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.cloudpush;
 
 import com.emitrom.ti4j.mobile.client.core.events.cloudpush.CloudPushCallbackEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface CloudPushCallbackHandler {
+public interface CloudPushCallbackHandler extends EventHandler {
     public void onEvent(CloudPushCallbackEvent event);
 }

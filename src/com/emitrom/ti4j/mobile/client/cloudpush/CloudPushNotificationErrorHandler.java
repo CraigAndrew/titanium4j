@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.cloudpush;
 
 import com.emitrom.ti4j.mobile.client.core.events.cloudpush.CloudPushNotificationErrorEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface CloudPushNotificationErrorHandler {
+public interface CloudPushNotificationErrorHandler extends EventHandler{
     public void onError(CloudPushNotificationErrorEvent event);
 }

@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.ui;
 
 import com.emitrom.ti4j.mobile.client.core.events.ui.text.TextEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface TextHandler {
+public interface TextHandler extends EventHandler {
     public void onEvent(TextEvent event);
 }

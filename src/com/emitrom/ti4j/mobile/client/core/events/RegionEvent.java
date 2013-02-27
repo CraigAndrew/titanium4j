@@ -16,13 +16,27 @@
 
 package com.emitrom.ti4j.mobile.client.core.events;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.geolocation.RegionChangeHandler;
 import com.emitrom.ti4j.mobile.client.ui.Point;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class RegionEvent extends TiEvent {
 
     public static final String REGION_CHANGED = "regionchanged";
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<RegionChangeHandler> TYPE = new Type<RegionChangeHandler>(REGION_CHANGED, null);
+	public static Type<RegionChangeHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<RegionChangeHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     protected RegionEvent() {
 
     }

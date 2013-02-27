@@ -15,13 +15,28 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.loading.LoadCompleteHandler;
 import com.emitrom.ti4j.mobile.client.ui.Point;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class CompleteEvent extends TiEvent {
 
     public static final String COMPLETE = "complete";
 
+
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<LoadCompleteHandler> TYPE = new Type<LoadCompleteHandler>(COMPLETE, null);
+	public static Type<LoadCompleteHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<LoadCompleteHandler> getAssociatedType() {
+		return TYPE;
+	}
+    
     protected CompleteEvent() {
 
     }

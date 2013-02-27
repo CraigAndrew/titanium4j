@@ -21,12 +21,13 @@ import com.emitrom.ti4j.mobile.client.ui.style.Font;
 import com.emitrom.ti4j.mobile.client.ui.style.Position;
 import com.emitrom.ti4j.mobile.client.ui.style.ShadowOffset;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.user.client.ui.HasText;
 
 /**
  * A label is created by the method
  * {@link com.emitrom.ti4j.mobile.client.ui.UI.createLabel}.
  */
-public class Label extends View {
+public class Label extends View implements HasText {
 
     public Label() {
         createPeer();

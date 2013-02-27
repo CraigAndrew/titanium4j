@@ -15,13 +15,28 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.activity.ResumeHandler;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class ResumeEvent extends TiEvent {
 
     public static final String RESUME = "resume";
     public static final String RESUMED = "resumed";
 
+
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<ResumeHandler> TYPE = new Type<ResumeHandler>(RESUME, null);
+	public static Type<ResumeHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<ResumeHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     protected ResumeEvent() {
 
     }

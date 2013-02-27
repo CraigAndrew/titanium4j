@@ -16,12 +16,26 @@
 
 package com.emitrom.ti4j.mobile.client.core.events.ui;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.ChangeHandler;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 public class SwitchEvent extends UIEvent {
 
     public static String CHANGE = "change";
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<ChangeHandler> TYPE = new Type<ChangeHandler>(CHANGE, null);
+	public static Type<ChangeHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<ChangeHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     protected SwitchEvent() {
 
     }

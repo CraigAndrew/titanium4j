@@ -15,14 +15,28 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events.cloudpush;
 
+import com.emitrom.ti4j.mobile.client.cloudpush.CloudPushNotificationSuccessHandler;
 import com.emitrom.ti4j.mobile.client.core.events.TiEvent;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.event.dom.client.DomEvent.Type;
 
 /**
  * An event object passed to the retrieveDeviceToken success callback.
  */
 public class CloudPushNotificationSuccessEvent extends TiEvent {
 
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<CloudPushNotificationSuccessHandler> TYPE = new Type<CloudPushNotificationSuccessHandler>("cloudpushnotificationsuccess", null);
+	public static Type<CloudPushNotificationSuccessHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<CloudPushNotificationSuccessHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     public CloudPushNotificationSuccessEvent(JavaScriptObject obj) {
         jsObj = obj;
     }

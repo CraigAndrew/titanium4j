@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.mobile.client.core.handlers.media;
 
 import com.emitrom.ti4j.mobile.client.core.events.media.VolumentEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public interface VolumeChangeHandler {
+public interface VolumeChangeHandler extends EventHandler {
     public void onVolumeChange(VolumentEvent event);
 }

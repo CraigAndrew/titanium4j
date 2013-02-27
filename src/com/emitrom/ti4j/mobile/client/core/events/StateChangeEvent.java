@@ -15,10 +15,26 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events;
 
+import com.emitrom.ti4j.mobile.client.core.handlers.media.StateChangeHandler;
+import com.google.gwt.event.dom.client.DomEvent.Type;
+
 public class StateChangeEvent extends TiEvent {
 
     public static final String STATE_CHANGE = "stateChange";
 
+
+	/**
+	 * UiBinder implementations
+	 */
+	private static Type<StateChangeHandler> TYPE = new Type<StateChangeHandler>(STATE_CHANGE, null);
+	public static Type<StateChangeHandler> getType() {
+		return TYPE;
+	}
+	
+	public static Type<StateChangeHandler> getAssociatedType() {
+		return TYPE;
+	}
+	
     protected StateChangeEvent() {
 
     }
