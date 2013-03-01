@@ -1060,7 +1060,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public void setTop(String value) {
-        UI.get().setSizePropertyAsString(jsObj, "right", value);
+        UI.get().setSizePropertyAsString(jsObj, "top", value);
     }
 
     public void setTop(String value, Unit unit) {
@@ -1895,7 +1895,6 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * @param v		The view to add
      */
     public void setView(View v) {
-    	clear();
     	setJsObj(v.getJsObj());
     }
     

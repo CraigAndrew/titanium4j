@@ -281,7 +281,10 @@ public class UI extends TiModule {
 
     public void setSizePropertyAsString(JavaScriptObject peer, String property, String value) {
         if (Platform.get().isAndroid()) {
-            if (!value.equalsIgnoreCase("auto")) {
+        	//Check if the value ends with a non-number, then we know it contains the unit at the back
+        	if (value != null && value.length() > 2 && !value.substring(value.length()-2).matches("/^[0-9]+$/")) {
+        		JsoHelper.setAttribute(peer, property, value);
+        	} else if (!"auto".equalsIgnoreCase(value)) { //Used the string literal first to keep from running validation code on a null object
                 JsoHelper.setAttribute(peer, property, value + Unit.DP.getValue());
             } else {
                 JsoHelper.setAttribute(peer, property, value);
