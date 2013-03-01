@@ -18,6 +18,7 @@ package com.emitrom.ti4j.mobile.client.ui.style;
 
 import com.emitrom.ti4j.mobile.client.core.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.ProxyObject;
+import com.emitrom.ti4j.mobile.client.core.Unit;
 import com.emitrom.ti4j.mobile.client.ui.UI;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -116,7 +117,10 @@ public class Font extends ProxyObject {
     }-*/;
 
     public void setFontSize(int value) {
-        UI.get().setSizePropertyAsDouble(jsObj, "fontSize", value);
+    	//Android uses PX, DP, PT as size units for fonts
+    	//iOS uses PT if you like it or not. 
+    	//Set default unit to points then
+    	UI.get().setSizePropertyAsString(jsObj, "fontSize", "" + value  + Unit.POINTS);
     }
 
     private native void _setFontSize(int value) /*-{
