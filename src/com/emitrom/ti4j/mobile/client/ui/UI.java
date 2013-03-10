@@ -35,55 +35,55 @@ import com.google.gwt.core.client.JsArrayString;
  * 
  * The UI module is broken down into 3 major area:
  * 
- * **Views** - [Views](Titanium.UI.View-object.html) are containers that host
+ * **Views** - [Views](Ti.UI.View-object.html) are containers that host
  * visual elements such as controls or other views. Views can have their
  * properties customized, such as their border color and radius, can fire events
  * such as swipe events or touches, and can optionally contain a hierarchy or
- * other views as children. In Titanium, most views are specialized to perform
+ * other views as children. In Ti, most views are specialized to perform
  * both a visual function and set of interaction behaviors such as [Table
- * View](Titanium.UI.TableView-object.html) or [Coverflow
- * View](Titanium.UI.CoverFlowView-object.html). Views are always named with the
+ * View](Ti.UI.TableView-object.html) or [Coverflow
+ * View](Ti.UI.CoverFlowView-object.html). Views are always named with the
  * suffix `View`. **Controls** - controls, or sometimes referred as widgets, are
- * visual elements such as [sliders](Titanium.UI.Slider-object.html),
- * [buttons](Titanium.UI.Button-object.html) and
- * [switches](Titanium.UI.Switch-object.html). They provide a visual element
+ * visual elements such as [sliders](Ti.UI.Slider-object.html),
+ * [buttons](Ti.UI.Button-object.html) and
+ * [switches](Ti.UI.Switch-object.html). They provide a visual element
  * which has a defined behavior and typical have special configuration and
  * special events. Controls themselves are views and also inherit a views
  * properties, functions and events. **Windows** -
- * [Windows](Titanium.UI.Window-object.html) are typically top-level visual
+ * [Windows](Ti.UI.Window-object.html) are typically top-level visual
  * constructs that are the main part of your interface. An application will
  * always have at least one window and windows can take different shapes and
  * sizes, can have display and interaction properties such as fullscreen or
  * modal and can be customized, such as changing their opacity or background
  * color. Windows themselves are views and also inherit a views properties,
  * functions and events. There are a few specialization of Windows such as a
- * [Tab Group](Titanium.UI.TabGroup-object.html) which offer additional behavior
+ * [Tab Group](Ti.UI.TabGroup-object.html) which offer additional behavior
  * beyond the basic Window.
  * 
  * 
- * Titanium uses the [Factory
+ * Ti uses the [Factory
  * Pattern](http://en.wikipedia.org/wiki/Factory_method_pattern) for
  * constructing objects and a general naming pattern for APIs. For example, to
- * construct a [Alert Dialog](Titanium.UI.AlertDialog-object.html), you call the
- * method <Titanium.UI.createAlertDialog>. To create a
- * [TextArea](Titanium.UI.TextArea-object.html), you call the method
- * <Titanium.UI.createTextArea>. Once an object is created, it will be available
+ * construct a [Alert Dialog](Ti.UI.AlertDialog-object.html), you call the
+ * method <Ti.UI.createAlertDialog>. To create a
+ * [TextArea](Ti.UI.TextArea-object.html), you call the method
+ * <Ti.UI.createTextArea>. Once an object is created, it will be available
  * until it goes out of scope.
  * 
  * Optimizations
  * 
- * UI objects are optimized by Titanium to not be realized into the drawing
+ * UI objects are optimized by Ti to not be realized into the drawing
  * context and placed into the device UI surface until needed. That means that
  * you can create UI objects, set their properties and add them to their
  * hierarchy without much worry about memory or performance. When the native
- * drawing surface needs to render a specific view or control, Titanium will
- * automatically create the view as needed. Additionally, Titanium is optimized
+ * drawing surface needs to render a specific view or control, Ti will
+ * automatically create the view as needed. Additionally, Ti is optimized
  * to also release memory once the view is no longer needed, on screen or in low
- * memory situations. However, it's a good idea to help Titanium along in
+ * memory situations. However, it's a good idea to help Ti along in
  * certain cases where you are no longer using objects. For example, you should
- * call `close` on a [Window](Titanium.UI.Window-object.html) instance when you
+ * call `close` on a [Window](Ti.UI.Window-object.html) instance when you
  * are no longer using it. You can safely call `open` on the
- * [Window](Titanium.UI.Window-object.html) again to re-open it.
+ * [Window](Ti.UI.Window-object.html) again to re-open it.
  * 
  * Global Context and Threading
  * 
@@ -91,12 +91,12 @@ import com.google.gwt.core.client.JsArrayString;
  * Since the 'app.js' context is global and generally is not garbage collected
  * until the application exits, you should think about the design of your
  * application as it relates to this fact.
- * [Window](Titanium.UI.Window-object.html) objects that are opened up with the
+ * [Window](Ti.UI.Window-object.html) objects that are opened up with the
  * 'url' property to another Javascript file contain a nice way to decompose
  * your application into smaller units. The other benefit is that when a
- * [Window](Titanium.UI.Window-object.html) is closed, its resources can be
+ * [Window](Ti.UI.Window-object.html) is closed, its resources can be
  * immediately cleaned up, saving resources such as memory and CPU.
- * Additionally, [Window](Titanium.UI.Window-object.html) objects run in a
+ * Additionally, [Window](Ti.UI.Window-object.html) objects run in a
  * separate Javascript context and Thread. While all UI processing is done on
  * the main UI thread, other processing inside a Window or the 'app.js' that
  * does not have UI interaction will run in its own thread.
@@ -104,12 +104,12 @@ import com.google.gwt.core.client.JsArrayString;
  * 
  * Portability
  * 
- * Titanium components are designed to be portable across as many platforms as
+ * Ti components are designed to be portable across as many platforms as
  * it supports. However, there are cases where a device either does not support
  * a specific feature or capability or where it support additional
  * functionality. For cases where the device OS supports capabilities that other
  * platforms do not, we attempt to place those capabilities in a separate
- * namespace, such as [Titanium.UI.iPhone](Titanium.UI.iPhone-module.html).
+ * namespace, such as [Ti.UI.iPhone](Ti.UI.iPhone-module.html).
  * However, in cases where the control is in a common namespace and support
  * additional features, we continue to place that functionality directly on the
  * object.
@@ -310,428 +310,428 @@ public class UI extends TiModule {
     }
 
     static native JavaScriptObject create2DMatrix() /*-{
-		return Titanium.UI.create2DMatrix();
+		return Ti.UI.create2DMatrix();
     }-*/;
 
     static native JavaScriptObject createActivityIndicator() /*-{
-		return Titanium.UI.createActivityIndicator();
+		return Ti.UI.createActivityIndicator();
     }-*/;
 
     static native JavaScriptObject createAlertDialog() /*-{
-		return Titanium.UI.createAlertDialog();
+		return Ti.UI.createAlertDialog();
     }-*/;
 
     static native JavaScriptObject createAlertDialog(JsArrayString buttons) /*-{
-		return Titanium.UI.createAlertDialog({
+		return Ti.UI.createAlertDialog({
 			buttonNames : buttons
 		});
     }-*/;
 
     static native JavaScriptObject createAnimation() /*-{
-		return Titanium.UI.createAnimation();
+		return Ti.UI.createAnimation();
     }-*/;
 
     static native JavaScriptObject createButton() /*-{
-		return Titanium.UI.createButton();
+		return Ti.UI.createButton();
     }-*/;
 
     static native JavaScriptObject create3DMatrix() /*-{
-		return Titanium.UI.create3DMatrix();
+		return Ti.UI.create3DMatrix();
     }-*/;
 
     static native JavaScriptObject createDashboardItem() /*-{
-		return Titanium.UI.createDashboardItem();
+		return Ti.UI.createDashboardItem();
     }-*/;
 
     static native JavaScriptObject createDashboardView() /*-{
-		return Titanium.UI.createDashboardView();
+		return Ti.UI.createDashboardView();
     }-*/;
 
     static native JavaScriptObject createEmailDialog() /*-{
-		return Titanium.UI.createEmailDialog();
+		return Ti.UI.createEmailDialog();
     }-*/;
 
     static native JavaScriptObject createImageView() /*-{
-		return Titanium.UI.createImageView();
+		return Ti.UI.createImageView();
     }-*/;
 
     static native JavaScriptObject createMaskedImage() /*-{
-		return Titanium.UI.createMaskedImage();
+		return Ti.UI.createMaskedImage();
     }-*/;
 
     static native JavaScriptObject createNotification() /*-{
-		return Titanium.UI.createNotification();
+		return Ti.UI.createNotification();
     }-*/;
 
     static native JavaScriptObject createLabel() /*-{
-		return Titanium.UI.createLabel();
+		return Ti.UI.createLabel();
     }-*/;
 
     static native JavaScriptObject createOptionDialog() /*-{
-		return Titanium.UI.createOptionDialog();
+		return Ti.UI.createOptionDialog();
     }-*/;
 
     static native JavaScriptObject createPicker() /*-{
-		return Titanium.UI.createPicker();
+		return Ti.UI.createPicker();
     }-*/;
 
     static native JavaScriptObject createPicker(boolean spinner) /*-{
-		return Titanium.UI.createPicker({
+		return Ti.UI.createPicker({
 			useSpinner : spinner
 		});
     }-*/;
 
     static native JavaScriptObject createPickerColumn() /*-{
-		return Titanium.UI.createPickerColumn();
+		return Ti.UI.createPickerColumn();
     }-*/;
 
     static native JavaScriptObject createPickerRow() /*-{
-		return Titanium.UI.createPickerRow();
+		return Ti.UI.createPickerRow();
     }-*/;
 
     static native JavaScriptObject createProgressBar() /*-{
-		return Titanium.UI.createProgressBar();
+		return Ti.UI.createProgressBar();
     }-*/;
 
     static native JavaScriptObject createScrollableView() /*-{
-		return Titanium.UI.createScrollableView();
+		return Ti.UI.createScrollableView();
     }-*/;
 
     static native JavaScriptObject createScrollView() /*-{
-		return Titanium.UI.createScrollView();
+		return Ti.UI.createScrollView();
     }-*/;
 
     static native JavaScriptObject createSearchBar() /*-{
-		return Titanium.UI.createSearchBar();
+		return Ti.UI.createSearchBar();
     }-*/;
 
     static native JavaScriptObject createSlider() /*-{
-		return Titanium.UI.createSlider();
+		return Ti.UI.createSlider();
     }-*/;
 
     static native JavaScriptObject createSwitch() /*-{
-		return Titanium.UI.createSwitch();
+		return Ti.UI.createSwitch();
     }-*/;
 
     static native JavaScriptObject createTab() /*-{
-		return Titanium.UI.createTab();
+		return Ti.UI.createTab();
     }-*/;
 
     static native JavaScriptObject createTabGroup() /*-{
-		return Titanium.UI.createTabGroup();
+		return Ti.UI.createTabGroup();
     }-*/;
 
     static native JavaScriptObject createTableView() /*-{
-		return Titanium.UI.createTableView();
+		return Ti.UI.createTableView();
     }-*/;
 
     static native JavaScriptObject createTableViewRow() /*-{
-		return Titanium.UI.createTableViewRow();
+		return Ti.UI.createTableViewRow();
     }-*/;
 
     static native JavaScriptObject createTableViewSection() /*-{
-		return Titanium.UI.createTableViewSection();
+		return Ti.UI.createTableViewSection();
     }-*/;
 
     static native JavaScriptObject createTextArea() /*-{
-		return Titanium.UI.createTextArea();
+		return Ti.UI.createTextArea();
     }-*/;
 
     static native JavaScriptObject createTextField() /*-{
-		return Titanium.UI.createTextField();
+		return Ti.UI.createTextField();
     }-*/;
 
     static native JavaScriptObject createToolbar() /*-{
-		return Titanium.UI.iOS.createToolbar();
+		return Ti.UI.iOS.createToolbar();
     }-*/;
 
     static native JavaScriptObject createView() /*-{
-		return Titanium.UI.createView();
+		return Ti.UI.createView();
     }-*/;
 
     static native JavaScriptObject createWebView() /*-{
-		return Titanium.UI.createWebView();
+		return Ti.UI.createWebView();
     }-*/;
 
     static native JavaScriptObject createWindow() /*-{
-		return Titanium.UI.createWindow();
+		return Ti.UI.createWindow();
     }-*/;
 
     static native JavaScriptObject createAndroid() /*-{
-		return Titanium.UI.createAndroid();
+		return Ti.UI.createAndroid();
     }-*/;
 
     public static native JavaScriptObject createIOs() /*-{
-		return Titanium.UI.createiOS();
+		return Ti.UI.createiOS();
     }-*/;
 
     static native JavaScriptObject createIPad() /*-{
-		return Titanium.UI.createiPad();
+		return Ti.UI.createiPad();
     }-*/;
 
     static native JavaScriptObject createIPhone() /*-{
-		return Titanium.UI.createiPhone();
+		return Ti.UI.createiPhone();
     }-*/;
 
     private static native final int FACE_DOWN() /*-{
-		return Titanium.UI.FACE_DOWN ? Titanium.UI.FACE_DOWN : 0;
+		return Ti.UI.FACE_DOWN ? Ti.UI.FACE_DOWN : 0;
     }-*/;
 
     private static native final int FACE_UP() /*-{
-		return Titanium.UI.FACE_UP ? Titanium.UI.FACE_UP : 0;
+		return Ti.UI.FACE_UP ? Ti.UI.FACE_UP : 0;
     }-*/;
 
     private static native final int FILL() /*-{
-		return Titanium.UI.FILL ? Titanium.UI.FILL : 0;
+		return Ti.UI.FILL ? Ti.UI.FILL : 0;
     }-*/;
 
     private static native final int INHERIT() /*-{
-		return Titanium.UI.INHERIT ? Titanium.UI.INHERIT : 0;
+		return Ti.UI.INHERIT ? Ti.UI.INHERIT : 0;
     }-*/;
 
     private static native final int INPUT_BORDERSTYLE_BEZEL() /*-{
-		return Titanium.UI.INPUT_BORDERSTYLE_BEZEL ? Titanium.UI.INPUT_BORDERSTYLE_BEZEL
+		return Ti.UI.INPUT_BORDERSTYLE_BEZEL ? Ti.UI.INPUT_BORDERSTYLE_BEZEL
 				: 0;
     }-*/;
 
     private static native final int INPUT_BORDERSTYLE_LINE() /*-{
-		return Titanium.UI.INPUT_BORDERSTYLE_LINE ? Titanium.UI.INPUT_BORDERSTYLE_LINE
+		return Ti.UI.INPUT_BORDERSTYLE_LINE ? Ti.UI.INPUT_BORDERSTYLE_LINE
 				: 0;
     }-*/;
 
     private static native final int INPUT_BORDERSTYLE_NONE() /*-{
-		return Titanium.UI.INPUT_BORDERSTYLE_NONE ? Titanium.UI.INPUT_BORDERSTYLE_NONE
+		return Ti.UI.INPUT_BORDERSTYLE_NONE ? Ti.UI.INPUT_BORDERSTYLE_NONE
 				: 0;
     }-*/;
 
     private static native final int INPUT_BORDERSTYLE_ROUNDED() /*-{
-		return Titanium.UI.INPUT_BORDERSTYLE_ROUNDED ? Titanium.UI.INPUT_BORDERSTYLE_ROUNDED
+		return Ti.UI.INPUT_BORDERSTYLE_ROUNDED ? Ti.UI.INPUT_BORDERSTYLE_ROUNDED
 				: 0;
     }-*/;
 
     private static native final int INPUT_BUTTONMODE_ALWAYS() /*-{
-		return Titanium.UI.INPUT_BUTTONMODE_ALWAYS ? Titanium.UI.INPUT_BUTTONMODE_ALWAYS
+		return Ti.UI.INPUT_BUTTONMODE_ALWAYS ? Ti.UI.INPUT_BUTTONMODE_ALWAYS
 				: 0;
     }-*/;
 
     private static native final int INPUT_BUTTONMODE_NEVER() /*-{
-		return Titanium.UI.INPUT_BUTTONMODE_NEVER ? Titanium.UI.INPUT_BUTTONMODE_NEVER
+		return Ti.UI.INPUT_BUTTONMODE_NEVER ? Ti.UI.INPUT_BUTTONMODE_NEVER
 				: 0;
     }-*/;
 
     private static native final int INPUT_BUTTONMODE_ONBLUR() /*-{
-		return Titanium.UI.INPUT_BUTTONMODE_ONBLUR ? Titanium.UI.INPUT_BUTTONMODE_ONBLUR
+		return Ti.UI.INPUT_BUTTONMODE_ONBLUR ? Ti.UI.INPUT_BUTTONMODE_ONBLUR
 				: 0;
     }-*/;
 
     private static native final int INPUT_BUTTONMODE_ONFOCUS() /*-{
-		return Titanium.UI.INPUT_BUTTONMODE_ONFOCUS ? Titanium.UI.INPUT_BUTTONMODE_ONFOCUS
+		return Ti.UI.INPUT_BUTTONMODE_ONFOCUS ? Ti.UI.INPUT_BUTTONMODE_ONFOCUS
 				: 0;
     }-*/;
 
     private static native final int KEYBOARD_APPEARANCE_ALERT() /*-{
-		return Titanium.UI.KEYBOARD_APPEARANCE_ALERT ? Titanium.UI.KEYBOARD_APPEARANCE_ALERT
+		return Ti.UI.KEYBOARD_APPEARANCE_ALERT ? Ti.UI.KEYBOARD_APPEARANCE_ALERT
 				: 0;
     }-*/;
 
     private static native final int KEYBOARD_APPEARANCE_DEFAULT() /*-{
-		return Titanium.UI.KEYBOARD_APPEARANCE_DEFAULT ? Titanium.UI.KEYBOARD_APPEARANCE_DEFAULT
+		return Ti.UI.KEYBOARD_APPEARANCE_DEFAULT ? Ti.UI.KEYBOARD_APPEARANCE_DEFAULT
 				: 0;
     }-*/;
 
     private static native final int KEYBOARD_ASCII() /*-{
-		return Titanium.UI.KEYBOARD_ASCII ? Titanium.UI.KEYBOARD_APPEARANCE_DEFAULT
+		return Ti.UI.KEYBOARD_ASCII ? Ti.UI.KEYBOARD_APPEARANCE_DEFAULT
 				: 0;
     }-*/;
 
     private static native final int KEYBOARD_DEFAULT() /*-{
-		return Titanium.UI.KEYBOARD_DEFAULT ? Titanium.UI.KEYBOARD_DEFAULT : 0;
+		return Ti.UI.KEYBOARD_DEFAULT ? Ti.UI.KEYBOARD_DEFAULT : 0;
     }-*/;
 
     private static native final int KEYBOARD_EMAIL() /*-{
-		return Titanium.UI.KEYBOARD_EMAIL ? Titanium.UI.KEYBOARD_EMAIL : 0;
+		return Ti.UI.KEYBOARD_EMAIL ? Ti.UI.KEYBOARD_EMAIL : 0;
     }-*/;
 
     private static native final int KEYBOARD_NAMEPHONE_PAD() /*-{
-		return Titanium.UI.KEYBOARD_NAMEPHONE_PAD ? Titanium.UI.KEYBOARD_NAMEPHONE_PAD
+		return Ti.UI.KEYBOARD_NAMEPHONE_PAD ? Ti.UI.KEYBOARD_NAMEPHONE_PAD
 				: 0;
     }-*/;
 
     private static native final int KEYBOARD_DECIMAL_PAD() /*-{
-		return Titanium.UI.KEYBOARD_DECIMAL_PAD ? Titanium.UI.KEYBOARD_DECIMAL_PAD
+		return Ti.UI.KEYBOARD_DECIMAL_PAD ? Ti.UI.KEYBOARD_DECIMAL_PAD
 				: 0;
     }-*/;
 
     private static native final int KEYBOARD_NUMBERS_PUNCTUATION() /*-{
-		return Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION ? Titanium.UI.KEYBOARD_NUMBERS_PUNCTUATION
+		return Ti.UI.KEYBOARD_NUMBERS_PUNCTUATION ? Ti.UI.KEYBOARD_NUMBERS_PUNCTUATION
 				: 0;
     }-*/;
 
     private static native final int KEYBOARD_NUMBER_PAD() /*-{
-		return Titanium.UI.KEYBOARD_NUMBER_PAD ? Titanium.UI.KEYBOARD_NUMBER_PAD
+		return Ti.UI.KEYBOARD_NUMBER_PAD ? Ti.UI.KEYBOARD_NUMBER_PAD
 				: 0;
     }-*/;
 
     private static native final int KEYBOARD_PHONE_PAD() /*-{
-		return Titanium.UI.KEYBOARD_PHONE_PAD ? Titanium.UI.KEYBOARD_PHONE_PAD
+		return Ti.UI.KEYBOARD_PHONE_PAD ? Ti.UI.KEYBOARD_PHONE_PAD
 				: 0;
     }-*/;
 
     private static native final int KEYBOARD_URL() /*-{
-		return Titanium.UI.KEYBOARD_URL ? Titanium.UI.KEYBOARD_URL : 0;
+		return Ti.UI.KEYBOARD_URL ? Ti.UI.KEYBOARD_URL : 0;
     }-*/;
 
     private static native final int LANDSCAPE_LEFT() /*-{
-		return Titanium.UI.LANDSCAPE_LEFT ? Titanium.UI.LANDSCAPE_LEFT : 0;
+		return Ti.UI.LANDSCAPE_LEFT ? Ti.UI.LANDSCAPE_LEFT : 0;
     }-*/;
 
     private static native final int LANDSCAPE_RIGHT() /*-{
-		return Titanium.UI.LANDSCAPE_RIGHT ? Titanium.UI.LANDSCAPE_RIGHT : 0;
+		return Ti.UI.LANDSCAPE_RIGHT ? Ti.UI.LANDSCAPE_RIGHT : 0;
     }-*/;
 
     private static native final int NOTIFICATION_DURATION_LONG() /*-{
-		return Titanium.UI.NOTIFICATION_DURATION_LONG ? Titanium.UI.NOTIFICATION_DURATION_LONG
+		return Ti.UI.NOTIFICATION_DURATION_LONG ? Ti.UI.NOTIFICATION_DURATION_LONG
 				: 0;
     }-*/;
 
     private static native final int NOTIFICATION_DURATION_SHORT() /*-{
-		return Titanium.UI.NOTIFICATION_DURATION_SHORT ? Titanium.UI.NOTIFICATION_DURATION_SHORT
+		return Ti.UI.NOTIFICATION_DURATION_SHORT ? Ti.UI.NOTIFICATION_DURATION_SHORT
 				: 0;
     }-*/;
 
     private static native final int PICKER_TYPE_COUNT_DOWN_TIMER() /*-{
-		return Titanium.UI.PICKER_TYPE_COUNT_DOWN_TIMER ? Titanium.UI.PICKER_TYPE_COUNT_DOWN_TIMER
+		return Ti.UI.PICKER_TYPE_COUNT_DOWN_TIMER ? Ti.UI.PICKER_TYPE_COUNT_DOWN_TIMER
 				: 0;
     }-*/;
 
     private static native final int PICKER_TYPE_DATE() /*-{
-		return Titanium.UI.PICKER_TYPE_DATE ? Titanium.UI.PICKER_TYPE_DATE : 0;
+		return Ti.UI.PICKER_TYPE_DATE ? Ti.UI.PICKER_TYPE_DATE : 0;
     }-*/;
 
     private static native final int PICKER_TYPE_DATE_AND_TIME() /*-{
-		return Titanium.UI.PICKER_TYPE_DATE_AND_TIME ? Titanium.UI.PICKER_TYPE_DATE_AND_TIME
+		return Ti.UI.PICKER_TYPE_DATE_AND_TIME ? Ti.UI.PICKER_TYPE_DATE_AND_TIME
 				: 0;
     }-*/;
 
     private static native final int PICKER_TYPE_PLAIN() /*-{
-		return Titanium.UI.PICKER_TYPE_PLAIN ? Titanium.UI.PICKER_TYPE_PLAIN
+		return Ti.UI.PICKER_TYPE_PLAIN ? Ti.UI.PICKER_TYPE_PLAIN
 				: 0;
     }-*/;
 
     private static native final int PICKER_TYPE_TIME() /*-{
-		return Titanium.UI.PICKER_TYPE_TIME ? Titanium.UI.PICKER_TYPE_TIME : 0;
+		return Ti.UI.PICKER_TYPE_TIME ? Ti.UI.PICKER_TYPE_TIME : 0;
     }-*/;
 
     private static native final int PORTRAIT() /*-{
-		return Titanium.UI.PORTRAIT ? Titanium.UI.PORTRAIT : 0;
+		return Ti.UI.PORTRAIT ? Ti.UI.PORTRAIT : 0;
     }-*/;
 
     private static native final int RETURNKEY_DEFAULT() /*-{
-		return Titanium.UI.RETURNKEY_DEFAULT ? Titanium.UI.RETURNKEY_DEFAULT
+		return Ti.UI.RETURNKEY_DEFAULT ? Ti.UI.RETURNKEY_DEFAULT
 				: 0;
     }-*/;
 
     private static native final int RETURNKEY_DONE() /*-{
-		return Titanium.UI.RETURNKEY_DONE ? Titanium.UI.RETURNKEY_DONE : 0;
+		return Ti.UI.RETURNKEY_DONE ? Ti.UI.RETURNKEY_DONE : 0;
     }-*/;
 
     private static native final int RETURNKEY_EMERGENCY_CALL() /*-{
-		return Titanium.UI.RETURNKEY_EMERGENCY_CALL ? Titanium.UI.RETURNKEY_EMERGENCY_CALL
+		return Ti.UI.RETURNKEY_EMERGENCY_CALL ? Ti.UI.RETURNKEY_EMERGENCY_CALL
 				: 0;
     }-*/;
 
     private static native final int RETURNKEY_GO() /*-{
-		return Titanium.UI.RETURNKEY_GO ? Titanium.UI.RETURNKEY_GO : 0;
+		return Ti.UI.RETURNKEY_GO ? Ti.UI.RETURNKEY_GO : 0;
     }-*/;
 
     private static native final int RETURNKEY_GOOGLE() /*-{
-		return Titanium.UI.RETURNKEY_GOOGLE ? Titanium.UI.RETURNKEY_GOOGLE : 0;
+		return Ti.UI.RETURNKEY_GOOGLE ? Ti.UI.RETURNKEY_GOOGLE : 0;
     }-*/;
 
     private static native final int RETURNKEY_JOIN() /*-{
-		return Titanium.UI.RETURNKEY_JOIN ? Titanium.UI.RETURNKEY_JOIN : 0;
+		return Ti.UI.RETURNKEY_JOIN ? Ti.UI.RETURNKEY_JOIN : 0;
     }-*/;
 
     private static native final int RETURNKEY_NEXT() /*-{
-		return Titanium.UI.RETURNKEY_NEXT ? Titanium.UI.RETURNKEY_NEXT : 0;
+		return Ti.UI.RETURNKEY_NEXT ? Ti.UI.RETURNKEY_NEXT : 0;
     }-*/;
 
     private static native final int RETURNKEY_ROUTE() /*-{
-		return Titanium.UI.RETURNKEY_ROUTE ? Titanium.UI.RETURNKEY_ROUTE : 0;
+		return Ti.UI.RETURNKEY_ROUTE ? Ti.UI.RETURNKEY_ROUTE : 0;
     }-*/;
 
     private static native final int RETURNKEY_SEARCH() /*-{
-		return Titanium.UI.RETURNKEY_SEARCH ? Titanium.UI.RETURNKEY_SEARCH : 0;
+		return Ti.UI.RETURNKEY_SEARCH ? Ti.UI.RETURNKEY_SEARCH : 0;
     }-*/;
 
     private static native final int RETURNKEY_SEND() /*-{
-		return Titanium.UI.RETURNKEY_SEND ? Titanium.UI.RETURNKEY_SEND : 0;
+		return Ti.UI.RETURNKEY_SEND ? Ti.UI.RETURNKEY_SEND : 0;
     }-*/;
 
     private static native final int RETURNKEY_YAHOO() /*-{
-		return Titanium.UI.RETURNKEY_YAHOO ? Titanium.UI.RETURNKEY_YAHOO : 0;
+		return Ti.UI.RETURNKEY_YAHOO ? Ti.UI.RETURNKEY_YAHOO : 0;
     }-*/;
 
     private static native final int SIZE() /*-{
-		return Titanium.UI.SIZE ? Titanium.UI.SIZE : 0;
+		return Ti.UI.SIZE ? Ti.UI.SIZE : 0;
     }-*/;
 
     private static native final int TEXT_ALIGNMENT_CENTER() /*-{
-		return Titanium.UI.TEXT_ALIGNMENT_CENTER ? Titanium.UI.TEXT_ALIGNMENT_CENTER
+		return Ti.UI.TEXT_ALIGNMENT_CENTER ? Ti.UI.TEXT_ALIGNMENT_CENTER
 				: 0;
     }-*/;
 
     private static native final int TEXT_ALIGNMENT_LEFT() /*-{
-		return Titanium.UI.TEXT_ALIGNMENT_LEFT ? Titanium.UI.TEXT_ALIGNMENT_LEFT
+		return Ti.UI.TEXT_ALIGNMENT_LEFT ? Ti.UI.TEXT_ALIGNMENT_LEFT
 				: 0;
     }-*/;
 
     private static native final int TEXT_ALIGNMENT_RIGHT() /*-{
-		return Titanium.UI.TEXT_ALIGNMENT_RIGHT ? Titanium.UI.TEXT_ALIGNMENT_RIGHT
+		return Ti.UI.TEXT_ALIGNMENT_RIGHT ? Ti.UI.TEXT_ALIGNMENT_RIGHT
 				: 0;
     }-*/;
 
     private static native final int TEXT_AUTOCAPITALIZATION_ALL() /*-{
-		return Titanium.UI.TEXT_AUTOCAPITALIZATION_ALL ? Titanium.UI.TEXT_AUTOCAPITALIZATION_ALL
+		return Ti.UI.TEXT_AUTOCAPITALIZATION_ALL ? Ti.UI.TEXT_AUTOCAPITALIZATION_ALL
 				: 0;
     }-*/;
 
     private static native final int TEXT_AUTOCAPITALIZATION_NONE() /*-{
-		return Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE ? Titanium.UI.TEXT_AUTOCAPITALIZATION_NONE
+		return Ti.UI.TEXT_AUTOCAPITALIZATION_NONE ? Ti.UI.TEXT_AUTOCAPITALIZATION_NONE
 				: 0;
     }-*/;
 
     private static native final int TEXT_AUTOCAPITALIZATION_SENTENCES() /*-{
-		return Titanium.UI.TEXT_AUTOCAPITALIZATION_SENTENCES ? Titanium.UI.TEXT_AUTOCAPITALIZATION_SENTENCES
+		return Ti.UI.TEXT_AUTOCAPITALIZATION_SENTENCES ? Ti.UI.TEXT_AUTOCAPITALIZATION_SENTENCES
 				: 0;
     }-*/;
 
     private static native final int TEXT_AUTOCAPITALIZATION_WORDS() /*-{
-		return Titanium.UI.TEXT_AUTOCAPITALIZATION_WORDS ? Titanium.UI.TEXT_AUTOCAPITALIZATION_WORDS
+		return Ti.UI.TEXT_AUTOCAPITALIZATION_WORDS ? Ti.UI.TEXT_AUTOCAPITALIZATION_WORDS
 				: 0;
     }-*/;
 
     private static native final int TEXT_VERTICAL_ALIGNMENT_BOTTOM() /*-{
-		return Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM ? Titanium.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM
+		return Ti.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM ? Ti.UI.TEXT_VERTICAL_ALIGNMENT_BOTTOM
 				: 0;
     }-*/;
 
     private static native final int TEXT_VERTICAL_ALIGNMENT_CENTER() /*-{
-		return Titanium.UI.TEXT_VERTICAL_ALIGNMENT_CENTER ? Titanium.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
+		return Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER ? Ti.UI.TEXT_VERTICAL_ALIGNMENT_CENTER
 				: 0;
     }-*/;
 
     private static native final int TEXT_VERTICAL_ALIGNMENT_TOP() /*-{
-		return Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP ? Titanium.UI.TEXT_VERTICAL_ALIGNMENT_TOP
+		return Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP ? Ti.UI.TEXT_VERTICAL_ALIGNMENT_TOP
 				: 0;
     }-*/;
 
     private static native final int UNKNOWN() /*-{
-		return Titanium.UI.UNKNOWN ? Titanium.UI.UNKNOWN : 0;
+		return Ti.UI.UNKNOWN ? Ti.UI.UNKNOWN : 0;
     }-*/;
 
     private static native final int UPSIDE_PORTRAIT() /*-{
-		return Titanium.UI.UPSIDE_PORTRAIT ? Titanium.UI.UPSIDE_PORTRAIT : 0;
+		return Ti.UI.UPSIDE_PORTRAIT ? Ti.UI.UPSIDE_PORTRAIT : 0;
     }-*/;
 
 }

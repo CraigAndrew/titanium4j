@@ -1783,9 +1783,9 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * Returns null if either view is not in the view hierarchy. Keep in mind
      * that views may be removed from the view hierarchy if their window is
      * blurred or if the view is offscreen (such as in some situations with
-     * Titanium.UI.ScrollableView).
+     * Ti.UI.ScrollableView).
      * <p>
-     * If this view is a Titanium.UI.ScrollView, the view's x and y offsets are
+     * If this view is a Ti.UI.ScrollView, the view's x and y offsets are
      * subtracted from the return value.
      * 
      * @param point
