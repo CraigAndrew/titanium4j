@@ -1,19 +1,19 @@
 /**************************************************************************
-   JsoHelper.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * JsoHelper.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
-package com.emitrom.ti4j.mobile.client.core;
+package com.emitrom.ti4j.core.client;
 
 import java.util.Date;
 import java.util.List;
@@ -50,7 +50,7 @@ public final class JsoHelper {
     public static native JavaScriptObject[] getAttributeAsJavaScriptObjectArray(JavaScriptObject elem, String attr) /*-{
 		var arrayJS = elem[attr];
 		return (arrayJS === undefined) ? null
-				: @com.emitrom.ti4j.mobile.client.core.JsoHelper::toArray(Lcom/google/gwt/core/client/JavaScriptObject;)(arrayJS);
+				: @com.emitrom.ti4j.core.client.JsoHelper::toArray(Lcom/google/gwt/core/client/JavaScriptObject;)(arrayJS);
     }-*/;
 
     public static JavaScriptObject[] toArray(JavaScriptObject array) {
@@ -106,7 +106,7 @@ public final class JsoHelper {
 
     public static native Date getAttributeAsDate(JavaScriptObject elem, String attr) /*-{
                                                                                    var ret = elem[attr];
-                                                                                   return (ret === undefined || ret == null) ? null: @com.emitrom.ti4j.mobile.client.core.JsoHelper::toDate(D)(ret.getTime());
+                                                                                   return (ret === undefined || ret == null) ? null: @com.emitrom.ti4j.core.client.JsoHelper::toDate(D)(ret.getTime());
                                                                                    }-*/;
 
     public static native float getAttributeAsFloat(JavaScriptObject elem, String attr) /*-{

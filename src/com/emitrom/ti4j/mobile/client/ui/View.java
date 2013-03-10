@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.emitrom.ti4j.core.client.ProxyObject;
 import com.emitrom.ti4j.mobile.client.blob.Blob;
-import com.emitrom.ti4j.mobile.client.core.ProxyObject;
 import com.emitrom.ti4j.mobile.client.core.Size;
 import com.emitrom.ti4j.mobile.client.core.Unit;
 import com.emitrom.ti4j.mobile.client.core.events.TiEventListener;
@@ -79,7 +79,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native Point getAnchorPoint() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.anchorPoint;
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.Point::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -94,8 +94,8 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setAnchorPoint(Point value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.anchorPoint = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.anchorPoint = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /*
@@ -106,7 +106,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native Point getAnimatedCenterPoint() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.animatedCenterPoint;
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.Point::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -121,8 +121,8 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setAnimatedCenterPoint(Point value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.animatedCenterPoint = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.animatedCenterPoint = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /*
@@ -133,7 +133,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native String getBackgroundColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundColor;
     }-*/;
 
@@ -146,7 +146,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setBackgroundColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundColor = value;
     }-*/;
 
@@ -163,7 +163,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native String getBackgroundDisabledColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundDisabledColor;
     }-*/;
 
@@ -176,7 +176,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setBackgroundDisabledColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundDisabledColor = value;
     }-*/;
 
@@ -193,7 +193,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native String getBackgroundDisabledImage() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundDisabledImage;
     }-*/;
 
@@ -206,7 +206,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setBackgroundDisabledImage(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundDisabledImage = value;
     }-*/;
 
@@ -219,7 +219,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native String getBackgroundFocusedColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundFocusedColor;
     }-*/;
 
@@ -232,7 +232,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setBackgroundFocusedColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundFocusedColor = value;
     }-*/;
 
@@ -249,7 +249,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native String getBackgroundFocusedImage() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundFocusedImage;
     }-*/;
 
@@ -262,7 +262,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setBackgroundFocusedImage(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundFocusedImage = value;
     }-*/;
 
@@ -275,7 +275,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native Object getBackgroundGradient() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundGradient;
     }-*/;
 
@@ -288,7 +288,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setBackgroundGradient(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundGradient = value;
     }-*/;
 
@@ -300,7 +300,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native String getBackgroundImage() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundImage;
     }-*/;
 
@@ -313,7 +313,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setBackgroundImage(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundImage = value;
     }-*/;
 
@@ -325,7 +325,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native <T> T getBackgroundLeftCap() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundLeftCap;
     }-*/;
 
@@ -350,7 +350,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native String getBackgroundSelectedColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundSelectedColor;
     }-*/;
 
@@ -363,7 +363,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setBackgroundSelectedColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundSelectedColor = value;
     }-*/;
 
@@ -380,7 +380,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native String getBackgroundSelectedImage() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundSelectedImage;
     }-*/;
 
@@ -393,7 +393,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setBackgroundSelectedImage(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundSelectedImage = value;
     }-*/;
 
@@ -405,7 +405,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native <T> T getBackgroundTopCap() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundTopCap;
     }-*/;
 
@@ -418,7 +418,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setBackgroundTopCap(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundTopCap = value;
     }-*/;
 
@@ -429,7 +429,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native String getBorderColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.borderColor;
     }-*/;
 
@@ -442,7 +442,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setBorderColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.borderColor = value;
     }-*/;
 
@@ -457,7 +457,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native <T> T getBorderRadius() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.borderRadius;
     }-*/;
 
@@ -469,7 +469,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setBorderRadius(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.borderRadius = value;
     }-*/;
 
@@ -480,7 +480,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native <T> T getBorderWidth() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.borderWidth;
     }-*/;
 
@@ -510,7 +510,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _setBottom(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.bottom = value;
     }-*/;
 
@@ -527,7 +527,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _setBottom(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.bottom = value;
     }-*/;
 
@@ -542,7 +542,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native double getBottom() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.bottom;
     }-*/;
 
@@ -553,7 +553,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native Point getCenter() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.center;
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.Point::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -568,8 +568,8 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setCenter(Point value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.center = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.center = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /*
@@ -579,7 +579,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native boolean isFocusable() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.focusable;
     }-*/;
 
@@ -590,7 +590,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setFocusable(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.focusable = value;
     }-*/;
 
@@ -605,13 +605,13 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * @return
      */
     public native Size getRect() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.rect;
 		return @com.emitrom.ti4j.mobile.client.core.Size::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
     
     public native JavaScriptObject getRectangle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.rect;
     }-*/;
 
@@ -630,7 +630,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _setHeight(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.height = value;
     }-*/;
 
@@ -651,7 +651,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _setHeight(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.height = value;
     }-*/;
 
@@ -662,7 +662,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native double getHeight() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.height;
     }-*/;
     
@@ -829,7 +829,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _setLeft(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.left = value;
     }-*/;
 
@@ -849,7 +849,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _setLeft(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.left = value;
     }-*/;
 
@@ -860,7 +860,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native double getLeft() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.left;
     }-*/;
 
@@ -871,7 +871,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native double getOpacity() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.opacity;
     }-*/;
 
@@ -882,7 +882,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setOpacity(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.opacity = value;
     }-*/;
 
@@ -901,7 +901,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _setRight(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.right = value;
     }-*/;
 
@@ -921,7 +921,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _setRight(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.right = value;
     }-*/;
 
@@ -932,7 +932,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native double getRight() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.right;
     }-*/;
 
@@ -943,7 +943,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native Size getSize() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.size;
 		var toReturn = @com.emitrom.ti4j.mobile.client.core.Size::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -957,8 +957,8 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setSize(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.size = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.size = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
@@ -1024,12 +1024,12 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      *         Available on Android only
      */
     public native int getSoftKeyboardOnFocus() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.softKeyboardOnFocus;
     }-*/;
 
     public native void setSoftKeyboardOnFocus(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.softKeyboardOnFocus = value;
     }-*/;
 
@@ -1048,7 +1048,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _setTop(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.top = value;
     }-*/;
 
@@ -1068,7 +1068,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _setTop(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.top = value;
     }-*/;
 
@@ -1079,7 +1079,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native double getTop() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.top;
     }-*/;
 
@@ -1088,12 +1088,12 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      *         (true, default) or forward them to peers (false)
      */
     public native boolean isTouchEnabled() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.touchEnabled;
     }-*/;
 
     public native void setTouchEnabled(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.touchEnabled = value;
     }-*/;
 
@@ -1104,7 +1104,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native Object getTransform() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.transform;
     }-*/;
 
@@ -1114,7 +1114,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * @return
      */
     public native Matrix2D getTransform2D() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.transform;
 		return @com.emitrom.ti4j.mobile.client.ui.Matrix2D::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
@@ -1125,19 +1125,19 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * @return
      */
     public native Matrix3D getTransform3D() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.transform;
 		return @com.emitrom.ti4j.mobile.client.ui.ios.Matrix3D::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
     public native void setTransform(Matrix2D value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.transform = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.transform = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     public native void setTransform(Matrix3D value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.transform = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.transform = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /*
@@ -1147,7 +1147,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native boolean isVisible() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.visible;
     }-*/;
 
@@ -1158,7 +1158,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setVisible(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.visible = value;
     }-*/;
 
@@ -1171,7 +1171,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _setWidth(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.width = value;
     }-*/;
 
@@ -1192,7 +1192,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _setWidth(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.width = value;
     }-*/;
 
@@ -1203,7 +1203,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native double getWidth() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.width;
     }-*/;
 
@@ -1214,7 +1214,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native int getZIndex() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.zIndex;
     }-*/;
 
@@ -1225,7 +1225,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void setZIndex(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.zIndex = value;
     }-*/;
 
@@ -1247,9 +1247,9 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _addNative(View view) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
-				.add(view.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.add(view.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /*
@@ -1261,9 +1261,9 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void animate(AnimationConfig obj)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
-				.animate(obj.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.animate(obj.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /*
@@ -1275,9 +1275,9 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void animate(Animation animation)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
-				.animate(animation.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.animate(animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /*
@@ -1294,7 +1294,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native void _animate(JavaScriptObject obj, JavaScriptObject callback) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.animate(obj, callback);
     }-*/;
 
@@ -1306,7 +1306,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
 
     @Override
     public native void hide() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.hide();
     }-*/;
 
@@ -1318,9 +1318,9 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * .ti.mobile.client.ui.HasWidgets)
      */
     public native void _remove(View view) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
-				.remove(view.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.remove(view.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     @Override    
@@ -1336,7 +1336,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void show() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.show();
     }-*/;
 
@@ -1347,7 +1347,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native Blob toImage() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.toImage();
 		var toReturn = @com.emitrom.ti4j.mobile.client.blob.Blob::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -1366,7 +1366,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
 
     private native Blob _toImage(JavaScriptObject f) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.toImage(f);
 		var toReturn = @com.emitrom.ti4j.mobile.client.blob.Blob::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -1381,7 +1381,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native CallbackRegistration addClickHandler(ClickHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.ClickEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.ClickHandler::onClick(Lcom/emitrom/ti4j/mobile/client/core/events/ui/ClickEvent;)(eventObject);
@@ -1405,7 +1405,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native CallbackRegistration addDoubleClickHandler(DoubleClickHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.DoubleClickEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.DoubleClickHandler::onDoubleClick(Lcom/emitrom/ti4j/mobile/client/core/events/ui/DoubleClickEvent;)(eventObject);
@@ -1429,7 +1429,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native CallbackRegistration addDoubleTapHandler(DoubleTapHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.DoubleTapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.DoubleTapHandler::onDoubleTap(Lcom/emitrom/ti4j/mobile/client/core/events/ui/DoubleTapEvent;)(eventObject);
@@ -1453,7 +1453,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native CallbackRegistration addLongClickHandler(LongClickHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.LongClickEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.LongClickHandler::onLongClick(Lcom/emitrom/ti4j/mobile/client/core/events/ui/LongClickEvent;)(eventObject);
@@ -1477,7 +1477,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native CallbackRegistration addLongPressHandler(LongPressHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.LongPressEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.LongPressHandler::onLongPress(Lcom/emitrom/ti4j/mobile/client/core/events/ui/LongPressEvent;)(eventObject);
@@ -1509,7 +1509,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native CallbackRegistration addSingleTapHandler(SingleTapHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.SingleTapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.SingleTapHandler::onSingleTap(Lcom/emitrom/ti4j/mobile/client/core/events/ui/SingleTapEvent;)(eventObject);
@@ -1533,7 +1533,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native CallbackRegistration addSwipeHandler(SwipeHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.SwipeEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.SwipeHandler::onSwipe(Lcom/emitrom/ti4j/mobile/client/core/events/ui/SwipeEvent;)(eventObject);
@@ -1557,7 +1557,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native CallbackRegistration addTouchCancelHandler(InteractionHandler handler) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.TouchCancelEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.TouchCancelHandler::onCancel(Lcom/emitrom/ti4j/mobile/client/core/events/ui/TouchCancelEvent;)(eventObject);
@@ -1580,7 +1580,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native CallbackRegistration addTouchEndHandler(TouchEndHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.TouchEndEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.TouchEndHandler::onTouchEnd(Lcom/emitrom/ti4j/mobile/client/core/events/ui/TouchEndEvent;)(eventObject);
@@ -1604,7 +1604,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native CallbackRegistration addTouchMoveHandler(TouchMoveHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.TouchMoveEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.TouchMoveHandler::onTouchMove(Lcom/emitrom/ti4j/mobile/client/core/events/ui/TouchMoveEvent;)(eventObject);
@@ -1628,7 +1628,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native CallbackRegistration addTouchStartHandler(TouchStartHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.TouchStartEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.TouchStartHandler::onTouchStart(Lcom/emitrom/ti4j/mobile/client/core/events/ui/TouchStartEvent;)(eventObject);
@@ -1652,7 +1652,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native CallbackRegistration addTwoFingerTapHandler(TwoFingerTapHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.TwoFingerTapEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.TwoFingerTapHandler::onTwoFingerTap(Lcom/emitrom/ti4j/mobile/client/core/events/ui/TwoFingerTapEvent;)(eventObject);
@@ -1686,7 +1686,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      */
     @Override
     public native void addEventHandler(String event, UIEventHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						event,
@@ -1697,12 +1697,12 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }-*/;
 
     public native void setBorderSize(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.borderSize = value;
     }-*/;
 
     public native int getBorderSize() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.borderSize;
     }-*/;
 
@@ -1748,7 +1748,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
 
     @Override
     public native <T> T getBackgroundRightCap()/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundRightCap;
     }-*/;
 
@@ -1769,7 +1769,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
 
     @Override
     public native <T> T getBackgroundBottomCap()/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundBottomCap;
     }-*/;
 
@@ -1793,11 +1793,11 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * @return
      */
     public native Point converPointToView(Point point, View view)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso
 				.converPointToView(
-						point.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()(),
-						view.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+						point.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
+						view.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
 		return @com.emitrom.ti4j.mobile.client.ui.Point::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
@@ -1812,7 +1812,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * postlayout event.
      */
     public native void finishLayout()/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.finishLayout();
     }-*/;
 
@@ -1825,7 +1825,7 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
      * deferred.
      */
     public native void startLayout()/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.startLayout();
     }-*/;
 
@@ -1858,17 +1858,17 @@ public class View extends UIObject implements HasWidgets, Animatable, HasAnchor,
     }
     
     private native JavaScriptObject _getChildren()/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.children;
     }-*/;
 
     private native JavaScriptObject _getChildrenAt(int index)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.children[index];
     }-*/;
 
     private native int getChildCount()/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 			return jso.children.length;
     }-*/;
     
