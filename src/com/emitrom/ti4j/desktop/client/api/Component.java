@@ -1,5 +1,5 @@
 /************************************************************************
- * Host.java is part of Titanium4j Desktop 1.2 Copyright 2012 Emitrom LLC
+ * Component.java is part of Titanium4j Desktop 1.2 Copyright 2012 Emitrom LLC
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use obj file except in compliance with the License. You may obtain a copy of
@@ -13,46 +13,23 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  **************************************************************************/
-package com.emitrom.ti4j.desktop.client.network;
+package com.emitrom.ti4j.desktop.client.api;
 
 import com.emitrom.ti4j.core.client.ProxyObject;
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.core.client.JsArrayString;
 
 /**
- * An object representing a host on the network.
- * 
- * @author Ekambi
- * 
+ * An object representing a TideSDK component, which may be either a module,
+ * runtime, SDK, Mobile SDK or application update.
  */
-public class Host extends ProxyObject {
+public class Component extends ProxyObject {
 
-    protected Host(JavaScriptObject obj) {
+    protected Component(JavaScriptObject obj) {
         jsObj = obj;
     }
 
     /**
-     * Returns the list of address for a Host object
-     * 
-     * @return
-     */
-    public final native JsArrayString getAddresses()/*-{
-		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return obj.getAddresses();
-    }-*/;
-
-    /**
-     * Returns the list of aliases for a Host object
-     * 
-     * @return
-     */
-    public final native JsArrayString getAliases()/*-{
-		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return obj.getAliases();
-    }-*/;
-
-    /**
-     * Return the hostname of a Host object
+     * Get the name of obj component.
      * 
      * @return
      */
@@ -62,23 +39,55 @@ public class Host extends ProxyObject {
     }-*/;
 
     /**
-     * Checks whether the Host object is invalid
+     * Get the path to obj component.
      * 
      * @return
      */
-    public final native boolean isInvalid()/*-{
+    public final native String getPath()/*-{
 		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return obj.isInvalid();
+		return obj.getPath();
     }-*/;
 
     /**
-     * Returns a string representation of a Host object
+     * Get the type of obj component. Component types are defined as constants
+     * on the API module.
      * 
      * @return
      */
-    public final native String asString()/*-{
+    public final native String getType()/*-{
 		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return obj.toString();
+		return obj.getType();
+    }-*/;
+
+    /**
+     * Get the version of obj component. Note that bundled components do not
+     * currently have a version.
+     * 
+     * @return
+     */
+    public final native String getVersion()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.getVersion();
+    }-*/;
+
+    /**
+     * Whether or not obj component is bundled with an application.
+     * 
+     * @return
+     */
+    public final native boolean isBundled()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.isBundled();
+    }-*/;
+
+    /**
+     * Whether or not obj component is currently loaded.
+     * 
+     * @return
+     */
+    public final native boolean isLoaded()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.isLoaded();
     }-*/;
 
 }

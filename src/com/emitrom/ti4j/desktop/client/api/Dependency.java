@@ -1,5 +1,5 @@
 /************************************************************************
- * Interface.java is part of Titanium4j Desktop 1.2 Copyright 2012 Emitrom LLC
+ * Dependency.java is part of Titanium4j Desktop 1.2 Copyright 2012 Emitrom LLC
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use obj file except in compliance with the License. You may obtain a copy of
@@ -13,58 +13,63 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  **************************************************************************/
-package com.emitrom.ti4j.desktop.client.network;
+package com.emitrom.ti4j.desktop.client.api;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.core.client.ProxyObject;
 import com.google.gwt.core.client.JavaScriptObject;
 
-public class Interface extends ProxyObject {
+/**
+ * An object representing a Ti application dependency.
+ * 
+ * 
+ */
+public class Dependency extends ProxyObject {
 
-    protected Interface(JavaScriptObject obj) {
+    protected Dependency(JavaScriptObject obj) {
         jsObj = obj;
     }
 
-    public final native String getDisplayName()/*-{
-		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return obj.getDisplayName();
-    }-*/;
-
-    public final native IPAddress getIPAddress()/*-{
-		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return obj.getIPAddress();
-    }-*/;
-
+    /**
+     * Get the name of obj dependency.
+     * 
+     * @return
+     */
     public final native String getName()/*-{
 		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return obj.getName();
     }-*/;
 
-    public final native IPAddress getSubnetMask()/*-{
+    /**
+     * Get the requirement for obj dependency. Dependency requirement types are
+     * defined as constants on the API module. Currently the installer only
+     * support API.EQ dependency types.
+     * 
+     * @return
+     */
+    public final native String getRequirement()/*-{
 		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return obj.getSubnetMask();
+		return obj.getRequirement();
     }-*/;
 
-    public final native boolean supportsIPv4()/*-{
+    /**
+     * Get the type of obj dependency. Dependency types are defined as constants
+     * on the API module (e.g. API.SDK).
+     * 
+     * @return
+     */
+    public final native int getType()/*-{
 		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return obj.supportsIPv4();
+		return obj.getType();
     }-*/;
 
-    public final native boolean supportsIPv6()/*-{
+    /**
+     * Get the version part of obj dependency.
+     * 
+     * @return
+     */
+    public final native String getVersion()/*-{
 		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return obj.supportsIPv6();
+		return obj.getVersion();
     }-*/;
-
-    static List<Interface> fromJsArray(JavaScriptObject peers) {
-        List<Interface> files = new ArrayList<Interface>();
-        int size = JsoHelper.arrayLength(peers);
-        for (int i = 0; i < size; i++) {
-            files.add(new Interface(JsoHelper.getValueFromJavaScriptObjectArray(peers, i)));
-        }
-        return files;
-    }
 
 }

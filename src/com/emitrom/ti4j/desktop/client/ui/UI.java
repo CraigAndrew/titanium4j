@@ -17,7 +17,6 @@
 package com.emitrom.ti4j.desktop.client.ui;
 
 import com.emitrom.ti4j.desktop.client.events.TiEventListener;
-import com.emitrom.ti4j.desktop.client.utils.WindowConfig;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 
@@ -32,10 +31,6 @@ public class UI extends JavaScriptObject {
     public static native UserWindow createWindow() /*-{
 		return Ti.UI.createWindow();
     }-*/;
-
-    public static UserWindow createWindow(WindowConfig config) {
-        return null;
-    }
 
     public static native UserWindow createWindow(JavaScriptObject config) /*-{
 		return Ti.UI.createWindow(config);

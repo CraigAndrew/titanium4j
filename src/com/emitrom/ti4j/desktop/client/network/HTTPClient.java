@@ -2,7 +2,7 @@
  * HTTPClient.java is part of Titanium4j Desktop 1.2 Copyright 2012 Emitrom LLC
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
+ * use obj file except in compliance with the License. You may obtain a copy of
  * the License at
  * 
  * http://www.apache.org/licenses/LICENSE-2.0
@@ -16,7 +16,8 @@
 package com.emitrom.ti4j.desktop.client.network;
 
 import com.emitrom.ti4j.core.client.Function;
-import com.emitrom.ti4j.desktop.client.filesystem.file.File;
+import com.emitrom.ti4j.core.client.ProxyObject;
+import com.emitrom.ti4j.desktop.client.filesystem.File;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArrayString;
 
@@ -26,7 +27,7 @@ import com.google.gwt.core.client.JsArrayString;
  * @author Ekambi
  * 
  */
-public class HTTPClient extends JavaScriptObject {
+public class HTTPClient extends ProxyObject {
 
     private static final int DONE = HTTPClient.DONE();
     public static final int HEADERS_RECEIVED = HTTPClient.HEADERS_RECEIVED();
@@ -34,8 +35,8 @@ public class HTTPClient extends JavaScriptObject {
     public static final int OPENED = HTTPClient.OPENED();
     public static final int UNSENT = HTTPClient.UNSENT();
 
-    protected HTTPClient() {
-
+    protected HTTPClient(JavaScriptObject obj) {
+        jsObj = obj;
     }
 
     /**
@@ -44,7 +45,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String abort()/*-{
-		return this.abort();
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.abort();
     }-*/;
 
     /**
@@ -53,7 +55,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String clearCookies()/*-{
-		return this.clearCookies();
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.clearCookies();
     }-*/;
 
     /**
@@ -64,7 +67,9 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native HTTPCookie getCookie(String name)/*-{
-		return this.getCookie(name);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var peer = obj.getCookie(name);
+		return @com.emitrom.ti4j.desktop.client.network.HTTPCookie::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
     /**
@@ -75,7 +80,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native double getMaxRedirects()/*-{
-		return this.getMaxRedirects();
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.getMaxRedirects();
     }-*/;
 
     /**
@@ -84,18 +90,20 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native JsArrayString getResponseHeader()/*-{
-		return this.getResponseHeader();
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.getResponseHeader();
     }-*/;
 
     /**
-     * Return the current timeout setting of this Network.HTTPClient object in
+     * Return the current timeout setting of obj Network.HTTPClient object in
      * milliseconds. Thie value may be -1 to indicate no timeout. The default
      * timeout value is five minutes.
      * 
      * @return
      */
     public final native int getTimeOut()/*-{
-		return this.getTimeOut();
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.getTimeOut();
     }-*/;
 
     /**
@@ -108,7 +116,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native boolean open(String method, String url)/*-{
-		return this.open(method, url);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.open(method, url);
     }-*/;
 
     /**
@@ -124,7 +133,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native boolean open(String method, String url, boolean asynchron)/*-{
-		return this.open(method, url, asynchron);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.open(method, url, asynchron);
     }-*/;
 
     /**
@@ -143,7 +153,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native boolean open(String method, String url, boolean asynchron, String userName)/*-{
-		return this.open(method, url, asynchron, userName);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.open(method, url, asynchron, userName);
     }-*/;
 
     /**
@@ -174,7 +185,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native boolean open(String method, String url, boolean asynchron, String userName, String password)/*-{
-		return this.open(method, url, asynchron, userName, password);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.open(method, url, asynchron, userName, password);
     }-*/;
 
     /**
@@ -185,7 +197,9 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native boolean receive(File handler)/*-{
-		return this.receive(handler);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj
+				.receive(handler.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -199,7 +213,11 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native boolean receive(File handler, Object data)/*-{
-		return this.receive(handler, data);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj
+				.receive(
+						handler.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
+						data);
     }-*/;
 
     /**
@@ -210,7 +228,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native boolean receive(Function handler)/*-{
-		return this.receive(function() {
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.receive(function() {
 			handler.@com.emitrom.ti4j.core.client.Function::execute()();
 		});
     }-*/;
@@ -226,7 +245,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native boolean receive(Function handler, Object data)/*-{
-		return this.receive(function() {
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.receive(function() {
 			handler.@com.emitrom.ti4j.core.client.Function::execute()();
 		}, data);
     }-*/;
@@ -239,7 +259,9 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String sendFile(File file)/*-{
-		return this.sendFile(file);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj
+				.sendFile(file.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -252,7 +274,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String setBasicCredentials(String userName, String password)/*-{
-		return this.setBasicCredentials(userName, password);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.setBasicCredentials(userName, password);
     }-*/;
 
     /**
@@ -266,7 +289,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String setCookie(String name, String value)/*-{
-		return this.setCookie(name, value);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.setCookie(name, value);
     }-*/;
 
     /**
@@ -279,7 +303,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String setCredentials(String userName, String password)/*-{
-		return this.setCredentials(userName, password);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.setCredentials(userName, password);
     }-*/;
 
     /**
@@ -292,7 +317,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String setMaxRedirects(double amount)/*-{
-		return this.setMaxRedirects(amount);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.setMaxRedirects(amount);
     }-*/;
 
     /**
@@ -305,11 +331,12 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String setRequestHeader(String header, String value)/*-{
-		return this.setRequestHeader(header, value);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.setRequestHeader(header, value);
     }-*/;
 
     /**
-     * Set the timeout setting of this Network.HTTPClient. Thie value may be -1
+     * Set the timeout setting of obj Network.HTTPClient. Thie value may be -1
      * to indicate no timeout. The default timeout value is five minutes.
      * 
      * @param value
@@ -317,7 +344,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String setTimeOut(double value)/*-{
-		return this.setTimeOut(value);
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.setTimeOut(value);
     }-*/;
 
     /**
@@ -326,7 +354,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native boolean isConnected()/*-{
-		return this.connected;
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.connected;
     }-*/;
 
     /**
@@ -335,7 +364,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String getDataSent()/*-{
-		return this.dataSent;
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.dataSent;
     }-*/;
 
     /**
@@ -345,7 +375,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String getDataReceived()/*-{
-		return this.dataReceived;
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.dataReceived;
     }-*/;
 
     /**
@@ -355,7 +386,8 @@ public class HTTPClient extends JavaScriptObject {
      * @param callback
      */
     public final native void setOnDataStream(Function callback)/*-{
-		this.ondatastream = function() {
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		obj.ondatastream = function() {
 			callback.callback.@com.emitrom.ti4j.core.client.Function::execute()();
 		};
     }-*/;
@@ -366,7 +398,8 @@ public class HTTPClient extends JavaScriptObject {
      * @param callback
      */
     public final native void setOnLoad(Function callback)/*-{
-		this.onload = function() {
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		obj.onload = function() {
 			callback.callback.@com.emitrom.ti4j.core.client.Function::execute()();
 		};
     }-*/;
@@ -378,7 +411,8 @@ public class HTTPClient extends JavaScriptObject {
      * @param callback
      */
     public final native void setReadyStateChange(Function callback)/*-{
-		this.onreadystatechange = function() {
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		obj.onreadystatechange = function() {
 			callback.callback.@com.emitrom.ti4j.core.client.Function::execute()();
 		};
     }-*/;
@@ -389,23 +423,26 @@ public class HTTPClient extends JavaScriptObject {
      * @param callback
      */
     public final native void setOnSendStream(Function callback)/*-{
-		this.onsendstream = function() {
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		obj.onsendstream = function() {
 			callback.callback.@com.emitrom.ti4j.core.client.Function::execute()();
 		};
     }-*/;
 
     public final native int getReadyState()/*-{
-		return this.readyState;
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.readyState;
     }-*/;
 
     /**
-     * The response of an HTTP request as a Bytes. Currently this property is
+     * The response of an HTTP request as a Bytes. Currently obj property is
      * only valid after the request has been completed.
      * 
      * @return
      */
     public final native String getResponseData()/*-{
-		return this.responseData;
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.responseData;
     }-*/;
 
     /**
@@ -414,7 +451,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String getResponseText()/*-{
-		return this.responseText;
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.responseText;
     }-*/;
 
     /**
@@ -423,7 +461,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String getResponseXML()/*-{
-		return this.responseXML;
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.responseXML;
     }-*/;
 
     /**
@@ -432,7 +471,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native int getStatus()/*-{
-		return this.status;
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.status;
     }-*/;
 
     /**
@@ -441,7 +481,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native int getStatusText()/*-{
-		return this.statusText;
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.statusText;
     }-*/;
 
     /**
@@ -450,7 +491,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native boolean hasTimedOut()/*-{
-		return this.timedOut;
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.timedOut;
     }-*/;
 
     /**
@@ -459,7 +501,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String getUrl()/*-{
-		return this.url;
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.url;
     }-*/;
 
     /**
@@ -468,7 +511,8 @@ public class HTTPClient extends JavaScriptObject {
      * @return
      */
     public final native String getUserAgent()/*-{
-		return this.userAgent;
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.userAgent;
     }-*/;
 
     private static native int DONE()/*-{

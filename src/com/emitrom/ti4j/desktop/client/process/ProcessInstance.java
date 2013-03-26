@@ -1,126 +1,138 @@
 /************************************************************************
-  ProcessInstance.java is part of Titanium4j Desktop 1.2  Copyright 2012 Emitrom LLC
-
-  Licensed under the Apache License, Version 2.0 (the "License");
-  you may not use this file except in compliance with the License.
-  You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
-  Unless required by applicable law or agreed to in writing, software
-  distributed under the License is distributed on an "AS IS" BASIS,
-  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  See the License for the specific language governing permissions and
-  limitations under the License.
-**************************************************************************/
+ * ProcessInstance.java is part of Titanium4j Desktop 1.2 Copyright 2012 Emitrom
+ * LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use obj file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ **************************************************************************/
 package com.emitrom.ti4j.desktop.client.process;
 
-import com.emitrom.ti4j.desktop.client.api.environment.Environment;
-import com.emitrom.ti4j.desktop.client.events.TiEventListener;
+import com.emitrom.ti4j.core.client.Function;
+import com.emitrom.ti4j.core.client.ProxyObject;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArrayString;
 
-public class ProcessInstance extends JavaScriptObject {
+public class ProcessInstance extends ProxyObject {
 
-	protected ProcessInstance() {
+    protected ProcessInstance(JavaScriptObject obj) {
+        jsObj = obj;
+    }
 
-	}
+    public final native JsArrayString getArguments()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.getArguments();
+    }-*/;
 
-	public final native Environment cloneEnvironment()/*-{
-		return this.cloneEnvironment();
-	}-*/;
+    public final native <T> T getEnvironment(String key)/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.getEnvironment(key);
+    }-*/;
 
-	public final native JsArrayString getArguments()/*-{
-		return this.getArguments();
-	}-*/;
+    public final native int getExitCode()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.getExitCode();
+    }-*/;
 
-	public final native <T> T getEnvironment(String key)/*-{
-		return this.getEnvironment(key);
-	}-*/;
+    public final native int getPID()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.getPID();
+    }-*/;
 
-	public final native int getExitCode()/*-{
-		return this.getExitCode();
-	}-*/;
+    public final native Pipe getStderr()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var peer = obj.getStderr();
+		return @com.emitrom.ti4j.desktop.client.process.Pipe::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
 
-	public final native int getPID()/*-{
-		return this.getPID();
-	}-*/;
+    public final native Pipe getStdin()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var peer = obj.getStdin();
+		return @com.emitrom.ti4j.desktop.client.process.Pipe::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
 
-	public final native Pipe getStderr()/*-{
-		return this.getStderr();
-	}-*/;
+    public final native Pipe getStdout()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var peer = obj.getStdout();
+		return @com.emitrom.ti4j.desktop.client.process.Pipe::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
 
-	public final native Pipe getStdin()/*-{
-		return this.getStdin();
-	}-*/;
+    public final native boolean isRunning()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.isRunning();
+    }-*/;
 
-	public final native Pipe getStdout()/*-{
-		return this.getStdout();
-	}-*/;
+    public final native String kill()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.kill();
+    }-*/;
 
-	public final native boolean isRunning()/*-{
-		return this.isRunning();
-	}-*/;
+    public final native String launch()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.launch();
+    }-*/;
 
-	public final native String kill()/*-{
-		return this.kill();
-	}-*/;
+    /**
+     * does nothing in Windows
+     */
+    public final native String sendSignal(String signal)/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.sendSignal(signal);
+    }-*/;
 
-	public final native String launch()/*-{
-		return this.launch();
-	}-*/;
+    /**
+     * does nothing in Windows
+     */
+    public final native String sendSignal(double signal)/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.sendSignal(signal);
+    }-*/;
 
-	/**
-	 * does nothing in Windows
-	 */
-	public final native String sendSignal(String signal)/*-{
-		return this.sendSignal(signal);
-	}-*/;
+    public final native String setEnvironment(String key, String value)/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.setEnvironment(key, value);
+    }-*/;
 
-	/**
-	 * does nothing in Windows
-	 */
-	public final native String sendSignal(double signal)/*-{
-		return this.sendSignal(signal);
-	}-*/;
+    public final native String setOnExit(Function callback)/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.setOnExit(function() {
+			callback.@com.emitrom.ti4j.core.client.Function::execute()();
+		});
+    }-*/;
 
-	public final native String setEnvironment(String key, String value)/*-{
-		return this.setEnvironment(key, value);
-	}-*/;
+    public final native String setOnRead(Function callback)/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.setOnRead(function() {
+			callback.@com.emitrom.ti4j.core.client.Function::execute()();
+		});
+    }-*/;
 
-	public final String setOnExit(TiEventListener<?> callback) {
-		return this.setOnExit(callback.getJsoPeer());
-	}
+    public final native String setOnReadLine(Function callback)/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.setOnReadLine(function() {
+			callback.@com.emitrom.ti4j.core.client.Function::execute()();
+		});
+    }-*/;
 
-	private final native String setOnExit(JavaScriptObject callback)/*-{
-		return this.setOnExit(callback);
-	}-*/;
+    /**
+     * does nothing on Windows
+     */
+    public final native String terminate()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.terminate();
+    }-*/;
 
-	public final String seOntRead(TiEventListener<?> callback) {
-		return this.setOnRead(callback.getJsoPeer());
-	}
-
-	private final native String setOnRead(JavaScriptObject callback)/*-{
-		return this.setOnRead(callback);
-	}-*/;
-
-	public final String setOnReadLine(TiEventListener<?> callback) {
-		return this.setOnReadLine(callback.getJsoPeer());
-	}
-
-	private final native String setOnReadLine(JavaScriptObject callback)/*-{
-		return this.setOnReadLine(callback);
-	}-*/;
-
-	/**
-	 * does nothing on Windows
-	 */
-	public final native String terminate()/*-{
-		return this.terminate();
-	}-*/;
-
-	public final native String stringValue()/*-{
-		return this.toString();
-	}-*/;
+    public final native String asString()/*-{
+		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return obj.toString();
+    }-*/;
 
 }

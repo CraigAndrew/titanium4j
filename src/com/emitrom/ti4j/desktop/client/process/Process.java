@@ -16,8 +16,12 @@
 package com.emitrom.ti4j.desktop.client.process;
 
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.core.client.JsArrayString;
 
-public class Process extends JavaScriptObject {
+/**
+ * A module for creating processes.
+ */
+public class Process {
 
     public static final String SIGABRT = Process.SIGABRT();
     public static final String SIGALRM = Process.SIGALRM();
@@ -50,21 +54,64 @@ public class Process extends JavaScriptObject {
     public static final String SIGXCPU = Process.SIGXCPU();
     public static final String SIGXFSZ = Process.SIGXFSZ();
 
-    protected Process() {
+    private Process() {
 
     }
 
     public static native Pipe createPipe()/*-{
-		return Ti.Process.createPipe();
+		var obj = Ti.Process.createPipe();
+		return @com.emitrom.ti4j.desktop.client.process.Pipe::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
-    // public static ProcessInstance createProcess(ConfigurationObject argument)
-    // {
-    // return Process.createProcess(argument.eval());
-    // }
+    public static native ProcessInstance createProcess(JsArrayString arguments)/*-{
+		var obj = Ti.Process.createProcess({
+			args : arguments
+		});
+		return @com.emitrom.ti4j.desktop.client.process.ProcessInstance::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
 
-    public static native ProcessInstance createProcess(JavaScriptObject args)/*-{
-		return Ti.Process.createProcess(args);
+    public static native ProcessInstance createProcess(JsArrayString arguments, JavaScriptObject environment)/*-{
+		var obj = Ti.Process.createProcess({
+			args : arguments,
+			env : environment
+		});
+		return @com.emitrom.ti4j.desktop.client.process.ProcessInstance::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
+
+    public static native ProcessInstance createProcess(JsArrayString arguments, JavaScriptObject environment,
+                    Pipe stdinPipe)/*-{
+		var obj = Ti.Process
+				.createProcess({
+					args : arguments,
+					env : environment,
+					stdin : stdinPipe.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()()
+				});
+		return @com.emitrom.ti4j.desktop.client.process.ProcessInstance::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
+
+    public static native ProcessInstance createProcess(JsArrayString arguments, JavaScriptObject environment,
+                    Pipe stdinPipe, Pipe stdoutPipe)/*-{
+		var obj = Ti.Process
+				.createProcess({
+					args : arguments,
+					env : environment,
+					stdin : stdinPipe.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
+					stdout : stdoutPipe.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()()
+				});
+		return @com.emitrom.ti4j.desktop.client.process.ProcessInstance::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
+
+    public static native ProcessInstance createProcess(JsArrayString arguments, JavaScriptObject environment,
+                    Pipe stdinPipe, Pipe stdoutPipe, Pipe stdErrPipe)/*-{
+		var obj = Ti.Process
+				.createProcess({
+					args : arguments,
+					env : environment,
+					stdin : stdinPipe.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
+					stdout : stdoutPipe.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
+					stderr : stdErrPipe.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()()
+				});
+		return @com.emitrom.ti4j.desktop.client.process.ProcessInstance::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
     private static native String SIGABRT()/*-{

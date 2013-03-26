@@ -1,5 +1,5 @@
 /************************************************************************
-  WorkerObject.java is part of Titanium4j Desktop 1.2  Copyright 2012 Emitrom LLC
+  Function.java is part of Titanium4j Desktop 1.2  Copyright 2012 Emitrom LLC
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -13,27 +13,8 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 **************************************************************************/
-package com.emitrom.ti4j.desktop.client.worker.worker;
+package com.emitrom.ti4j.core.client;
 
-import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.json.client.JSONObject;
-
-public class WorkerObject extends JavaScriptObject {
-
-	protected WorkerObject() {
-
-	}
-
-	public final native String postMessage(JSONObject value)/*-{
-		return this.postMessage(value);
-	}-*/;
-
-	public final native void start()/*-{
-		this.start();
-	}-*/;
-
-	public final native void stop()/*-{
-		this.stop();
-	}-*/;
-
+public interface Function {
+  public void execute();
 }

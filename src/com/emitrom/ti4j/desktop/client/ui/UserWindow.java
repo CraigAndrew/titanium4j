@@ -34,10 +34,6 @@ public class UserWindow extends JavaScriptObject {
 		return this.createWindow();
     }-*/;
 
-    // public final UserWindow createWindow(ConfigurationObject config) {
-    // return this.createWindow(config.eval());
-    // }
-
     public final native UserWindow createWindow(JavaScriptObject configObject)/*-{
 		return this.createWindow(configObject);
     }-*/;

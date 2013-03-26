@@ -15,7 +15,7 @@
 **************************************************************************/
 package com.emitrom.ti4j.desktop.client.codec;
 
-import com.emitrom.ti4j.desktop.client.filesystem.file.File;
+import com.emitrom.ti4j.desktop.client.filesystem.File;
 
 public interface ZipCreateFileDestinationHandler {
   public void onComplete(File destination);
