@@ -16,84 +16,94 @@
 
 package com.emitrom.ti4j.desktop.client.ui;
 
-import com.emitrom.ti4j.desktop.client.events.TiEventListener;
+import java.util.List;
+
+import com.emitrom.ti4j.core.client.Function;
 import com.google.gwt.core.client.JavaScriptObject;
-import com.google.gwt.core.client.JsArray;
 
-public class UI extends JavaScriptObject {
+public class UI {
 
-    public static final int CENTERED = UI.CENTERED();
+    public static final int CENTERED = CENTERED();
 
-    protected UI() {
+    private UI() {
 
     }
 
     public static native UserWindow createWindow() /*-{
-		return Ti.UI.createWindow();
+		var peer = Ti.UI.createWindow();
+		return @com.emitrom.ti4j.desktop.client.ui.UserWindow::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
     public static native UserWindow createWindow(JavaScriptObject config) /*-{
-		return Ti.UI.createWindow(config);
+		var peer = Ti.UI.createWindow(config);
+		return @com.emitrom.ti4j.desktop.client.ui.UserWindow::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
     public static native Tray addTray(String iconURL)/*-{
-		return Ti.UI.addTray(iconURL);
+		var peer = Ti.UI.addTray(iconURL);
+		return @com.emitrom.ti4j.desktop.client.ui.Tray::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
-    public static Tray addTray(String iconURL, TiEventListener<?> eventListener) {
-        return UI.addTray(iconURL, eventListener.getJsoPeer());
-    }
-
-    private static native Tray addTray(String iconURL, JavaScriptObject eventListener)/*-{
-		return Ti.UI.addTray(iconURL, eventListener);
+    public static native Tray addTray(String iconURL, Function callback)/*-{
+		var peer = Ti.UI.addTray(iconURL, function() {
+			callbac.@com.emitrom.ti4j.core.client.Function::execute()();
+		});
+		return @com.emitrom.ti4j.desktop.client.ui.Tray::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
     public static native void clearTray()/*-{
 		Ti.UI.clearTray();
     }-*/;
 
-    public static CheckMenuItem createCheckMenuItem(String iconURL, TiEventListener<?> eventListener) {
-        return UI.createCheckMenuItem(iconURL, eventListener.getJsoPeer());
-    }
+    public static native CheckMenuItem createCheckMenuItem(String label)/*-{
+		var peer = Ti.UI.createCheckMenuItem(label);
+		return @com.emitrom.ti4j.desktop.client.ui.CheckMenuItem::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
+    }-*/;
 
-    private static native CheckMenuItem createCheckMenuItem(String iconURL, JavaScriptObject eventListener)/*-{
-		return Ti.UI.createCheckMenuItem(iconURL, eventListener);
+    public static native CheckMenuItem createCheckMenuItem(String label, Function callback)/*-{
+		var peer = Ti.UI.createCheckMenuItem(label, function() {
+			callbac.@com.emitrom.ti4j.core.client.Function::execute()();
+		});
+		return @com.emitrom.ti4j.desktop.client.ui.CheckMenuItem::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
     public static native Menu createMenu()/*-{
-		return Ti.UI.createMenu();
+		var peer = Ti.UI.createMenu();
+		return @com.emitrom.ti4j.desktop.client.ui.Menu::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
     public static native MenuItem createMenuItem(String label)/*-{
-		return Ti.UI.createMenuItem(label);
+		var peer = Ti.UI.createMenuItem(label);
+		return @com.emitrom.ti4j.desktop.client.ui.MenuItem::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
-    public static MenuItem createMenuItem(String label, TiEventListener<?> eventListener) {
-        return UI.createMenuItem(label, eventListener.getJsoPeer());
-    }
-
-    public static native MenuItem createMenuItem(String label, JavaScriptObject eventListener)/*-{
-		return Ti.UI.createMenuItem(label, eventListener);
+    public static native MenuItem createMenuItem(String label, Function callback)/*-{
+		var peer = Ti.UI.createMenuItem(label, function() {
+			callbac.@com.emitrom.ti4j.core.client.Function::execute()();
+		});
+		return @com.emitrom.ti4j.desktop.client.ui.MenuItem::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
-    public static MenuItem createMenuItem(String label, TiEventListener<?> eventListener, String iconURL) {
-        return UI.createMenuItem(label, eventListener.getJsoPeer(), iconURL);
-    }
-
-    public static native MenuItem createMenuItem(String label, JavaScriptObject eventListener, String iconURL)/*-{
-		return Ti.UI.createMenuItem(label, eventListener, iconURL);
+    public static native MenuItem createMenuItem(String label, Function callback, String iconURL)/*-{
+		var peer = Ti.UI.createMenuItem(label, function() {
+			callbac.@com.emitrom.ti4j.core.client.Function::execute()();
+		}, iconURL);
+		return @com.emitrom.ti4j.desktop.client.ui.MenuItem::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
     public static native SeparatorMenuItem createSeparatorMenuItem()/*-{
-		return Ti.UI.createSeparatorMenuItem();
+		var peer = Ti.UI.createSeparatorMenuItem();
+		return @com.emitrom.ti4j.desktop.client.ui.SeparatorMenuItem::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
     public static native Menu getContextMenu()/*-{
-		return Ti.UI.getContextMenu();
+		var peer = Ti.UI.getContextMenu();
+		return @com.emitrom.ti4j.desktop.client.ui.Menu::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
     public static native UserWindow getCurrentWindow()/*-{
-		return Ti.UI.getCurrentWindow();
+		var peer = Ti.UI.getCurrentWindow();
+		return @com.emitrom.ti4j.desktop.client.ui.UserWindow::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
     public static native double getIdleTime()/*-{
@@ -101,19 +111,23 @@ public class UI extends JavaScriptObject {
     }-*/;
 
     public static native UserWindow getMainWindow()/*-{
-		return Ti.UI.getMainWindow();
+		var peer = Ti.UI.getMainWindow();
+		return @com.emitrom.ti4j.desktop.client.ui.UserWindow::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
     public static native Menu getMenu()/*-{
-		return Ti.UI.getMenu();
+		var peer = Ti.UI.getMenu();
+		return @com.emitrom.ti4j.desktop.client.ui.Menu::new(Lcom/google/gwt/core/client/JavaScriptObject;)(peer);
     }-*/;
 
-    public static native JsArray<UserWindow> getOpenWindows()/*-{
-		return Ti.UI.getOpenWindows();
+    public static native List<UserWindow> getOpenWindows()/*-{
+		var peers = Ti.UI.getOpenWindows();
+		return @com.emitrom.ti4j.desktop.client.ui.UserWindow::fromJsArray(Lcom/google/gwt/core/client/JavaScriptObject;)(peers);
     }-*/;
 
-    public static native JsArray<UserWindow> getWindows()/*-{
-		return Ti.UI.getWindows();
+    public static native List<UserWindow> getWindows()/*-{
+		var peers = Ti.UI.getWindows();
+		return @com.emitrom.ti4j.desktop.client.ui.UserWindow::fromJsArray(Lcom/google/gwt/core/client/JavaScriptObject;)(peers);
     }-*/;
 
     public static native String setBadge(String text)/*-{
@@ -125,7 +139,8 @@ public class UI extends JavaScriptObject {
     }-*/;
 
     public static native void setContextMenu(Menu value)/*-{
-		Ti.UI.setContextMenu(value);
+		Ti.UI
+				.setContextMenu(value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     public static native String setDockIcon(String icon)/*-{
@@ -133,7 +148,8 @@ public class UI extends JavaScriptObject {
     }-*/;
 
     public static native String setDockMenu(Menu menu)/*-{
-		return Ti.UI.setDockMenu(menu);
+		return Ti.UI
+				.setDockMenu(menu.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     public static native String setIcon(String iconPath)/*-{
@@ -141,11 +157,13 @@ public class UI extends JavaScriptObject {
     }-*/;
 
     public static native String setMenu(Menu menu)/*-{
-		return Ti.UI.setMenu(menu);
+		return Ti.UI
+				.setMenu(menu.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     public static native Dialog showDialog()/*-{
-		return Ti.UI.showDialog();
+		var peer = Ti.UI.showDialog();
+		return @com.emitrom.ti4j.desktop.client.ui.Dialog::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
     private static native int CENTERED()/*-{

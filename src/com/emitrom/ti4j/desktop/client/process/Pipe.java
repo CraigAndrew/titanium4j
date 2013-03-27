@@ -2,7 +2,7 @@
  * Pipe.java is part of Titanium4j Desktop 1.2 Copyright 2012 Emitrom LLC
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use peer file except in compliance with the License. You may obtain a copy of
+ * use obj file except in compliance with the License. You may obtain a copy of
  * the License at
  * 
  * http://www.apache.org/licenses/LICENSE-2.0
@@ -33,32 +33,32 @@ public class Pipe extends ProxyObject {
 
     public final native String attach()/*-{
 		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return peer.attach();
+		return obj.attach();
     }-*/;
 
     public final native String close()/*-{
 		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return peer.close();
+		return obj.close();
     }-*/;
 
     public final native String detach()/*-{
 		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return peer.detach();
+		return obj.detach();
     }-*/;
 
     public final native boolean isAttached()/*-{
 		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return peer.isAttached();
+		return obj.isAttached();
     }-*/;
 
     public final native int write(String data)/*-{
 		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return peer.write(data);
+		return obj.write(data);
     }-*/;
 
     public final native int write(Bytes data)/*-{
 		var obj = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return peer.write(data);
+		return obj.write(data);
     }-*/;
 
 }
