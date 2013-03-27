@@ -15,7 +15,7 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui;
 
-import com.emitrom.ti4j.mobile.client.core.ProxyObject;
+import com.emitrom.ti4j.core.client.ProxyObject;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -49,12 +49,12 @@ public class Ti2DMatrix extends EventDispatcher {
      * @return The entry at position [1,1] in the matrix. Available only on iOs
      */
     public native double getA() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.a;
     }-*/;
 
     public native void setA(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.a = value;
     }-*/;
 
@@ -62,12 +62,12 @@ public class Ti2DMatrix extends EventDispatcher {
      * @return The entry at position [1,2] in the matrix. Available only on iOs
      */
     public native double getB() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.b;
     }-*/;
 
     public native void setB(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.b = value;
     }-*/;
 
@@ -75,12 +75,12 @@ public class Ti2DMatrix extends EventDispatcher {
      * @return The entry at position [2,1] in the matrix. Available only on iOs
      */
     public native double getC() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.c;
     }-*/;
 
     public native void setC(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.c = value;
     }-*/;
 
@@ -88,12 +88,12 @@ public class Ti2DMatrix extends EventDispatcher {
      * @return The entry at position [2,2] in the matrix. Available only on iOs
      */
     public native double getD() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.d;
     }-*/;
 
     public native void setD(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.d = value;
     }-*/;
 
@@ -101,7 +101,7 @@ public class Ti2DMatrix extends EventDispatcher {
      * @return The entry at position [3,1] in the matrix. Available only on iOs
      */
     public native double getTx() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.tx;
     }-*/;
 
@@ -113,12 +113,12 @@ public class Ti2DMatrix extends EventDispatcher {
      * @return The entry at position [3,2] in the matrix. Available only on iOs
      */
     public native double getTy() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.ty;
     }-*/;
 
     public native void setTy(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.ty = value;
     }-*/;
 
@@ -126,7 +126,7 @@ public class Ti2DMatrix extends EventDispatcher {
      * Returns a matrix constructed by inverting an existing matrix
      */
     public native Ti2DMatrix invert() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.invert();
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.Ti2DMatrix::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -147,9 +147,9 @@ public class Ti2DMatrix extends EventDispatcher {
      *            matrix t2 by matrix t1.
      */
     public native Ti2DMatrix multiply(Ti2DMatrix t2) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso
-				.multiply(t2.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.multiply(t2.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.Ti2DMatrix::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
@@ -162,7 +162,7 @@ public class Ti2DMatrix extends EventDispatcher {
      *            negative value specifies clockwise rotation.
      */
     public native Ti2DMatrix rotate(double angle) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.rotate(angle);
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.Ti2DMatrix::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -175,7 +175,7 @@ public class Ti2DMatrix extends EventDispatcher {
      * @param sy The value by which to scale y values of the matrix
      */
     public native Ti2DMatrix scale(double sx, double sy) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.scale(sx, sy);
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.Ti2DMatrix::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -188,7 +188,7 @@ public class Ti2DMatrix extends EventDispatcher {
      * @param ty The value by which to move y values with the matrix
      */
     public native Ti2DMatrix translate(double tx, double ty) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.translate(tx, ty);
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.Ti2DMatrix::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;

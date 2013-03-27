@@ -28,7 +28,7 @@ public class OrientationChangeEvent extends TiEvent {
      * the orientation constant
      */
     public final native int getOrientation() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.orientation;
     }-*/;
 

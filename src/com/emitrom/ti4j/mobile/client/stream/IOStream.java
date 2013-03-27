@@ -46,9 +46,9 @@ public class IOStream extends EventDispatcher {
 	 * @return Number of bytes read.
 	 */
 	public native double read(Buffer buffer) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
-				.read(buffer.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.read(buffer.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
 	}-*/;
 
 	/**
@@ -89,10 +89,10 @@ public class IOStream extends EventDispatcher {
 	 * @return Number of bytes written.
 	 */
 	public native double write(Buffer buffer, float offset, float length) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
 				.write(
-						buffer.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()(),
+						buffer.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
 						offset, length);
 	}-*/;
 
@@ -102,7 +102,7 @@ public class IOStream extends EventDispatcher {
 	 * @return true if stream is writeable, false otherwise
 	 */
 	public native boolean isWriteable() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.isWriteable();
 	}-*/;
 
@@ -112,7 +112,7 @@ public class IOStream extends EventDispatcher {
 	 * @return true if stream is readable, false otherwise
 	 */
 	public native boolean isReadable() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.isReadable();
 	}-*/;
 
@@ -120,7 +120,7 @@ public class IOStream extends EventDispatcher {
 	 * Closes stream and throws exception on error
 	 */
 	public native void close() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.close();
 	}-*/;
 

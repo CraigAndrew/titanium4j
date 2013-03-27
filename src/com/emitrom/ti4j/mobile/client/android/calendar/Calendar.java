@@ -88,7 +88,7 @@ public class Calendar extends TiModule {
     }
 
     private native JavaScriptObject _createAlert(Object parameters) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.createAlert(parameters);
     }-*/;
 
@@ -103,7 +103,7 @@ public class Calendar extends TiModule {
     }
 
     private native JavaScriptObject _createCalendar() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.createCalendar();
     }-*/;
 
@@ -122,7 +122,7 @@ public class Calendar extends TiModule {
     }
 
     private native JavaScriptObject _createCalendar(Object parameters) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.createCalendar(parameters);
     }-*/;
 
@@ -137,7 +137,7 @@ public class Calendar extends TiModule {
     }
 
     private native JavaScriptObject _createEvent() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.createEvent();
     }-*/;
 
@@ -155,7 +155,7 @@ public class Calendar extends TiModule {
     }
 
     private native JavaScriptObject _createEvent(Object params) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.createEvent(params);
     }-*/;
 
@@ -170,7 +170,7 @@ public class Calendar extends TiModule {
     }
 
     private native JavaScriptObject _createReminder() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.createReminder();
     }-*/;
 
@@ -189,7 +189,7 @@ public class Calendar extends TiModule {
     }
 
     private native JavaScriptObject _createReminder(Object params) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.createReminder(params);
     }-*/;
 
@@ -206,7 +206,7 @@ public class Calendar extends TiModule {
     }
 
     public native JavaScriptObject _getCalendarById(int id) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getCalendarById(id);
     }-*/;
 
@@ -228,7 +228,7 @@ public class Calendar extends TiModule {
     }
 
     public native JsArray<JavaScriptObject> _getAllAlerts() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.allAlerts;
     }-*/;
 
@@ -250,7 +250,7 @@ public class Calendar extends TiModule {
     }
 
     private native JsArray<JavaScriptObject> _getAllCalendars() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.allCalendars;
     }-*/;
 
@@ -276,7 +276,7 @@ public class Calendar extends TiModule {
     }
 
     private native JsArray<JavaScriptObject> _getSelectableCalendars() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.selectableCalendars;
     }-*/;
 

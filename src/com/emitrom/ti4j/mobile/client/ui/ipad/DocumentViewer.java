@@ -40,11 +40,11 @@ public class DocumentViewer extends View {
      *            the viewer should display.
      */
     public native void show(boolean animated, View view) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.show(
 						animated,
-						view.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+						view.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -53,7 +53,7 @@ public class DocumentViewer extends View {
      * @param url the new url
      */
     public native void setUrl(String url) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setUrl(url);
     }-*/;
 

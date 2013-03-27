@@ -15,7 +15,7 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.android;
 
-import com.emitrom.ti4j.mobile.client.core.JsoHelper;
+import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -39,7 +39,7 @@ public class Intent extends EventDispatcher {
      * @param name , the category name.
      */
     public native void addCategory(String name) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		this.addCategory(name);
     }-*/;
 
@@ -49,7 +49,7 @@ public class Intent extends EventDispatcher {
      * @param flags , the flags to add to the existing set.
      */
     public native void addFlags(int flags) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.addFlags(flags);
     }-*/;
 
@@ -60,7 +60,7 @@ public class Intent extends EventDispatcher {
      * @return
      */
     public native boolean getBooleanExtra(String name) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getBooleanExtra(name);
     }-*/;
 
@@ -68,7 +68,7 @@ public class Intent extends EventDispatcher {
      * Get the Data URI from this Intent
      */
     public native void getData() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.getData();
     }-*/;
 
@@ -79,7 +79,7 @@ public class Intent extends EventDispatcher {
      * @return
      */
     public native boolean getDoubleExtra(String name) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getDoubleExtra(name);
     }-*/;
 
@@ -90,7 +90,7 @@ public class Intent extends EventDispatcher {
      * @return
      */
     public native boolean getIntExtra(String name) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getIntExtra(name);
     }-*/;
 
@@ -101,7 +101,7 @@ public class Intent extends EventDispatcher {
      * @return
      */
     public native boolean getLongExtra(String name) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getLongExtra(name);
     }-*/;
 
@@ -112,7 +112,7 @@ public class Intent extends EventDispatcher {
      * @return
      */
     public native boolean getStringExtra(String name) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getStringExtra(name);
     }-*/;
 
@@ -123,7 +123,7 @@ public class Intent extends EventDispatcher {
      * @return
      */
     public native boolean hasExtra(String name) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.hasExtra(name);
     }-*/;
 
@@ -134,7 +134,7 @@ public class Intent extends EventDispatcher {
      * @param value , The property value
      */
     public native void putExtra(String name, Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.putExtra(name, value);
     }-*/;
 
@@ -145,7 +145,7 @@ public class Intent extends EventDispatcher {
      * @param value , The URI value
      */
     public native void putExtraUri(String name, String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.putExtraUri(name, value);
     }-*/;
 
@@ -156,7 +156,7 @@ public class Intent extends EventDispatcher {
      * @return
      */
     public native String getAction() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.action;
     }-*/;
 
@@ -167,12 +167,12 @@ public class Intent extends EventDispatcher {
      * @param value , the bane of the action
      */
     public native void setAction(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.action = value;
     }-*/;
 
     public native String getClassName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.className;
     }-*/;
 
@@ -182,7 +182,7 @@ public class Intent extends EventDispatcher {
      * @param value
      */
     public native void setClassName(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.className = value;
     }-*/;
 
@@ -192,12 +192,12 @@ public class Intent extends EventDispatcher {
      * @param value
      */
     public native void setData(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.data = value;
     }-*/;
 
     public native int getFlags() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.flags;
     }-*/;
 
@@ -208,12 +208,12 @@ public class Intent extends EventDispatcher {
      * @param value
      */
     public native void setFlags(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.flags = value;
     }-*/;
 
     public native String getPackageName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.packageName;
     }-*/;
 
@@ -236,12 +236,12 @@ public class Intent extends EventDispatcher {
      * @param value
      */
     public native void setType(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.type = value;
     }-*/;
 
     public native String getUrl() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.url;
     }-*/;
 
@@ -251,7 +251,7 @@ public class Intent extends EventDispatcher {
      * @param value
      */
     public native void setUrl(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.url = value;
     }-*/;
 

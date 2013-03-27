@@ -50,12 +50,12 @@ public class TableViewRow extends View implements HasTitle {
      *         performance.
      */
     public native String getClassName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.className;
     }-*/;
 
     public native void setClassName(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.className = value;
     }-*/;
 
@@ -63,12 +63,12 @@ public class TableViewRow extends View implements HasTitle {
      * @return Default color of the row when not selected
      */
     public native String getColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.color;
     }-*/;
 
     public native void setColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.color = value;
     }-*/;
 
@@ -77,12 +77,12 @@ public class TableViewRow extends View implements HasTitle {
      *         the row cell
      */
     public native boolean hasCheck() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.hasCheck;
     }-*/;
 
     public native void setHasCheck(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.hasCheck = value;
     }-*/;
 
@@ -91,12 +91,12 @@ public class TableViewRow extends View implements HasTitle {
      *         the row cell
      */
     public native boolean hasChild() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.hasChild;
     }-*/;
 
     public native void setHasChild(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.hasChild = value;
     }-*/;
 
@@ -105,12 +105,12 @@ public class TableViewRow extends View implements HasTitle {
      *         area of the row cell
      */
     public native boolean hasDetail() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.hasDetail;
     }-*/;
 
     public native void setHasDetail(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.hasDetail = value;
     }-*/;
 
@@ -122,7 +122,7 @@ public class TableViewRow extends View implements HasTitle {
     }-*/;
 
     public native void setIndentionLevel(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.indentionLevel = value;
     }-*/;
 
@@ -131,12 +131,12 @@ public class TableViewRow extends View implements HasTitle {
      *         (default) or vertical.
      */
     public native String getLayout() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.layout;
     }-*/;
 
     public native void setLayout(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.layout = value;
     }-*/;
 
@@ -144,12 +144,12 @@ public class TableViewRow extends View implements HasTitle {
      * @return Image url to render in the left image area of the row cell
      */
     public native String getLeftImage() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.leftImage;
     }-*/;
 
     public native void setLeftImage(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.leftImage = value;
     }-*/;
 
@@ -157,12 +157,12 @@ public class TableViewRow extends View implements HasTitle {
      * @return Image url to render in the right image area of the row cell
      */
     public native String getRightImage() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.rightImage;
     }-*/;
 
     public native void setRightImage(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.rightImage = value;
     }-*/;
 
@@ -170,12 +170,12 @@ public class TableViewRow extends View implements HasTitle {
      * @return The background color to render when the row cell is selected
      */
     public native String getSelectedBackgroundColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.selectedBackgroundColor;
     }-*/;
 
     public native void setSelectedBackgroundColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.selectedBackgroundColor = value;
     }-*/;
 
@@ -183,12 +183,12 @@ public class TableViewRow extends View implements HasTitle {
      * @return The background image to render when the row cell is selected
      */
     public native String getSelectedBackgroundImage() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.selectedBackgroundImage;
     }-*/;
 
     public native void setSelectedBackgroundImage(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.selectedBackgroundImage = value;
     }-*/;
 
@@ -196,12 +196,12 @@ public class TableViewRow extends View implements HasTitle {
      * @return Color of the row during selection
      */
     public native String getSelectedColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.selectedColor;
     }-*/;
 
     public native void setSelectedColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.selectedColor = value;
     }-*/;
 
@@ -211,22 +211,22 @@ public class TableViewRow extends View implements HasTitle {
      *         .ui.iphone.TableViewCellSelectionStyle
      */
     public native int getSelectionStyle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.selectionStyle;
     }-*/;
 
     public native void setSelectionStyle(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.selectionStyle = value;
     }-*/;
 
     public native void setFilter(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.filter = value;
     }-*/;
 
     public native String getFilter() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.filter;
     }-*/;
 
@@ -235,12 +235,12 @@ public class TableViewRow extends View implements HasTitle {
      *         of the row
      */
     public native String getTitle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.title;
     }-*/;
 
     public native void setTitle(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.title = value;
     }-*/;
 

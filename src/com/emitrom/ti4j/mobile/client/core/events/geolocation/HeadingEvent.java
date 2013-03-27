@@ -30,7 +30,7 @@ public class HeadingEvent extends TiEvent {
      * if success is false, the error code if available (iOS only)
      */
     public final native double getCode() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()()
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()()
 		return jso.code;
     }-*/;
 
@@ -39,7 +39,7 @@ public class HeadingEvent extends TiEvent {
      * error occurred
      */
     public final native boolean isSuccess() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()()
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()()
 		return jso.success;
     }-*/;
 
@@ -47,7 +47,7 @@ public class HeadingEvent extends TiEvent {
      * if success is false, returns a string of the error description
      */
     public final native String getError() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()()
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()()
 		return jso.error;
     }-*/;
 
@@ -55,7 +55,7 @@ public class HeadingEvent extends TiEvent {
      * heading results dictionary.
      */
     public final native HeadingInfo getHeading() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()()
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()()
 		var obj = jso.headinInfo;
 		var toReturn = @com.emitrom.ti4j.mobile.client.geolocation.HeadingInfo::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;

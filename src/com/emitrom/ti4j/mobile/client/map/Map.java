@@ -42,14 +42,14 @@ public class Map extends TiModule {
     }
 
     public native Annotation createAnnotation() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createAnnotation();
 		var toReturn = @com.emitrom.ti4j.mobile.client.map.Annotation::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return Titanium.Map.createAnnotation();
     }-*/;
 
     public static native MapView createView() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createAnnotation();
 		var toReturn = @com.emitrom.ti4j.mobile.client.map.MapView::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;

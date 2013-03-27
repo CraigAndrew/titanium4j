@@ -31,7 +31,7 @@ public class ReadEvent extends TiEvent {
      * the reference for the socket that data was retrieved from
      */
     public final native TCPSocket getFrom() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.from;
 		var toReturn = @com.emitrom.ti4j.mobile.client.network.TCPSocket::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;

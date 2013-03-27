@@ -62,7 +62,7 @@ public class NotificationManager extends TiModule {
      */
     public native void cancel(int id)
     /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.cancel(id);
     }-*/;
 
@@ -71,7 +71,7 @@ public class NotificationManager extends TiModule {
      */
     public native void cancelAll()
     /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.cancelAll();
     }-*/;
 
@@ -85,11 +85,11 @@ public class NotificationManager extends TiModule {
      *            {@link com.emitrom.ti4j.mobile.client.android.Android}.
      */
     public native void notify(int id, Notification notification) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
 				.notify(
 						id,
-						notification.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+						notification.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     private static native final int DEFAULT_ALL() /*-{

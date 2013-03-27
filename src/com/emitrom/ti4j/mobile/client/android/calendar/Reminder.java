@@ -16,7 +16,7 @@
 
 package com.emitrom.ti4j.mobile.client.android.calendar;
 
-import com.emitrom.ti4j.mobile.client.core.JsoHelper;
+import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -34,12 +34,12 @@ public class Reminder extends EventDispatcher {
      * @return The id of the reminder.
      */
     public native String getId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.id;
     }-*/;
 
     public native void setId(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		this.jso = value;
     }-*/;
 
@@ -49,12 +49,12 @@ public class Reminder extends EventDispatcher {
      * 
      */
     public native int getMethod() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.method;
     }-*/;
 
     public native void setMethod(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.method = value;
     }-*/;
 
@@ -62,12 +62,12 @@ public class Reminder extends EventDispatcher {
      * @return The minutes before the event when the reminder should occur.
      */
     public native int getMinutes() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.minutes;
     }-*/;
 
     public native void setMinutes(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.minutes = value;
     }-*/;
 

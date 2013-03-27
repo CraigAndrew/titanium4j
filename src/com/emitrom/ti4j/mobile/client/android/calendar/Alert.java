@@ -34,7 +34,7 @@ public class Alert extends EventDispatcher {
     }
 
     public native JsDate getAlarmTime() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.alarmTime;
     }-*/;
 
@@ -44,12 +44,12 @@ public class Alert extends EventDispatcher {
      * @param value
      */
     public native void setAlarmTime(JsDate value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.alarmTime = value;
     }-*/;
 
     public native JsDate getBegin() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.begin;
     }-*/;
 
@@ -59,7 +59,7 @@ public class Alert extends EventDispatcher {
      * @param value
      */
     public native void setBeginn(JsDate value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.beginn = value;
     }-*/;
 
@@ -73,12 +73,12 @@ public class Alert extends EventDispatcher {
      * @param value
      */
     public native void setEnd(JsDate value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.end = value;
     }-*/;
 
     public native int getEventId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.eventId;
     }-*/;
 
@@ -88,12 +88,12 @@ public class Alert extends EventDispatcher {
      * @param id
      */
     public native void setEventId(int id) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.eventId = id;
     }-*/;
 
     public native int getId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.id;
     }-*/;
 
@@ -103,7 +103,7 @@ public class Alert extends EventDispatcher {
      * @param id
      */
     public native void setId(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.id = value;
     }-*/;
 
@@ -117,12 +117,12 @@ public class Alert extends EventDispatcher {
      * @param value
      */
     public native void setMinutes(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.minutes = value;
     }-*/;
 
     public native int getStates() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.states;
     }-*/;
 
@@ -135,7 +135,7 @@ public class Alert extends EventDispatcher {
      * @param value
      */
     public native void setState(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.state = value;
     }-*/;
 

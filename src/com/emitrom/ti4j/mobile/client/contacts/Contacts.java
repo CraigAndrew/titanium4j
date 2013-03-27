@@ -62,7 +62,7 @@ public class Contacts extends TiModule {
      * 
      */
     public native Group createGroup() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createGroup();
 		var toReturn = @com.emitrom.ti4j.mobile.client.contacts.Group::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -76,7 +76,7 @@ public class Contacts extends TiModule {
      *            com.emitrom.ti4j.mobile.client.contacts.Group.Group
      */
     public native Group createGroup(Object parameters) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createGroup(parameters);
 		var toReturn = @com.emitrom.ti4j.mobile.client.contacts.Group::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -87,7 +87,7 @@ public class Contacts extends TiModule {
      * com.emitrom.ti4j.mobile.client.contacts.Person. Only available on iOs.
      */
     public native Person createPerson() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createPerson();
 		var toReturn = @com.emitrom.ti4j.mobile.client.contacts.Person::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -101,7 +101,7 @@ public class Contacts extends TiModule {
      *            com.emitrom.ti4j.mobile.client.contacts.Person
      */
     public native Person createPerson(Object parameters) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createPerson(parameters);
 		var toReturn = @com.emitrom.ti4j.mobile.client.contacts.Person::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -113,7 +113,7 @@ public class Contacts extends TiModule {
      * contacts database.Only available on iOs.
      */
     public native void getAllGroups() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getAllGroups();
     }-*/;
 
@@ -123,7 +123,7 @@ public class Contacts extends TiModule {
      * contacts database
      */
     public native void getAllPeople() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getAllPeople();
     }-*/;
 
@@ -134,7 +134,7 @@ public class Contacts extends TiModule {
      * @param id The database ID of the group to retrieve
      */
     public native Group getGroupByID(int id) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.getGroupByID(id);
 		var toReturn = @com.emitrom.ti4j.mobile.client.contacts.Group::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -158,7 +158,7 @@ public class Contacts extends TiModule {
     }
 
     private native JsArray<JavaScriptObject> _getPeopleWithName(String name) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getPeopleWithName(name);
     }-*/;
 
@@ -169,7 +169,7 @@ public class Contacts extends TiModule {
      * @param id The database ID of the person to retrieve
      */
     public native Person getPersonByID(int id) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.getPersonByID(id);
 		var toReturn = @com.emitrom.ti4j.mobile.client.contacts.Person::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -183,9 +183,9 @@ public class Contacts extends TiModule {
      *            object to remove from the database.
      */
     public native void removeGroup(Group group) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
-				.removeGroup(group.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.removeGroup(group.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -196,9 +196,9 @@ public class Contacts extends TiModule {
      *            object to remove from the database.
      */
     public native void removePerson(Person person) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
-				.removePerson(person.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.removePerson(person.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -206,7 +206,7 @@ public class Contacts extends TiModule {
      * iOs
      */
     public static native void revert() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.revert();
     }-*/;
 
@@ -214,7 +214,7 @@ public class Contacts extends TiModule {
      * Saves all changes to contacts to the database.
      */
     public static native void save() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.save();
     }-*/;
 
@@ -233,7 +233,7 @@ public class Contacts extends TiModule {
 
     private native void showContacts(JavaScriptObject cancel, JavaScriptObject selectedPerson,
                     JavaScriptObject selectedProperty, boolean animated, JsArrayString fields) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.showContacts(cancel, selectedPerson, selectedProperty, animated,
 				fields);
     }-*/;

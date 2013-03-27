@@ -61,7 +61,7 @@ public class Android extends TiModule {
      * note: it is not possible to globally show the keyboard at this point.
      */
     public native void hideSoftKeyboard() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.hideSoftKeyboard();
     }-*/;
 
@@ -74,7 +74,7 @@ public class Android extends TiModule {
      * /xml/preferences.html)
      */
     public native void openPreferences() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.openPreferences();
     }-*/;
 

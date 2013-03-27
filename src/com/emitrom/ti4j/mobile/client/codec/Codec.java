@@ -60,7 +60,7 @@ public class Codec extends TiModule {
      * @return The OS native byte order
      */
     public native int getNativeByteOrder() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getNativeByteOrder();
     }-*/;
 
@@ -71,9 +71,9 @@ public class Codec extends TiModule {
      * @return The position after the encoded number in 'dest'.
      */
     public native int encodeNumber(EncodeNumberSpec options) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
-				.encodeNumber(options.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.encodeNumber(options.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -83,9 +83,9 @@ public class Codec extends TiModule {
      * @return The Number decoded from `source`.
      */
     public native double decodeNumber(DecodeNumberSpec options) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
-				.decodeNumber(options.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.decodeNumber(options.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -95,9 +95,9 @@ public class Codec extends TiModule {
      * @return The position after the encoded String inside 'dest'.
      */
     public native int encodeString(EncodeStringSpec options) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
-				.encodeString(options.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.encodeString(options.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -107,9 +107,9 @@ public class Codec extends TiModule {
      * @return The decoded string
      */
     public native String decodeString(DecodeStringSpec options) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
-				.decodeString(options.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.decodeString(options.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     private static native final String CHARSET_ASCII() /*-{

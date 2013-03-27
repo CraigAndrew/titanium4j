@@ -61,11 +61,11 @@ public class DOMImplementation extends EventDispatcher {
      *         object
      */
     public native Document createDocument(String namespaceURI, DocumentType doctype) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso
 				.createDocument(
 						namespaceURI,
-						doctype.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+						doctype.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
 		var toReturn = @com.emitrom.ti4j.mobile.client.xml.Document::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
@@ -85,7 +85,7 @@ public class DOMImplementation extends EventDispatcher {
      *         node with Node.ownerDocument set to null.
      */
     public native DocumentType createDocumentType(String qualifiedName, String publicId, String systemId) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createDocumentType(qualifiedName, publicId, systemId);
 		var toReturn = @com.emitrom.ti4j.mobile.client.xml.DocumentType::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -114,7 +114,7 @@ public class DOMImplementation extends EventDispatcher {
      *         false otherwise.
      */
     public native boolean hasFeature(String feature, String version) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.hasFeature(feature, version);
     }-*/;
 

@@ -15,7 +15,7 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.android;
 
-import com.emitrom.ti4j.mobile.client.core.JsoHelper;
+import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.emitrom.ti4j.mobile.client.core.events.TiEventListener;
 import com.emitrom.ti4j.mobile.client.core.handlers.activity.CreateHandler;
@@ -47,7 +47,7 @@ public class Activity extends EventDispatcher {
      * app/activity.html#finish)
      */
     public native void finish() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.finish();
     }-*/;
 
@@ -57,7 +57,7 @@ public class Activity extends EventDispatcher {
      * @return The intent that was used to start this Activity.
      */
     public native Intent getIntent() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.getIntent();
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Intent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -71,7 +71,7 @@ public class Activity extends EventDispatcher {
      * @return
      */
     public native String getString(int resourceId) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getString(resourceId);
     }-*/;
 
@@ -85,7 +85,7 @@ public class Activity extends EventDispatcher {
      * @return
      */
     public native String getString(int resourceId, Object format) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getString(resourceId, format);
     }-*/;
 
@@ -103,7 +103,7 @@ public class Activity extends EventDispatcher {
      *            AndroidMedia.SCREEN_ORIENTATION_USER
      */
     public native void setRequestedOrientation(int orientation) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setRequestedOrientation(orientation);
     }-*/;
 
@@ -113,7 +113,7 @@ public class Activity extends EventDispatcher {
      *         {@link com.emitrom.ti4j.mobile.client.android.Android}.
      */
     public native int getRequestedOrientation() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.requestedOrientation;
     }-*/;
 
@@ -127,7 +127,7 @@ public class Activity extends EventDispatcher {
      *            AndroidMedia.RESULT_FIRST_USER
      */
     public native void setResult(int resultCode) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setResult(resultCode);
     }-*/;
 
@@ -144,11 +144,11 @@ public class Activity extends EventDispatcher {
      *            data
      */
     public native void setResult(int resultCode, Intent intent) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.setResult(
 						resultCode,
-						intent.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+						intent.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -158,9 +158,9 @@ public class Activity extends EventDispatcher {
      * @param intent , Description of the Activity to start
      */
     public native void startActivity(Intent intent) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
-				.startActivity(intent.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.startActivity(intent.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -177,7 +177,7 @@ public class Activity extends EventDispatcher {
     }
 
     private native void _startActivityForResult(JavaScriptObject intent, JavaScriptObject listener) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.startActivityForResult(intent, listener);
     }-*/;
 
@@ -187,7 +187,7 @@ public class Activity extends EventDispatcher {
      * @return, The Intent that was used to start this Activity
      */
     public native Intent getIntentProperty() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.intent;
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Intent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -204,7 +204,7 @@ public class Activity extends EventDispatcher {
     }
 
     private native void setOncreateOptionsMenu(JavaScriptObject callback) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.oncreateOptionsMenu = callback;
     }-*/;
 
@@ -219,12 +219,12 @@ public class Activity extends EventDispatcher {
     }
 
     private native void setOnPrepareOptionsMenu(JavaScriptObject callback) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.onPrepareOptionsMenu = callback;
     }-*/;
 
     public native void addCreateHandler(CreateHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.activity.ActivityEvent::CREATE,
@@ -235,7 +235,7 @@ public class Activity extends EventDispatcher {
     }-*/;
 
     public native void addDestroyHandler(DestroyHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.activity.ActivityEvent::DESTROY,
@@ -246,7 +246,7 @@ public class Activity extends EventDispatcher {
     }-*/;
 
     public native void addNewIntentHandler(NewIntentHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.android.NewIntentEvent::NEW_INTENT,
@@ -257,7 +257,7 @@ public class Activity extends EventDispatcher {
     }-*/;
 
     public native void addPauseHandler(PauseHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.activity.ActivityEvent::PAUSE,
@@ -268,7 +268,7 @@ public class Activity extends EventDispatcher {
     }-*/;
 
     public native void addResumeHandler(ResumeHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.activity.ActivityEvent::RESUME,
@@ -279,7 +279,7 @@ public class Activity extends EventDispatcher {
     }-*/;
 
     public native void addStartHandler(StartHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.activity.ActivityEvent::START,
@@ -290,7 +290,7 @@ public class Activity extends EventDispatcher {
     }-*/;
 
     public native void addStopHandler(StopHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.activity.ActivityEvent::STOP,

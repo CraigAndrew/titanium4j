@@ -29,7 +29,7 @@ public class UpdateEvent extends TiEvent {
      * and not an exact timestamp.
      */
     public final native double getTimestamp() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.timestamp;
     }-*/;
 
@@ -37,7 +37,7 @@ public class UpdateEvent extends TiEvent {
      * the y axis of the device
      */
     public final native Object getY() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.y;
     }-*/;
 
@@ -45,7 +45,7 @@ public class UpdateEvent extends TiEvent {
      * the x axis of the device
      */
     public final native Object getX() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.x;
     }-*/;
 
@@ -53,7 +53,7 @@ public class UpdateEvent extends TiEvent {
      * the z axis of the device
      */
     public final native Object getZ() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.z;
     }-*/;
 

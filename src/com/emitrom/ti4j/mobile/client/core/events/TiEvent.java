@@ -16,8 +16,8 @@
 
 package com.emitrom.ti4j.mobile.client.core.events;
 
-import com.emitrom.ti4j.mobile.client.core.JsoHelper;
-import com.emitrom.ti4j.mobile.client.core.ProxyObject;
+import com.emitrom.ti4j.core.client.JsoHelper;
+import com.emitrom.ti4j.core.client.ProxyObject;
 import com.google.gwt.core.client.JavaScriptObject;
 
 public class TiEvent extends ProxyObject {
@@ -33,19 +33,19 @@ public class TiEvent extends ProxyObject {
     }
 
     public native ProxyObject getSource() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.source;
-		var toReturn = @com.emitrom.ti4j.mobile.client.core.ProxyObject::create(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+		var toReturn = @com.emitrom.ti4j.core.client.ProxyObject::create(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
 
     public native void preventDefault() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.preventDefault();
     }-*/;
 
     public native void stopPropagation() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.stopPropagation();
     }-*/;
 
@@ -54,18 +54,18 @@ public class TiEvent extends ProxyObject {
      * @return
      */
     public native String getEventType() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.type;
     }-*/;
 
     public native void setEventData(EventData data) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var attribute = @com.emitrom.ti4j.mobile.client.core.events.EventData::DATA_ATTRIBUTE;
-		jso[attribute] = data.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		jso[attribute] = data.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     public native EventData getEventData() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var attribute = @com.emitrom.ti4j.mobile.client.core.events.EventData::DATA_ATTRIBUTE;
 		var toReturn = jso[attribute];
 		return @com.emitrom.ti4j.mobile.client.core.events.EventData::new(Lcom/google/gwt/core/client/JavaScriptObject;)(toReturn);

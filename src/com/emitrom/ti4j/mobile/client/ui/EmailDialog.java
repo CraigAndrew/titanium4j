@@ -16,7 +16,7 @@
 package com.emitrom.ti4j.mobile.client.ui;
 
 import com.emitrom.ti4j.mobile.client.blob.Blob;
-import com.emitrom.ti4j.mobile.client.core.ProxyObject;
+import com.emitrom.ti4j.core.client.ProxyObject;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.emitrom.ti4j.mobile.client.core.handlers.EmailCompleteHandler;
 import com.emitrom.ti4j.mobile.client.filesystem.File;
@@ -51,12 +51,12 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      * @return The bar color of the email dialog window when opened
      */
     public native String getBarColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.barColor;
     }-*/;
 
     public native void setBarColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.barColor = value;
     }-*/;
 
@@ -67,7 +67,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native JsArrayString getBccRecipients() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.bccRecipients;
     }-*/;
 
@@ -80,7 +80,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native void setBccRecipients(JsArrayString value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.bccRecipients = value;
     }-*/;
 
@@ -91,7 +91,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native JsArrayString getCcRecipients() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.ccRecipients;
     }-*/;
 
@@ -104,7 +104,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native void setCcRecipients(JsArrayString value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.ccRecipients = value;
     }-*/;
 
@@ -115,7 +115,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native boolean isHtml() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.html;
     }-*/;
 
@@ -126,7 +126,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native void setHtml(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.html = value;
     }-*/;
 
@@ -137,7 +137,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native String getMessageBody() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.messageBody;
     }-*/;
 
@@ -150,7 +150,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native void setMessageBody(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.messageBody = value;
     }-*/;
 
@@ -161,7 +161,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native String getSubject() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.subject;
     }-*/;
 
@@ -174,7 +174,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native void setSubject(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.subject = value;
     }-*/;
 
@@ -185,7 +185,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native JsArrayString getToRecipients() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.toRecipients;
     }-*/;
 
@@ -198,7 +198,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native void setToRecipients(JsArrayString value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.toRecipients = value;
     }-*/;
 
@@ -219,9 +219,9 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native void addAttachment(Blob attachment) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
-				.addAttachment(attachment.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.addAttachment(attachment.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /*
@@ -233,9 +233,9 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native void addAttachment(File attachment) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
-				.addAttachment(attachment.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.addAttachment(attachment.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /*
@@ -245,7 +245,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native void isSupported() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.isSupported();
     }-*/;
 
@@ -256,7 +256,7 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native void open(Object properties) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.open(properties);
     }-*/;
 
@@ -267,12 +267,12 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
      */
     @Override
     public native void open() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.open();
     }-*/;
 
     public native void addCompleteHandler(EmailCompleteHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.ui.email.EmailCompleteEvent::COMPLETE,
@@ -283,22 +283,22 @@ public class EmailDialog extends EventDispatcher implements HasAttachment, Senda
     }-*/;
 
     private native int _getCancelled() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.CANCELLED;
     }-*/;
 
     private native int _getFailed() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.FAILED;
     }-*/;
 
     private native int _getSent() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.sENT;
     }-*/;
 
     private native int _getSaved() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.SAVED;
     }-*/;
 

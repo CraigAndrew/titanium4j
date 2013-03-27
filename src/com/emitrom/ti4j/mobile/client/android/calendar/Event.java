@@ -57,7 +57,7 @@ public class Event extends EventDispatcher {
     }
 
     private final native JsArray<JavaScriptObject> _getAlerts() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.alerts;
     }-*/;
 
@@ -70,7 +70,7 @@ public class Event extends EventDispatcher {
     }
 
     private final native void _setAlerts(JsArray<JavaScriptObject> value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.alerts = value;
     }-*/;
 
@@ -78,12 +78,12 @@ public class Event extends EventDispatcher {
      * @return Whether the event is all day.
      */
     public final native boolean isAllDay() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.allDay;
     }-*/;
 
     public final native void setAllDay(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.allDay = value;
     }-*/;
 
@@ -91,12 +91,12 @@ public class Event extends EventDispatcher {
      * @return The date/time at which the event begins.
      */
     public final native JsDate getBegin() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.begin;
     }-*/;
 
     public final native void setBegin(JsDate value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.begin = value;
     }-*/;
 
@@ -104,12 +104,12 @@ public class Event extends EventDispatcher {
      * @return The event description.
      */
     public final native String getDescription() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.description;
     }-*/;
 
     public final native void setDescription(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.description = value;
     }-*/;
 
@@ -117,12 +117,12 @@ public class Event extends EventDispatcher {
      * @return The date/time at which the event ends.
      */
     public final native JsDate getEnd() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.end;
     }-*/;
 
     public final native void setEnd(JsDate value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.end = value;
     }-*/;
 
@@ -130,12 +130,12 @@ public class Event extends EventDispatcher {
      * @return An object containing extended properties of the event.
      */
     public final native <T> T getExtendedProperties() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.extendedProperties;
     }-*/;
 
     public final native void setExtendedProperties(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.extendedProperties = value;
     }-*/;
 
@@ -143,12 +143,12 @@ public class Event extends EventDispatcher {
      * @return Whether an alarm is scheduled for the event.
      */
     public final native boolean hasAlarm() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.hasAlarm;
     }-*/;
 
     public final native void setHasAlarm(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.hasAlarm = value;
     }-*/;
 
@@ -156,12 +156,12 @@ public class Event extends EventDispatcher {
      * @return wether or not this event has extended properties
      */
     public final native boolean hasExtendedProperties() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.hasExtendedProperties;
     }-*/;
 
     public final native void setHasExtendedProperties(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.hasExtendedProperties = value;
     }-*/;
 
@@ -169,12 +169,12 @@ public class Event extends EventDispatcher {
      * @return The id of the event.
      */
     public final native String getId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.id;
     }-*/;
 
     public final native void setId(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.id = value;
     }-*/;
 
@@ -182,12 +182,12 @@ public class Event extends EventDispatcher {
      * @return The event location.
      */
     public final native String getLocation() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.location;
     }-*/;
 
     public final native void setLocation(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.location = value;
     }-*/;
 
@@ -206,7 +206,7 @@ public class Event extends EventDispatcher {
     }
 
     private final native JsArray<JavaScriptObject> _getReminders() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.reminders;
     }-*/;
 
@@ -227,7 +227,7 @@ public class Event extends EventDispatcher {
     }
 
     private final native void _setReminders(JsArray<JavaScriptObject> value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.reminders = value;
     }-*/;
 
@@ -238,12 +238,12 @@ public class Event extends EventDispatcher {
      *         .
      */
     public final native int getStatus() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.status;
     }-*/;
 
     public final native void setStatus(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.status = value;
     }-*/;
 
@@ -251,12 +251,12 @@ public class Event extends EventDispatcher {
      * @return The title string for the event.
      */
     public final native String getTitle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.title;
     }-*/;
 
     public final native void setTitle(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.title = value;
     }-*/;
 
@@ -266,12 +266,12 @@ public class Event extends EventDispatcher {
      *         {@link com.emitrom.ti4j.mobile.client.android.calendar}.
      */
     public final native int getVisibility() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.visibility;
     }-*/;
 
     public final native void setVisibility(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.visibility = value;
     }-*/;
 
@@ -290,7 +290,7 @@ public class Event extends EventDispatcher {
     }
 
     private native JavaScriptObject _createAlert(Object data) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return this.createAlert(data);
     }-*/;
 
@@ -306,7 +306,7 @@ public class Event extends EventDispatcher {
      *            .
      */
     public final native Reminder createReminder(Object data) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return this.createReminder(data);
     }-*/;
 
@@ -317,7 +317,7 @@ public class Event extends EventDispatcher {
      *            returned.
      */
     public final native String getExtendedProperty(String name) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getExtendedProperty(name);
     }-*/;
 
@@ -328,7 +328,7 @@ public class Event extends EventDispatcher {
      * @param value The value to which to set the named extended property.
      */
     public final native void setExtendedProperty(String name, String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.setExtendedProperty(name, value);
     }-*/;
 

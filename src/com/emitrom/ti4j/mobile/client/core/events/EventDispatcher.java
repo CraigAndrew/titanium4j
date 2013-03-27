@@ -15,7 +15,7 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events;
 
-import com.emitrom.ti4j.mobile.client.core.ProxyObject;
+import com.emitrom.ti4j.core.client.ProxyObject;
 import com.emitrom.ti4j.mobile.client.core.handlers.EventHandler;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -30,7 +30,7 @@ public abstract class EventDispatcher extends ProxyObject {
     }
 
     private final native void addEventListener(String event, JavaScriptObject listener) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.addEventListener(event, listener);
     }-*/;
 
@@ -47,12 +47,12 @@ public abstract class EventDispatcher extends ProxyObject {
     }
 
     private final native void removeEventListener(String event, JavaScriptObject listener) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.removeEventListener(event, listener);
     }-*/;
 
     public native void addEventHandler(String event, EventHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						event,
@@ -83,11 +83,11 @@ public abstract class EventDispatcher extends ProxyObject {
      *            , event object
      */
     public native void fireEvent(String name, TiEvent eventObject) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.fireEvent(
 						name,
-						eventObject.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+						eventObject.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
 }

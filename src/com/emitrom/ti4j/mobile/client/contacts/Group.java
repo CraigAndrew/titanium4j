@@ -15,7 +15,7 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.contacts;
 
-import com.emitrom.ti4j.mobile.client.core.JsoHelper;
+import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -37,12 +37,12 @@ public class Group extends EventDispatcher {
      * @return The name of the group
      */
     public final native String getName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.name;
     }-*/;
 
     public final native void setName(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.name = value;
     }-*/;
 
@@ -53,16 +53,16 @@ public class Group extends EventDispatcher {
      *            object to add to the group
      */
     public final native void add(Person person) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
-				.add(person.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.add(person.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
      * The complete list of members of the group
      */
     public final native void members() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.members();
     }-*/;
 
@@ -73,9 +73,9 @@ public class Group extends EventDispatcher {
      *            object to remove from the group
      */
     public final native void remove(Person person) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
-				.remove(person.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.remove(person.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -87,7 +87,7 @@ public class Group extends EventDispatcher {
      *            {@link com.emitrom.ti4j.mobile.client.contacts.Contacts.CONTACTS_SORT_LAST_NAME}
      */
     public final native void sortedMembers(int sortBy) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.sortedMembers(sortBy);
     }-*/;
 

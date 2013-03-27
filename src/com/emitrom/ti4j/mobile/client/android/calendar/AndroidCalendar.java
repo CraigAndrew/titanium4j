@@ -39,12 +39,12 @@ public class AndroidCalendar extends EventDispatcher {
      * @return Whether the calendar is hidden.
      */
     public final native boolean isHidden() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return this.hidden;
     }-*/;
 
     public final native void setHidden(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.hidden = value;
     }-*/;
 
@@ -53,12 +53,12 @@ public class AndroidCalendar extends EventDispatcher {
      */
 
     public final native String getId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.id;
     }-*/;
 
     public final native void setId(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		this.jso = value;
     }-*/;
 
@@ -66,12 +66,12 @@ public class AndroidCalendar extends EventDispatcher {
      * @return The display name of the calendar.
      */
     public final native String getName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.name;
     }-*/;
 
     public final native void setName(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.name = value;
     }-*/;
 
@@ -79,12 +79,12 @@ public class AndroidCalendar extends EventDispatcher {
      * @return Whether the calendar is selected.
      */
     public final native boolean isSelected() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.selected;
     }-*/;
 
     public final native void setSelected(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.selected = value;
     }-*/;
 
@@ -98,7 +98,7 @@ public class AndroidCalendar extends EventDispatcher {
      *            .
      */
     public final native Event createEvent(Object option) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.createEvent(option);
     }-*/;
 
@@ -110,7 +110,7 @@ public class AndroidCalendar extends EventDispatcher {
      * @param id The integer id of the event to return.
      */
     public final native Event getEventById(int id) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getEventById(id);
     }-*/;
 

@@ -17,7 +17,7 @@ package com.emitrom.ti4j.mobile.client.ui;
 
 import java.util.ArrayList;
 
-import com.emitrom.ti4j.mobile.client.core.ProxyObject;
+import com.emitrom.ti4j.core.client.ProxyObject;
 import com.emitrom.ti4j.mobile.client.core.handlers.ui.DashboardItemHandler;
 import com.emitrom.ti4j.mobile.client.ui.interfaces.Editable;
 import com.google.gwt.core.client.JavaScriptObject;
@@ -56,7 +56,7 @@ public class DashboardView extends View implements Editable {
     }
 
     private native JsArray<JavaScriptObject> _getData() /*-{
-		var jso = jso.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = jso.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.data;
     }-*/;
 
@@ -77,7 +77,7 @@ public class DashboardView extends View implements Editable {
     }
 
     private native void _setData(JsArray<JavaScriptObject> value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.data = value;
     }-*/;
 
@@ -86,12 +86,12 @@ public class DashboardView extends View implements Editable {
      *         effect
      */
     public native boolean wobble() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.wobble;
     }-*/;
 
     public native void setWobble(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.wobble = value;
     }-*/;
 
@@ -102,7 +102,7 @@ public class DashboardView extends View implements Editable {
      */
     @Override
     public native void startEditing() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.startEditing();
     }-*/;
 
@@ -113,12 +113,12 @@ public class DashboardView extends View implements Editable {
      */
     @Override
     public native void stopEditing() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.stopEditing();
     }-*/;
 
     public native void addDeleteHandler(DashboardItemHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.ui.dashboard.DashboardEvent::DELETE,
@@ -129,7 +129,7 @@ public class DashboardView extends View implements Editable {
     }-*/;
 
     public native void addMoveHandler(DashboardItemHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.ui.dashboard.DashboardEvent::MOVE,

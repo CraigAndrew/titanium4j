@@ -15,7 +15,7 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui;
 
-import com.emitrom.ti4j.mobile.client.core.ProxyObject;
+import com.emitrom.ti4j.core.client.ProxyObject;
 import com.emitrom.ti4j.mobile.client.ui.style.Color;
 import com.emitrom.ti4j.mobile.client.ui.style.Font;
 import com.emitrom.ti4j.mobile.client.ui.style.Position;
@@ -49,12 +49,12 @@ public class Label extends View implements HasText {
      *         on Android only
      */
     public native int getAutoLink() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.autoLink;
     }-*/;
 
     public native void setAutoLink(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.autoLink = value;
     }-*/;
 
@@ -63,12 +63,12 @@ public class Label extends View implements HasText {
      *         label on the bottom
      */
     public native int getBackgroundPaddingBottom() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundPaddingBottom;
     }-*/;
 
     public native void setBackgroundPaddingBottom(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundPaddingBottom = value;
     }-*/;
 
@@ -77,12 +77,12 @@ public class Label extends View implements HasText {
      *         label on the left
      */
     public native int getBackgroundPaddingLeft() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundPaddingLeft;
     }-*/;
 
     public native void setBackgroundPaddingLeft(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundPaddingLeft = value;
     }-*/;
 
@@ -131,12 +131,12 @@ public class Label extends View implements HasText {
      *         label on the right
      */
     public native int getBackgroundPaddingRight() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundPaddingRight;
     }-*/;
 
     public native void setBackgroundPaddingRight(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundPaddingRight = value;
     }-*/;
 
@@ -145,12 +145,12 @@ public class Label extends View implements HasText {
      *         label on the top
      */
     public native int getBackgroundPaddingTop() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.backgroundPaddingTop;
     }-*/;
 
     public native void setBackgroundPaddingTop(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundPaddingTop = value;
     }-*/;
 
@@ -158,7 +158,7 @@ public class Label extends View implements HasText {
      * @return The color of the label
      */
     public native String getColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.color;
     }-*/;
 
@@ -167,7 +167,7 @@ public class Label extends View implements HasText {
     }
 
     public native void setColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.color = value;
     }-*/;
 
@@ -177,12 +177,12 @@ public class Label extends View implements HasText {
      *         Available on Android only
      */
     public native boolean ellipsize() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.ellipsize;
     }-*/;
 
     public native void setEllipsize(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.ellipsize = value;
     }-*/;
 
@@ -190,27 +190,27 @@ public class Label extends View implements HasText {
      * @return The label font object properties
      */
     public native Font getFont() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.font;
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.style.Font::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
 
     public native void setFont(Font value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.font = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.font = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
      * @return The color of the label when in the highlighted state
      */
     public native String getHighlightedColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.highlightedColor;
     }-*/;
 
     public native void setHighlightedColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.highlightedColor = value;
     }-*/;
 
@@ -218,12 +218,12 @@ public class Label extends View implements HasText {
      * @return Simple html formatting. (android only) Available on Android only
      */
     public native String getHtml() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.html;
     }-*/;
 
     public native void setHtml(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.html = value;
     }-*/;
 
@@ -233,12 +233,12 @@ public class Label extends View implements HasText {
      *         content to be limited to a single line
      */
     public native int getMinimumFontSize() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.minimumFontSize;
     }-*/;
 
     public native void setMinimumFontSize(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.minimumFontSize = value;
     }-*/;
 
@@ -246,12 +246,12 @@ public class Label extends View implements HasText {
      * @return The text shadow color
      */
     public native String getShadowColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.shadowColor;
     }-*/;
 
     public native void setShadowColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.shadowColor = value;
     }-*/;
 
@@ -263,27 +263,27 @@ public class Label extends View implements HasText {
      * @return The shadow offset as a dictionary with the properties `x` and `y`
      */
     public native ShadowOffset getShadowOffset() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.shadowOffset;
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.style.ShadowOffset::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
 
     public native void setShadowOffset(ShadowOffset value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.shadowOffset = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.shadowOffset = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
      * @return The text of the label
      */
     public native String getText() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.text;
     }-*/;
 
     public native void setText(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.text = value;
     }-*/;
 
@@ -292,12 +292,12 @@ public class Label extends View implements HasText {
     }
 
     private native void _setTextAlign(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.textAlign = value;
     }-*/;
 
     public native void setTextAlign(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.textAlign = value;
     }-*/;
 
@@ -313,13 +313,13 @@ public class Label extends View implements HasText {
      * @return The key in the locale file to use for the text property
      */
     public native String getTextId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.textid;
     }-*/;
 
     public native void setTextId(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.textid = value;
     }-*/;
 
@@ -328,12 +328,12 @@ public class Label extends View implements HasText {
      *         true) Available on Android only
      */
     public native boolean wordWrap() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.wordWrap;
     }-*/;
 
     public native void setWordWrap(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.wordWrap = value;
     }-*/;
 

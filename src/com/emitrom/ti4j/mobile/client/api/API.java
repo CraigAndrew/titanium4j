@@ -42,7 +42,7 @@ public class API extends TiModule {
      * @param message , the message to log
      */
     public native void info(String message) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.info(message);
     }-*/;
 
@@ -52,7 +52,7 @@ public class API extends TiModule {
      * @param message , the message to log
      */
     public native void debug(String message) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.debug(message);
     }-*/;
 
@@ -62,7 +62,7 @@ public class API extends TiModule {
      * @param message , the message to log
      */
     public native void error(String message) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.error(message);
     }-*/;
 
@@ -72,7 +72,7 @@ public class API extends TiModule {
      * @param message , the message to log
      */
     public native void log(String level, String message) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.log(level, message);
     }-*/;
 
@@ -82,7 +82,7 @@ public class API extends TiModule {
      * @param message , the message to log
      */
     public native void warn(String message) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.warn(message);
     }-*/;
 

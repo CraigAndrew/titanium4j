@@ -69,12 +69,12 @@ public class Geolocation extends TiModule {
      *         continuously generated.
      */
     public native double getDistanceFilter() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.distanceFilter;
     }-*/;
 
     public native void setDistanceFilter(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.distanceFilter = value;
     }-*/;
 
@@ -84,12 +84,12 @@ public class Geolocation extends TiModule {
      *         continuously generated.
      */
     public native double getHeadingFilter() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.headingFilter;
     }-*/;
 
     public native void setHeadingFilter(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.headingFilter = value;
     }-*/;
 
@@ -101,12 +101,12 @@ public class Geolocation extends TiModule {
      * @platforms iphone, ipad
      */
     public native int getLocationServicesAuthorization() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.locationServicesAuthorization;
     }-*/;
 
     public native void setLocationServicesAuthorization(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.locationServicesAuthorization = value;
     }-*/;
 
@@ -115,12 +115,12 @@ public class Geolocation extends TiModule {
      *         for the device (not the application).
      */
     public native boolean isLocationServicesEnabled() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.locationServicesEnabled;
     }-*/;
 
     public native void setLocationServicesEnabled(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.locationServicesEnabled = value;
     }-*/;
 
@@ -129,12 +129,12 @@ public class Geolocation extends TiModule {
      *         undefined when the preferred provider is auto-detected
      */
     public native String getPreferredProvider() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.preferredProvider;
     }-*/;
 
     public native void setPreferredProvider(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.preferredProvider = value;
     }-*/;
 
@@ -146,12 +146,12 @@ public class Geolocation extends TiModule {
      * @platforms iphone, ipad
      */
     public native String getPurpose() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.purpose;
     }-*/;
 
     public native void setPurpose(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.purpose = value;
     }-*/;
 
@@ -159,12 +159,12 @@ public class Geolocation extends TiModule {
      * @return Returns true if the calibration ui can show
      */
     public native boolean getShowCalibration() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.showCalibration;
     }-*/;
 
     public native void setShowCalibration(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.showCalibration = value;
     }-*/;
 
@@ -175,7 +175,7 @@ public class Geolocation extends TiModule {
      *            address to resolve.
      */
     public native void forwardGeocoder(String address, GeocoderCallback callback) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
 				.forwardGeocoder(
 						address,
@@ -199,7 +199,7 @@ public class Geolocation extends TiModule {
      * Retrieve the current compass heading.
      */
     public native void getCurrentHeading(GeolocationHandler handler) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
 				.getCurrentHeading(function(e) {
 					var locationEvent = @com.emitrom.ti4j.mobile.client.core.events.geolocation.LocationEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
@@ -216,7 +216,7 @@ public class Geolocation extends TiModule {
      */
 
     public native void getCurrentPosition(GeolocationHandler handler) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
 				.getCurrentPosition(function(e) {
 					var locationEvent = @com.emitrom.ti4j.mobile.client.core.events.geolocation.LocationEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
@@ -226,7 +226,7 @@ public class Geolocation extends TiModule {
     }-*/;
 
     private native void getCurrentHeading(JavaScriptObject callback) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.getCurrentHeading(callback);
     }-*/;
 
@@ -242,7 +242,7 @@ public class Geolocation extends TiModule {
     }
 
     private native void getCurrentPosition(JavaScriptObject callback) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.getCurrentPosition(callback);
     }-*/;
 
@@ -255,7 +255,7 @@ public class Geolocation extends TiModule {
      *            longitude to search
      */
     public static native void reverseGeocoder(double latitude, double longitude, ReverseGeocoderCallback callback) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso
 				.reverseGeocoder(
 						latitude,

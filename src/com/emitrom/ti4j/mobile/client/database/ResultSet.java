@@ -35,12 +35,12 @@ public class ResultSet extends EventDispatcher {
      * @return The number of rows in the result set
      */
     public native int getRowCount() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.rowCount;
     }-*/;
 
     public native void setRowCount(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.rowCount = value;
     }-*/;
 
@@ -48,12 +48,12 @@ public class ResultSet extends EventDispatcher {
      * @return Returns true if the current row is still valid
      */
     public native boolean getValidRow() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.validRow;
     }-*/;
 
     public native void setValidRow(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.validRow = value;
     }-*/;
 
@@ -62,7 +62,7 @@ public class ResultSet extends EventDispatcher {
      * must no longer be used
      */
     public native void close() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.close();
     }-*/;
 
@@ -72,7 +72,7 @@ public class ResultSet extends EventDispatcher {
      * @param index column index (which is zero based)
      */
     public native <T> T field(int index) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.field(index);
     }-*/;
 
@@ -88,7 +88,7 @@ public class ResultSet extends EventDispatcher {
      *            )
      */
     public native <T> T field(int index, int type) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.field(index, type);
     }-*/;
 
@@ -98,7 +98,7 @@ public class ResultSet extends EventDispatcher {
      * @param name column name from SQL query
      */
     public native <T> T fieldByName(String name) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.fieldByName(name);
     }-*/;
 
@@ -114,7 +114,7 @@ public class ResultSet extends EventDispatcher {
      *            )
      */
     public native <T> T fieldByName(String name, int type) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.fieldByName(name, type);
     }-*/;
 
@@ -122,7 +122,7 @@ public class ResultSet extends EventDispatcher {
      * Return the number of columns in the result set
      */
     public native int fieldCount() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.fieldCount();
     }-*/;
 
@@ -132,7 +132,7 @@ public class ResultSet extends EventDispatcher {
      * @param index field name column index (which is zero based)
      */
     public native String fieldName(int index) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.fieldName(index);
     }-*/;
 
@@ -140,7 +140,7 @@ public class ResultSet extends EventDispatcher {
      * Return true if the row is a valid row
      */
     public native boolean isValidRow() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.isValidRow();
     }-*/;
 
@@ -151,7 +151,7 @@ public class ResultSet extends EventDispatcher {
      *         true.
      */
     public native boolean next() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.next();
     }-*/;
 

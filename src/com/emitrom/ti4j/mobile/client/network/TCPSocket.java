@@ -59,12 +59,12 @@ public class TCPSocket extends EventDispatcher {
      *         or an identifier for the local device in order to listen
      */
     public native String getHostName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.hostName;
     }-*/;
 
     public native void setHostName(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.hostName = value;
     }-*/;
 
@@ -72,12 +72,12 @@ public class TCPSocket extends EventDispatcher {
      * @return Whether or not the socket is valid
      */
     public native boolean isValid() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.isValid;
     }-*/;
 
     public native void setValid(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.isValid = value;
     }-*/;
 
@@ -85,12 +85,12 @@ public class TCPSocket extends EventDispatcher {
      * @return The socket's mode
      */
     public native int getMode() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.mode;
     }-*/;
 
     public native void setMode(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.mode = value;
     }-*/;
 
@@ -98,12 +98,12 @@ public class TCPSocket extends EventDispatcher {
      * @return The port to connect/listen on
      */
     public native int getPort() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.port;
     }-*/;
 
     public native void setPort(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.port = value;
     }-*/;
 
@@ -112,12 +112,12 @@ public class TCPSocket extends EventDispatcher {
      *         default is false
      */
     public native boolean hasStripTerminator() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.stripTerminator;
     }-*/;
 
     public native void setStripTerminator(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.stripTerminator = value;
     }-*/;
 
@@ -125,7 +125,7 @@ public class TCPSocket extends EventDispatcher {
      * Close the socket
      */
     public native void close() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.close();
     }-*/;
 
@@ -133,7 +133,7 @@ public class TCPSocket extends EventDispatcher {
      * Connect the scocket to a tcp server
      */
     public native void connect() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return this.connect();
     }-*/;
 
@@ -141,7 +141,7 @@ public class TCPSocket extends EventDispatcher {
      * Set up the socket to receive connections
      */
     public native void listen() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.listen();
     }-*/;
 
@@ -154,7 +154,7 @@ public class TCPSocket extends EventDispatcher {
      *            send to all connected sockets
      */
     public native void write(Object data, int sendTo) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.write(data, sendTo);
     }-*/;
 

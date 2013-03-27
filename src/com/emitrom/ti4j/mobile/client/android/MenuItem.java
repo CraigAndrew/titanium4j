@@ -15,7 +15,7 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.android;
 
-import com.emitrom.ti4j.mobile.client.core.JsoHelper;
+import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.emitrom.ti4j.mobile.client.core.handlers.ui.InteractionHandler;
 import com.google.gwt.core.client.JavaScriptObject;
@@ -39,7 +39,7 @@ public class MenuItem extends EventDispatcher {
      * @return
      */
     public final native String getCondensedTitle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getCondensedTitle();
     }-*/;
 
@@ -49,7 +49,7 @@ public class MenuItem extends EventDispatcher {
      * @return
      */
     public final native int getGroupId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getGroupId();
     }-*/;
 
@@ -59,7 +59,7 @@ public class MenuItem extends EventDispatcher {
      * @return
      */
     public final native int getItemId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getItemId();
     }-*/;
 
@@ -69,7 +69,7 @@ public class MenuItem extends EventDispatcher {
      * @return
      */
     public final native String getTitle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getTitle();
     }-*/;
 
@@ -79,7 +79,7 @@ public class MenuItem extends EventDispatcher {
      * @return
      */
     public final native boolean isEnable() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.isEnable();
     }-*/;
 
@@ -89,7 +89,7 @@ public class MenuItem extends EventDispatcher {
      * @return
      */
     public final native boolean isVisible() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.isVisible();
     }-*/;
 
@@ -99,7 +99,7 @@ public class MenuItem extends EventDispatcher {
      * @param value , new condensed title
      */
     public final native void setCondensedTitle(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setCondensedTitle(value);
     }-*/;
 
@@ -109,7 +109,7 @@ public class MenuItem extends EventDispatcher {
      * @param value , true to enable item, false to disable
      */
     public final native void setEnabled(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setEnabled(value);
     }-*/;
 
@@ -119,7 +119,7 @@ public class MenuItem extends EventDispatcher {
      * @param value , icon to use with the item
      */
     public final native void setIcon(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setIcon(value);
     }-*/;
 
@@ -129,7 +129,7 @@ public class MenuItem extends EventDispatcher {
      * @param value , new title
      */
     public final native void setTitle(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setTitle(value);
     }-*/;
 
@@ -148,12 +148,12 @@ public class MenuItem extends EventDispatcher {
      * @return
      */
     public final native int getOrder() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getOrder();
     }-*/;
 
     public native void addClickHandler(InteractionHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.ui.ClickEvent::EVENT_NAME,

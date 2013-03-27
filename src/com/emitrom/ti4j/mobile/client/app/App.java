@@ -49,7 +49,7 @@ public class App extends TiModule {
      * Indicates whether Analytics is enabled, determined by tiapp.xml.
      */
     public native boolean isAnalyticsEnabled() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.analytics;
     }-*/;
 
@@ -57,7 +57,7 @@ public class App extends TiModule {
      * Application copyright statement, determined by tiapp.xml.
      */
     public native String getCopyright() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.copyright;
     }-*/;
 
@@ -66,7 +66,7 @@ public class App extends TiModule {
      * development or production.
      */
     public native String getDeployType() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.deployType;
     }-*/;
 
@@ -74,7 +74,7 @@ public class App extends TiModule {
      * Application description, determined by tiapp.xml.
      */
     public native String getDescription() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.description;
     }-*/;
 
@@ -82,7 +82,7 @@ public class App extends TiModule {
      * Application globally-unique ID, determined by tiapp.xml.
      */
     public native String getGuId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.guid;
     }-*/;
 
@@ -90,7 +90,7 @@ public class App extends TiModule {
      * Application ID, from tiapp.xml.
      */
     public native String getId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.id;
     }-*/;
 
@@ -98,7 +98,7 @@ public class App extends TiModule {
      * @iosOnly Determines whether the screen is locked when the device is idle.
      */
     public native boolean isIdelTimerDisabled() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.idleTimerDisabled;
     }-*/;
 
@@ -106,7 +106,7 @@ public class App extends TiModule {
      * @iosOnly Determines whether the screen is locked when the device is idle.
      */
     public native void setIdelTimerDisabled(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.idleTimerDisabled = value;
     }-*/;
 
@@ -114,7 +114,7 @@ public class App extends TiModule {
      * @iosOnly The install ID for this application.
      */
     public native String getInstallId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.installId;
     }-*/;
 
@@ -122,7 +122,7 @@ public class App extends TiModule {
      * Application name, determined by tiapp.xml.
      */
     public native String getName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.name;
     }-*/;
 
@@ -130,7 +130,7 @@ public class App extends TiModule {
      * @iosOnly Determines whether proximity detection is enabled.
      */
     public native boolean isProxymityDectionEnabled() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.proximityDetection;
     }-*/;
 
@@ -139,7 +139,7 @@ public class App extends TiModule {
      *          Set to true to receive proximity events.
      */
     public native void setProximityDetection(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.proximityDetection = true;
     }-*/;
 
@@ -152,7 +152,7 @@ public class App extends TiModule {
      *          property is undefined.
      */
     public native boolean hasProximityState() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.proximityState;
     }-*/;
 
@@ -160,7 +160,7 @@ public class App extends TiModule {
      * Application publisher, from tiapp.xml.
      */
     public native String getPublisher() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.publisher;
     }-*/;
 
@@ -169,7 +169,7 @@ public class App extends TiModule {
      * application.
      */
     public native String getSessionId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.sessionId;
     }-*/;
 
@@ -177,7 +177,7 @@ public class App extends TiModule {
      * Application URL, from tiapp.xml.
      */
     public native String getUrl() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.url;
     }-*/;
 
@@ -185,7 +185,7 @@ public class App extends TiModule {
      * Application version, from tiapp.xml.
      */
     public native String getVersion() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.version;
     }-*/;
 

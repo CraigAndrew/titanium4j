@@ -17,7 +17,7 @@ package com.emitrom.ti4j.mobile.client.android;
 
 import java.util.ArrayList;
 
-import com.emitrom.ti4j.mobile.client.core.JsoHelper;
+import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
@@ -43,9 +43,9 @@ public class Menu extends EventDispatcher {
      * @return
      */
     public native MenuItem add(MenuItemConfig config) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return this
-				.add(config.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.add(config.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -57,7 +57,7 @@ public class Menu extends EventDispatcher {
      * @return Titanium.Android.MenuItem
      */
     public native MenuItem add(String itemTitle, int id) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var menuItem = jso.add({
 			title : itemTitle,
 			itemId : id
@@ -71,7 +71,7 @@ public class Menu extends EventDispatcher {
      * retained to Titanium.Android.MenuItem previously created.
      */
     public native void clear() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.clear();
     }-*/;
 
@@ -79,7 +79,7 @@ public class Menu extends EventDispatcher {
      * close the menu if visible
      */
     public native void close() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.close();
     }-*/;
 
@@ -90,7 +90,7 @@ public class Menu extends EventDispatcher {
      * @return
      */
     public native MenuItem findItem(int item) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.findItem(item);
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.MenuItem::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -107,7 +107,7 @@ public class Menu extends EventDispatcher {
     }
 
     private native MenuItem findItem(JavaScriptObject item) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.findItem(item);
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.MenuItem::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -120,7 +120,7 @@ public class Menu extends EventDispatcher {
      * @return
      */
     public native MenuItem getItem(int index) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getItem(index);
     }-*/;
 
@@ -130,7 +130,7 @@ public class Menu extends EventDispatcher {
      * @return
      */
     public native boolean hasVisibleItems() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.hasVisibleItems();
     }-*/;
 
@@ -140,7 +140,7 @@ public class Menu extends EventDispatcher {
      * @param groupId , groupId of items to remove.
      */
     public native void removeGroup(int groupId) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.removeGroup(groupId);
     }-*/;
 
@@ -150,7 +150,7 @@ public class Menu extends EventDispatcher {
      * @param itemId , itemId of item to remove.
      */
     public native void removeItem(int itemId) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.removeItem(itemId);
     }-*/;
 
@@ -161,7 +161,7 @@ public class Menu extends EventDispatcher {
      * @param enabled , true to enable, false to disable.
      */
     public native void setGroupEnabled(int groupId, boolean enabled) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setGroupEnabled(groupId, enabled);
     }-*/;
 
@@ -172,7 +172,7 @@ public class Menu extends EventDispatcher {
      * @param enabled , true to enable, false to disable.
      */
     public native void setGroupVisible(int groupId, boolean enabled) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setGroupVisible(groupId, enabled);
     }-*/;
 
@@ -182,7 +182,7 @@ public class Menu extends EventDispatcher {
      * @return
      */
     public native int size() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.size();
     }-*/;
 
@@ -196,7 +196,7 @@ public class Menu extends EventDispatcher {
     }
 
     private native JsArray<JavaScriptObject> _getItems() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.items;
     }-*/;
 
@@ -209,7 +209,7 @@ public class Menu extends EventDispatcher {
     }
 
     private native void _setItems(JsArray<JavaScriptObject> value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.items = value;
     }-*/;
 

@@ -15,7 +15,7 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui;
 
-import com.emitrom.ti4j.mobile.client.core.ProxyObject;
+import com.emitrom.ti4j.core.client.ProxyObject;
 import com.emitrom.ti4j.mobile.client.core.handlers.EventHandler;
 import com.emitrom.ti4j.mobile.client.ui.interfaces.ColoredElement;
 import com.emitrom.ti4j.mobile.client.ui.interfaces.Displayable;
@@ -50,7 +50,7 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
      * @return The color of the message label
      */
     public native String getColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.color;
     }-*/;
 
@@ -59,7 +59,7 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
     }
 
     public native void setColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.color = value;
     }-*/;
 
@@ -71,20 +71,20 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
     }-*/;
 
     public native void setFont(Font value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.font = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.font = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
      * @return The activity message label text
      */
     public native String getMessage() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.message;
     }-*/;
 
     public native void setMessage(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.message = value;
     }-*/;
 
@@ -92,7 +92,7 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
      * @return The activity type
      */
     public native int getType() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.type;
     }-*/;
 
@@ -100,12 +100,12 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
      * @return The activity value
      */
     public native double getValue() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.value;
     }-*/;
 
     public native void setValue(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.value = value;
     }-*/;
 
@@ -113,12 +113,12 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
      * @return The activity minimum value
      */
     public native double getMin() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.min;
     }-*/;
 
     public native void setMin(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.min = value;
     }-*/;
 
@@ -126,12 +126,12 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
      * @return The activity maximum value
      */
     public native double getMax() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.min;
     }-*/;
 
     public native void setMax(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.max = value;
     }-*/;
 
@@ -139,7 +139,7 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
      * @return The activity location
      */
     public native int getLocation() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.location;
     }-*/;
 
@@ -147,12 +147,12 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
      * @return The key in the locale file to use for the message property
      */
     public native String getMessageId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.messageid;
     }-*/;
 
     public native void setMessageId(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.messageid = value;
     }-*/;
 
@@ -160,12 +160,12 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
      * @return The style constant of the activity indicator
      */
     public native int getStyle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.style;
     }-*/;
 
     public native void setStyle(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.style = value;
     }-*/;
 
@@ -173,7 +173,7 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
      * Call hide to make the activity indicator hidden and stop spinning
      */
     public native void hide() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.hide();
     }-*/;
 
@@ -181,7 +181,7 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
      * Call show to make the activity indicator visible and start spinning
      */
     public native void show() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.show();
     }-*/;
 

@@ -15,7 +15,7 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.contacts;
 
-import com.emitrom.ti4j.mobile.client.core.JsoHelper;
+import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -45,12 +45,12 @@ public class Person extends EventDispatcher {
      *         home, work, other. values are dictionaries.
      */
     public native Object getAddress() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.address;
     }-*/;
 
     public native void setAddress(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.address = value;
     }-*/;
 
@@ -59,12 +59,12 @@ public class Person extends EventDispatcher {
      *         "yyyy-mm-dd't'hh:mm:ss'.'sss+0000"
      */
     public native String getBirthday() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.birthday;
     }-*/;
 
     public native void setBirthday(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.birthday = value;
     }-*/;
 
@@ -73,7 +73,7 @@ public class Person extends EventDispatcher {
      *         format is "yyyy-mm-dd't'hh:mm:ss'.'sss+0000", read-only
      */
     public native String getCreated() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.created;
     }-*/;
 
@@ -83,12 +83,12 @@ public class Person extends EventDispatcher {
      *         "yyyy-mm-dd't'hh:mm:ss'.'sss+0000"
      */
     public native Object getDate() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.date;
     }-*/;
 
     public native void setDate(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.date = value;
     }-*/;
 
@@ -96,12 +96,12 @@ public class Person extends EventDispatcher {
      * @return The department of the person. single value
      */
     public native String getDepartment() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.department;
     }-*/;
 
     public native void setDepartment(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.department = value;
     }-*/;
 
@@ -110,12 +110,12 @@ public class Person extends EventDispatcher {
      *         are: home, work, other. values are strings.
      */
     public native Object getEmail() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.email;
     }-*/;
 
     public native void setEmail(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.email = value;
     }-*/;
 
@@ -123,12 +123,12 @@ public class Person extends EventDispatcher {
      * @return The first name of the person. single value
      */
     public native String getFirstName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.firstName;
     }-*/;
 
     public native void setFirstName(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.firstName = value;
     }-*/;
 
@@ -136,12 +136,12 @@ public class Person extends EventDispatcher {
      * @return The phonetic first name of the person. single value
      */
     public native String getFirstPhonetic() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.firstPhonetic;
     }-*/;
 
     public native void setFirstPhonetic(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.firstPhonetic = value;
     }-*/;
 
@@ -149,12 +149,12 @@ public class Person extends EventDispatcher {
      * @return The localized full name of the person. single value, read-only
      */
     public native String getFullName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.fullName;
     }-*/;
 
     public native void setFullName(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.fullName = value;
     }-*/;
 
@@ -163,12 +163,12 @@ public class Person extends EventDispatcher {
      *         `null` to remove the image. single value
      */
     public native Object getImage() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.image;
     }-*/;
 
     public native void setImage(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.image = value;
     }-*/;
 
@@ -178,12 +178,12 @@ public class Person extends EventDispatcher {
      *         dictionaries.
      */
     public native Object getInstantMessage() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.instantMessage;
     }-*/;
 
     public native void setInstantMessage(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.instantMessage = value;
     }-*/;
 
@@ -191,12 +191,12 @@ public class Person extends EventDispatcher {
      * @return The job title of the person. single value
      */
     public native String getJobTitle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.jobTitle;
     }-*/;
 
     public native void setJobTitle(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.jobTitle = value;
     }-*/;
 
@@ -207,12 +207,12 @@ public class Person extends EventDispatcher {
      *         {@link com.emitrom.ti4j.mobile.client.contacts.Contacts.KIND_ORGANIZATION}
      */
     public native int getKind() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.kind;
     }-*/;
 
     public native void setKind(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.kind = value;
     }-*/;
 
@@ -220,12 +220,12 @@ public class Person extends EventDispatcher {
      * @return The last name of the person. single value
      */
     public native String getLastName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.lastName;
     }-*/;
 
     public native void setLastName(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.lastName = value;
     }-*/;
 
@@ -233,12 +233,12 @@ public class Person extends EventDispatcher {
      * @return The phonetic last name of the person. single value
      */
     public native String getLastPhonetic() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.lastPhonetic;
     }-*/;
 
     public native void setLastPhonetic(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.lastPhonetic = value;
     }-*/;
 
@@ -246,12 +246,12 @@ public class Person extends EventDispatcher {
      * @return The middle name of the person. single value
      */
     public native String getMiddleName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.middleName;
     }-*/;
 
     public native void setMiddleName(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.middleName = value;
     }-*/;
 
@@ -259,12 +259,12 @@ public class Person extends EventDispatcher {
      * @return The phonetic middle name of the person. single value
      */
     public native String getMiddlePhonetic() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.middlePhonetic;
     }-*/;
 
     public native void setMiddlePhonetic(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.middlePhonetic = value;
     }-*/;
 
@@ -273,12 +273,12 @@ public class Person extends EventDispatcher {
      *         format is "yyyy-mm-dd't'hh:mm:ss'.'sss+0000", read-only
      */
     public native String getModified() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.modified;
     }-*/;
 
     public native void setModified(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.modified = value;
     }-*/;
 
@@ -286,12 +286,12 @@ public class Person extends EventDispatcher {
      * @return The nickname of the person. single value
      */
     public native String getNickname() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.nickname;
     }-*/;
 
     public native void setNickname(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.nickname = value;
     }-*/;
 
@@ -299,12 +299,12 @@ public class Person extends EventDispatcher {
      * @return Notes for the person. single value
      */
     public native String getNote() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.note;
     }-*/;
 
     public native void setNote(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.note = value;
     }-*/;
 
@@ -312,12 +312,12 @@ public class Person extends EventDispatcher {
      * @return The organization the person belongs to. single value
      */
     public native String getOrganization() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.organization;
     }-*/;
 
     public native void setOrganization(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.organization = value;
     }-*/;
 
@@ -327,12 +327,12 @@ public class Person extends EventDispatcher {
      *         values are strings.
      */
     public native Object getPhone() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.phone;
     }-*/;
 
     public native void setPhone(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.phone = value;
     }-*/;
 
@@ -340,12 +340,12 @@ public class Person extends EventDispatcher {
      * @return The prefix for the person. single value
      */
     public native String getPrefix() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.prefix;
     }-*/;
 
     public native void setPrefix(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.prefix = value;
     }-*/;
 
@@ -355,12 +355,12 @@ public class Person extends EventDispatcher {
      *         friend, spouse, partner, manager, assistant. values are strings.
      */
     public native Object getRelatedNames() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.relatedNames;
     }-*/;
 
     public native void setRelatedNames(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.relatedNames = value;
     }-*/;
 
@@ -368,12 +368,12 @@ public class Person extends EventDispatcher {
      * @return The suffix for the person. single value
      */
     public native String getSuffix() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.suffix;
     }-*/;
 
     public native void setSuffix(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.suffix = value;
     }-*/;
 

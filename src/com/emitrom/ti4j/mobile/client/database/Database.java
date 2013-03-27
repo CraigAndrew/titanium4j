@@ -42,14 +42,14 @@ public class Database extends TiModule {
     }
 
     public native DB createDB() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createDB();
 		var toReturn = @com.emitrom.ti4j.mobile.client.database.DB::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
 
     public native ResultSet createResultSet() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createResultSet();
 		var toReturn = @com.emitrom.ti4j.mobile.client.database.ResultSet::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -69,7 +69,7 @@ public class Database extends TiModule {
      *            the name of the database
      */
     public static native DB install(String path, String name) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.install(path, name);
 		var toReturn = @com.emitrom.ti4j.mobile.client.database.DB::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -82,7 +82,7 @@ public class Database extends TiModule {
      *            the name of the database
      */
     public native DB open(String name) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.open(name);
 		var toReturn = @com.emitrom.ti4j.mobile.client.database.DB::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;

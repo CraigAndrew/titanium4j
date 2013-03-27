@@ -78,12 +78,12 @@ public class IOS extends TiModule {
     }
 
     native JavaScriptObject createAdView() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.createAdView();
     }-*/;
 
     native JavaScriptObject createToolbar() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.createToolbar();
     }-*/;
 

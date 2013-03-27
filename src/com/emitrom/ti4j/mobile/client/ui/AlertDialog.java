@@ -17,7 +17,7 @@ package com.emitrom.ti4j.mobile.client.ui;
 
 import java.util.ArrayList;
 
-import com.emitrom.ti4j.mobile.client.core.ProxyObject;
+import com.emitrom.ti4j.core.client.ProxyObject;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.emitrom.ti4j.mobile.client.core.events.TiEvent;
 import com.emitrom.ti4j.mobile.client.core.events.TiEventListener;
@@ -70,7 +70,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
     }
 
     private native JsArrayString _getButtonNames() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.buttonNames;
     }-*/;
 
@@ -78,7 +78,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      * @return An index to indicate which button should be the cancel button
      */
     public native int getCancel() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.cancel;
     }-*/;
 
@@ -88,8 +88,8 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      * @param view
      */
     public native void setAndroidView(View view) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		return jso.androidView = view.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.androidView = view.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 
     }-*/;
 
@@ -99,14 +99,14 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      * @return
      */
     public native View getAndroidView() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.androidView;
 		return @com.emitrom.ti4j.mobile.client.ui.View::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 
     }-*/;
 
     public native void setCancel(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.cancel = value;
     }-*/;
 
@@ -117,7 +117,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      */
     @Override
     public native String getMessage() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.message;
     }-*/;
 
@@ -130,7 +130,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      */
     @Override
     public native void setMessage(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.message = value;
     }-*/;
 
@@ -141,7 +141,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      */
     @Override
     public native String getMessageId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.messageid;
     }-*/;
 
@@ -151,7 +151,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      * @param value
      */
     public native void setOk(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.ok = value;
     }-*/;
 
@@ -161,7 +161,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      * @return
      */
     public native String getOk() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.ok;
     }-*/;
 
@@ -171,7 +171,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      * @param value
      */
     public native void setOkId(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.okid = value;
     }-*/;
 
@@ -181,7 +181,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      * @return
      */
     public native String getOkId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.okid;
     }-*/;
 
@@ -194,7 +194,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      */
     @Override
     public native void setMessageId(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.messageid = value;
     }-*/;
 
@@ -205,7 +205,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      */
     @Override
     public native String getTitle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.title;
     }-*/;
 
@@ -217,7 +217,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      */
     @Override
     public native void setTitle(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.title = value;
     }-*/;
 
@@ -227,7 +227,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      * @return
      */
     public native String getTitleId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.titleid;
     }-*/;
 
@@ -237,7 +237,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      * @param value
      */
     public native void setTitleId(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.titleid = value;
     }-*/;
 
@@ -245,7 +245,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      * Cause the dialog to become hidden
      */
     public native void hide() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.hide();
     }-*/;
 
@@ -253,7 +253,7 @@ public class AlertDialog extends EventDispatcher implements Displayable, HasTitl
      * Cause the dialog to become visible
      */
     public native void show() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.show();
     }-*/;
 

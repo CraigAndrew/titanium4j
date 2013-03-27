@@ -15,7 +15,7 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.android;
 
-import com.emitrom.ti4j.mobile.client.core.JsoHelper;
+import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsDate;
@@ -45,7 +45,7 @@ public class RemoteViews extends EventDispatcher {
      * @param value , The boolean to pass to the method
      */
     public native void setBoolean(int viewId, String methodName, boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setBoolean(viewId, methodName, value);
     }-*/;
 
@@ -63,7 +63,7 @@ public class RemoteViews extends EventDispatcher {
      * @param started , True if you want the clock to be started, false if not
      */
     public native void setChronometer(int viewId, JsDate base, String format, boolean started) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setChronometer(viewId, base, format, started);
     }-*/;
 
@@ -77,7 +77,7 @@ public class RemoteViews extends EventDispatcher {
      * @param value , The double to pass to the method
      */
     public native void setDouble(int viewId, String methodName, double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setDouble(viewId, methodName, value);
     }-*/;
 
@@ -90,7 +90,7 @@ public class RemoteViews extends EventDispatcher {
      * @param srcId , The resource id of the image
      */
     public native void setViewResource(int viewId, int srcId) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setViewResource(viewId, srcId);
     }-*/;
 
@@ -104,7 +104,7 @@ public class RemoteViews extends EventDispatcher {
      *            are supported)
      */
     public native void setImageViewUri(int viewId, String uri) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setImageViewUri(viewId, uri);
     }-*/;
 
@@ -118,7 +118,7 @@ public class RemoteViews extends EventDispatcher {
      * @param value , The int to pass to the method
      */
     public native void setInt(int viewId, String methodName, int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setInt(viewId, methodName, value);
     }-*/;
 
@@ -131,11 +131,11 @@ public class RemoteViews extends EventDispatcher {
      * @param intent , The PendingIntent to execute when this view is clicked
      */
     public native void setOnclickPendingIntent(int viewId, PendingIntent intent) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.setOnclickPendingIntent(
 						viewId,
-						intent.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+						intent.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -149,7 +149,7 @@ public class RemoteViews extends EventDispatcher {
      * @param indeterminate , Whether or not the progress in indeterminate
      */
     public native void setProgressBar(int viewId, int max, int progress, boolean indeterminate) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setProgressBar(viewId, max, progress, indeterminate);
     }-*/;
 
@@ -163,7 +163,7 @@ public class RemoteViews extends EventDispatcher {
      * @param value , The string to pass to the method
      */
     public native void setString(int viewId, String methodName, String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setString(viewId, methodName, value);
     }-*/;
 
@@ -176,7 +176,7 @@ public class RemoteViews extends EventDispatcher {
      * @param color , A color as an integer
      */
     public native void setTextColor(int viewId, int color) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setTextColor(viewId, color);
     }-*/;
 
@@ -189,7 +189,7 @@ public class RemoteViews extends EventDispatcher {
      * @param text ,The new text of the TextView
      */
     public native void setTextViewText(int viewId, String text) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setTextViewText(viewId, text);
     }-*/;
 
@@ -203,7 +203,7 @@ public class RemoteViews extends EventDispatcher {
      * @param value , The URI(as string) to pass to the method
      */
     public native void setUri(int viewId, String methodName, String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setUri(viewId, methodName, value);
     }-*/;
 
@@ -217,7 +217,7 @@ public class RemoteViews extends EventDispatcher {
      *            AndroidMedia.INVISIBLE, or AndroidMedia.GONE
      */
     public native void setViewVisibility(int viewId, int visibility) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setViewVisibility(viewId, visibility);
     }-*/;
 

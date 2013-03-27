@@ -24,7 +24,7 @@ public class MenuEvent extends TiEvent {
     }
 
     public final native Menu getMenu() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.menu;
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Menu::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;

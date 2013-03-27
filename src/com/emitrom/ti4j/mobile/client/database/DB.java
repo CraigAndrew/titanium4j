@@ -40,12 +40,12 @@ public class DB extends EventDispatcher {
      * @return The last row identifier by the last insert query
      */
     public native int getLastInsertRowId() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.lastInsertRowId;
     }-*/;
 
     public native void setLastInsertRowId(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.lastInsertRowId = value;
     }-*/;
 
@@ -53,12 +53,12 @@ public class DB extends EventDispatcher {
      * @return The name of the database
      */
     public native String getName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.name;
     }-*/;
 
     public native void setName(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.name = value;
     }-*/;
 
@@ -66,12 +66,12 @@ public class DB extends EventDispatcher {
      * @return The number of rows affected by the last query
      */
     public native int getRowsAffected() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.rowsAffected;
     }-*/;
 
     public native void setRowsAffected(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.rowsAffected = value;
     }-*/;
 
@@ -80,7 +80,7 @@ public class DB extends EventDispatcher {
      * instance is no longer valid and must no longer be used.
      */
     public native void close() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.close();
     }-*/;
 
@@ -90,7 +90,7 @@ public class DB extends EventDispatcher {
      * @param sql the SQL to execute
      */
     public native ResultSet execute(String sql) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.execute(sql);
 		var toReturn = @com.emitrom.ti4j.mobile.client.database.ResultSet::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -129,7 +129,7 @@ public class DB extends EventDispatcher {
     }
 
     private native ResultSet _execute(String sql, JsArrayString vararg) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.execute(sql, vararg);
 		var toReturn = @com.emitrom.ti4j.mobile.client.database.ResultSet::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -141,7 +141,7 @@ public class DB extends EventDispatcher {
      * will be lost upon calling this function. use with caution.
      */
     public native void remove() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.remove();
     }-*/;
 

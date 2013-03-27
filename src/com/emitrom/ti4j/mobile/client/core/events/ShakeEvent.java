@@ -28,7 +28,7 @@ public class ShakeEvent extends TiEvent {
      * the timestamp reference since previous shake
      */
     public final native double getTimestamp() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.timestamp;
     }-*/;
 

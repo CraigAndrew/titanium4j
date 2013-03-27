@@ -27,7 +27,7 @@ public class NetworkChangeEvent extends TiEvent {
      * the new network type as a string
      */
     public final native String getNetworkTypeName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.networkTypeName;
     }-*/;
 
@@ -35,7 +35,7 @@ public class NetworkChangeEvent extends TiEvent {
      * boolean to indicate if the network is online
      */
     public final native boolean isOnline() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.online;
     }-*/;
 
@@ -43,7 +43,7 @@ public class NetworkChangeEvent extends TiEvent {
      * the new network type
      */
     public final native <T> T getNetworkType() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.networkType;
     }-*/;
 

@@ -17,7 +17,7 @@ package com.emitrom.ti4j.mobile.client;
 
 import com.emitrom.ti4j.mobile.client.blob.Blob;
 import com.emitrom.ti4j.mobile.client.buffer.Buffer;
-import com.emitrom.ti4j.mobile.client.core.JsoHelper;
+import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.events.TiEvent;
 import com.emitrom.ti4j.mobile.client.core.events.TiEventListener;
 import com.emitrom.ti4j.mobile.client.platform.Platform;
@@ -164,7 +164,7 @@ public class Titanium {
 		Titanium
 				.fireEvent(
 						name,
-						eventObject.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+						eventObject.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**

@@ -64,12 +64,12 @@ public class Network extends TiModule {
      * @return The network type value as a constant.
      */
     public native int getNetworkType() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.networkType;
     }-*/;
 
     public native void setNetworkType(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.networkType = value;
     }-*/;
 
@@ -78,12 +78,12 @@ public class Network extends TiModule {
      *         `lan` or `mobile`.
      */
     public native String getNetworkTypeName() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.networkTypeName;
     }-*/;
 
     public native void setNetworkTypeName(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.networkTypeName = value;
     }-*/;
 
@@ -92,7 +92,7 @@ public class Network extends TiModule {
      *         to the internet either via wifi or carrier network
      */
     public native boolean isOnline() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.online;
     }-*/;
 
@@ -103,12 +103,12 @@ public class Network extends TiModule {
      * 
      */
     public native String getRemoteDeviceUUID() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.remoteDeviceUUID;
     }-*/;
 
     public native void setRemoteDeviceUUID(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.remoteDeviceUUID = value;
     }-*/;
 
@@ -117,12 +117,12 @@ public class Network extends TiModule {
      *         application. only available on iphone.
      */
     public native <T> T getRemoteNotificationTypes() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.remoteNotificationTypes;
     }-*/;
 
     public native void setRemoteNotificationTypes(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.remoteNotificationTypes = value;
     }-*/;
 
@@ -131,17 +131,17 @@ public class Network extends TiModule {
      *         available on iphone. Available on iOs only
      */
     public native boolean isRemoteNotificationsEnabled() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.remoteNotificationsEnabled;
     }-*/;
 
     public native void setRemoteNotificationsEnabled(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.remoteNotificationsEnabled = value;
     }-*/;
 
     public native HTTPClient createHTTPClient() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createHTTPClient({
 			// function called when an error occurs, including a timeout
 			onerror : function(e) {
@@ -153,7 +153,7 @@ public class Network extends TiModule {
     }-*/;
 
     public native Socket createSocket() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createSocket();
 		var toReturn = @com.emitrom.ti4j.mobile.client.network.socket.Socket::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -171,7 +171,7 @@ public class Network extends TiModule {
      *            (._tcp)
      */
     public native BonjourBrowser createBonjourBrowser(String serviceType) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createBonjourBrowser(serviceType);
 		var toReturn = @com.emitrom.ti4j.mobile.client.network.BonjourBrowser::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -191,7 +191,7 @@ public class Network extends TiModule {
      *            value is 'local.'
      */
     public native BonjourBrowser createBonjourBrowser(String serviceType, String domain) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createBonjourBrowser(serviceType, domain);
 		var toReturn = @com.emitrom.ti4j.mobile.client.network.BonjourBrowser::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -214,7 +214,7 @@ public class Network extends TiModule {
      *            {@link com.emitrom.ti4j.mobile.client.network.BonjourBrowser}
      */
     public native BonjourBrowser createBonjourBrowser(String serviceType, String domain, Object parameters) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createBonjourBrowser(serviceType, domain, parameters);
 		var toReturn = @com.emitrom.ti4j.mobile.client.network.BonjourBrowser::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -234,7 +234,7 @@ public class Network extends TiModule {
      *            (._tcp)
      */
     public native BonjourService createBonjourService(String name, String type) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createBonjourService(name, type);
 		var toReturn = @com.emitrom.ti4j.mobile.client.network.BonjourService::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -257,7 +257,7 @@ public class Network extends TiModule {
      *            'local.'
      */
     public native BonjourService createBonjourService(String name, String type, String domain) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createBonjourService(name, type, domain);
 		var toReturn = @com.emitrom.ti4j.mobile.client.network.BonjourService::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -283,7 +283,7 @@ public class Network extends TiModule {
      *            {@link com.emitrom.ti4j.mobile.client.network.BonjourService}
      */
     public native BonjourService createBonjourService(String name, String type, String domain, Object parameters) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createBonjourService(name, type, domain, parameters);
 		var toReturn = @com.emitrom.ti4j.mobile.client.network.BonjourService::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -301,7 +301,7 @@ public class Network extends TiModule {
      *            the socket's mode
      */
     public native TCPSocket createTCPSocket(String hostName, int port, int mode, Object parameters) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createTCPSocket(hostName, port, mode, parameters);
 		var toReturn = @com.emitrom.ti4j.mobile.client.network.TCPSocket::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -314,7 +314,7 @@ public class Network extends TiModule {
      *            input value to be decoded
      */
     public native String decodeURIComponent(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.decodeURIComponent(value);
     }-*/;
 
@@ -325,7 +325,7 @@ public class Network extends TiModule {
      *            input value to be encoded
      */
     public native String encodeURIComponent(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.encodeURIComponent(value);
     }-*/;
 
@@ -344,7 +344,7 @@ public class Network extends TiModule {
      *            should be called at application startup.
      */
     public native void registerForPushNotifications(Object config) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.registerForPushNotifications(config);
     }-*/;
 

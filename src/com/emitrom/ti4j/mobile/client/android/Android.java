@@ -221,7 +221,7 @@ public class Android extends TiModule {
     }
 
     public native RemoteViews createRemoteViews(Object config) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createRemoteViews(config);
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.RemoteViews::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -234,7 +234,7 @@ public class Android extends TiModule {
      * @return
      */
     public static native Intent createBroadcastIntent() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createBroadcastIntent();
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Intent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -251,7 +251,7 @@ public class Android extends TiModule {
     }
 
     private native Intent _createBroadcastIntent(JavaScriptObject config) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createBroadcastIntent(config);
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Intent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -264,7 +264,7 @@ public class Android extends TiModule {
      * @return
      */
     public native Intent createIntent() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createIntent();
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Intent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -282,7 +282,7 @@ public class Android extends TiModule {
     }
 
     private native Intent _createIntent(JavaScriptObject config) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createIntent(config);
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Intent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -294,7 +294,7 @@ public class Android extends TiModule {
      * @return
      */
     public native Intent createIntentChooser() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createIntentChooser();
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Intent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -308,7 +308,7 @@ public class Android extends TiModule {
      * @return Titanium.Android.Notification
      */
     public native Notification createNotification(Object options) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createNotification(options);
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Notification::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -322,9 +322,9 @@ public class Android extends TiModule {
      * @return Titanium.Android.PendingIntent
      */
     public native PendingIntent createPendingIntent(Intent intent) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso
-				.createPendingIntent(intent.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.createPendingIntent(intent.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.PendingIntent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
@@ -343,10 +343,10 @@ public class Android extends TiModule {
      * @return Titanium.Android.PendingIntent
      */
     public native PendingIntent createPendingIntent(Intent intent, int flags) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso
 				.createPendingIntent(
-						intent.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()(),
+						intent.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
 						flags);
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.PendingIntent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -363,9 +363,9 @@ public class Android extends TiModule {
      * @return Titanium.Android.Service
      */
     public native Service createService(Intent intent) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso
-				.createService(intent.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.createService(intent.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Service::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
@@ -379,7 +379,7 @@ public class Android extends TiModule {
      * @return Titanium.Android.Intent
      */
     public native Intent createServiceIntent(Object options) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createServiceIntent(options);
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Intent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -394,7 +394,7 @@ public class Android extends TiModule {
      * @return Titanium.Android.Intent
      */
     public native Intent createServiceIntent(String urlToJsFile) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createServiceIntent({
 			url : urlToJsFile
 		});
@@ -412,9 +412,9 @@ public class Android extends TiModule {
      * @return true if the service is running false otherwise
      */
     public native boolean isServiceRunning(Intent intent) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
-				.isServiceRunning(intent.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.isServiceRunning(intent.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -425,9 +425,9 @@ public class Android extends TiModule {
      *            specifies the service to start.
      */
     public native void startService(Intent intent) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
-				.startService(intent.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.startService(intent.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -439,9 +439,9 @@ public class Android extends TiModule {
      *            specifies the service to start.
      */
     public native void stopService(Intent intent) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
-				.stopService(intent.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.stopService(intent.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -450,7 +450,7 @@ public class Android extends TiModule {
      * @return
      */
     public native Activity getCurrentActivity() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.currentActivity;
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Activity::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
@@ -462,7 +462,7 @@ public class Android extends TiModule {
      * @return
      */
     public native Service getCurrentService() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.currentService;
 		var toReturn = @com.emitrom.ti4j.mobile.client.android.Service::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;

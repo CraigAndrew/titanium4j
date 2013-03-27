@@ -17,7 +17,7 @@ package com.emitrom.ti4j.mobile.client.ui;
 
 import java.util.List;
 
-import com.emitrom.ti4j.mobile.client.core.ProxyObject;
+import com.emitrom.ti4j.core.client.ProxyObject;
 import com.emitrom.ti4j.mobile.client.core.handlers.ui.CallbackRegistration;
 import com.emitrom.ti4j.mobile.client.core.handlers.ui.TableViewHandler;
 import com.emitrom.ti4j.mobile.client.data.TableViewBaseModel;
@@ -49,12 +49,12 @@ public class TableView extends View {
      * @return True if the rows can be selected
      */
     public native boolean allowsSelection() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.allowsSelection;
     }-*/;
 
     public native void setAllowsSelection(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.allowsSelection = value;
     }-*/;
 
@@ -63,12 +63,12 @@ public class TableView extends View {
      *         only) Available only on iOs
      */
     public native boolean allowsSelectionDuringEditing() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.allowsSelectionDuringEditing;
     }-*/;
 
     public native void setAllowsSelectionDuringEditing(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.allowsSelectionDuringEditing = value;
     }-*/;
 
@@ -77,7 +77,7 @@ public class TableView extends View {
      *         view
      */
     public native JsArray<JavaScriptObject> getData() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.data;
     }-*/;
 
@@ -99,7 +99,7 @@ public class TableView extends View {
     }
 
     private native void _setData(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.data = value;
     }-*/;
 
@@ -109,12 +109,12 @@ public class TableView extends View {
      * 
      */
     public native boolean isEditable() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.editable;
     }-*/;
 
     public native void setEditable(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.editable = value;
     }-*/;
 
@@ -123,12 +123,12 @@ public class TableView extends View {
      *         Available only on iOs
      */
     public native boolean isEditing() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.editing;
     }-*/;
 
     public native void setEditing(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.editing = value;
     }-*/;
 
@@ -137,12 +137,12 @@ public class TableView extends View {
      *         to your data object or a property on the row object
      */
     public native String getFilterAttribute() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.filterAttribute;
     }-*/;
 
     public native void setFilterAttribute(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.filterAttribute = value;
     }-*/;
 
@@ -151,12 +151,12 @@ public class TableView extends View {
      *         case insensitive (default)
      */
     public native boolean isFilterCaseInsensitive() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.filterCaseInsensitive;
     }-*/;
 
     public native void setFilterCaseInsensitive(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.filterCaseInsensitive = value;
     }-*/;
 
@@ -164,12 +164,12 @@ public class TableView extends View {
      * @return The table view footer title
      */
     public native String getFooterTitle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.footerTitle;
     }-*/;
 
     public native void setFooterTitle(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.footerTitle = value;
     }-*/;
 
@@ -178,27 +178,27 @@ public class TableView extends View {
      *         a label
      */
     public native View getFooterView() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.footerView;
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.View::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
 
     public native void setFooterView(View value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.footerView = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.footerView = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
      * @return The table view header title
      */
     public native String getHeaderTitle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.headerTitle;
     }-*/;
 
     public native void setHeaderTitle(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.headerTitle = value;
     }-*/;
 
@@ -207,15 +207,15 @@ public class TableView extends View {
      *         a label
      */
     public native View getHeaderView() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.headerView;
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.View::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
 
     public native void setHeaderView(View value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.headerView = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.headerView = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
@@ -223,15 +223,15 @@ public class TableView extends View {
      *         a label
      */
     public native View getHeaderPullView() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.headerPullView;
 		var toReturn = @com.emitrom.ti4j.mobile.client.ui.View::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
 		return toReturn;
     }-*/;
 
     public native void setHeaderPullView(View value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.headerPullView = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.headerPullView = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
@@ -239,12 +239,12 @@ public class TableView extends View {
      *         the table view index
      */
     public native <T> T getIndex() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.index;
     }-*/;
 
     public native void setIndex(JsArray<JavaScriptObject> value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.index = value;
     }-*/;
 
@@ -252,12 +252,12 @@ public class TableView extends View {
      * @return Max row height for table view rows
      */
     public native double getMaxRowHeight() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.maxRowHeight;
     }-*/;
 
     public native void setMaxRowHeight(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.maxRowHeight = value;
     }-*/;
 
@@ -265,12 +265,12 @@ public class TableView extends View {
      * @return Min row height for table view rows
      */
     public native double getMinRowHeight() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.minRowHeight;
     }-*/;
 
     public native void setMinRowHeight(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.minRowHeight = value;
     }-*/;
 
@@ -279,12 +279,12 @@ public class TableView extends View {
      *         only) Available only on iOs
      */
     public native boolean isMoving() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.moving;
     }-*/;
 
     public native void setMoving(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.moving = value;
     }-*/;
 
@@ -292,12 +292,12 @@ public class TableView extends View {
      * @return Default row height for table view rows
      */
     public native double getRowHeight() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.rowHeight;
     }-*/;
 
     public native void setRowHeight(double value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.rowHeight = value;
     }-*/;
 
@@ -305,12 +305,12 @@ public class TableView extends View {
      * @return True (default) if tableview can be scrolled
      */
     public native boolean isScrollable() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.scrollable;
     }-*/;
 
     public native void setScrollable(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.scrollable = value;
     }-*/;
 
@@ -318,25 +318,25 @@ public class TableView extends View {
      * @return The search field to use for the table view
      */
     public native <T> T getSearch() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.search;
     }-*/;
 
     public native void setSearch(SearchBar value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
-		jso.search = value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.search = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
      * @return Boolean to control the visibility of the search field
      */
     public native boolean isSearchHidden() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.searchHidden;
     }-*/;
 
     public native void setSearchHidden(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.searchHidden = value;
     }-*/;
 
@@ -344,12 +344,12 @@ public class TableView extends View {
      * @return The separator color color as a hex or named value
      */
     public native String getSeparatorColor() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.separatorColor;
     }-*/;
 
     public native void setSeparatorColor(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.separatorColor = value;
     }-*/;
 
@@ -358,12 +358,12 @@ public class TableView extends View {
      *         .mobile.client.ui.iphone.TableViewSeparatorStyle
      */
     public native int getSeparatorStyle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.separatorStyle;
     }-*/;
 
     public native void setSeparatorStyle(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.separatorStyle = value;
     }-*/;
 
@@ -372,12 +372,12 @@ public class TableView extends View {
      *         Available only on iOs
      */
     public native boolean showVerticalScrollIndicator() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.showVerticalScrollIndicator;
     }-*/;
 
     public native void setShowVerticalScrollIndicator(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.showVerticalScrollIndicator = value;
     }-*/;
 
@@ -387,12 +387,12 @@ public class TableView extends View {
      *         Iphone only
      */
     public native int getStyle() /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.style;
     }-*/;
 
     public native void setStyle(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.style = value;
     }-*/;
 
@@ -405,10 +405,10 @@ public class TableView extends View {
      *            animation properties
      */
     public native void appendRow(TableViewRow row, Object properties) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.appendRow(
-						row.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()(),
+						row.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
 						properties);
     }-*/;
 
@@ -421,7 +421,7 @@ public class TableView extends View {
      *            animation properties
      */
     public native void deleteRow(int row, Object properties) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.deleteRow(row, properties);
     }-*/;
 
@@ -432,7 +432,7 @@ public class TableView extends View {
      *            row index to deselect
      */
     public native void deselectRow(int row) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.deselectRow(row);
     }-*/;
 
@@ -447,11 +447,11 @@ public class TableView extends View {
      *            animation properties
      */
     public native void insertRowAfter(int index, TableViewRow row, Object properties) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.insertRowAfter(
 						index,
-						row.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()(),
+						row.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
 						properties);
     }-*/;
 
@@ -466,7 +466,7 @@ public class TableView extends View {
      *            animation properties
      */
     public native void insertRowBefore(int index, TableViewRow row, Object properties) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.insertRowBefore(index, row, properties);
     }-*/;
 
@@ -482,7 +482,7 @@ public class TableView extends View {
      *            TableViewScrollPosition).
      */
     public native void scrollToIndex(int index, Object properties) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.scrollToIndex(index, properties);
     }-*/;
 
@@ -498,7 +498,7 @@ public class TableView extends View {
      *            immediate
      */
     public native void scrollToTop(double top, Object properties) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.scrollToTop(top, properties);
     }-*/;
 
@@ -509,7 +509,7 @@ public class TableView extends View {
      *            row index to select
      */
     public native void selectRow(int row) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.selectRow(row);
     }-*/;
 
@@ -526,9 +526,9 @@ public class TableView extends View {
      * @iOs Only
      */
     public native void setContentInsets(TableViewEdgeInsets value) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
-				.setContentInsets(value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+				.setContentInsets(value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -544,10 +544,10 @@ public class TableView extends View {
      * @iOs Only
      */
     public native void setContentInsets(TableViewEdgeInsets value, boolean animate) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.setContentInsets(
-						value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()(),
+						value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
 						{
 							animated : animate
 						});
@@ -566,11 +566,11 @@ public class TableView extends View {
      * @iOs Only
      */
     public native void setContentInsets(TableViewEdgeInsets value, Animation animation) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.setContentInsets(
-						value.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()(),
-						animation.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()());
+						value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -582,16 +582,16 @@ public class TableView extends View {
      *            animation properties
      */
     public native void updateRow(TableViewRow row, Object properties) /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.updateRow(
-						row.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()(),
+						row.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
 						properties);
     }-*/;
 
     public native CallbackRegistration addRowSelectionHandler(TableViewHandler handler)
     /*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.tableview.TableViewEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.TableViewHandler::onEvent(Lcom/emitrom/ti4j/mobile/client/core/events/ui/tableview/TableViewEvent;)(eventObject);
@@ -608,7 +608,7 @@ public class TableView extends View {
     
 
     public native void addDeleteHandler(TableViewHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.ui.tableview.TableViewEvent::DELETE,
@@ -619,7 +619,7 @@ public class TableView extends View {
     }-*/;
 
     public native void addMoveHandler(TableViewHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.ui.tableview.TableViewEvent::MOVE,
@@ -630,7 +630,7 @@ public class TableView extends View {
     }-*/;
 
     public native void addScrollHandler(TableViewHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.ui.tableview.TableViewEvent::SCROLL,
@@ -641,7 +641,7 @@ public class TableView extends View {
     }-*/;
 
     public native void addScrollEndHandler(TableViewHandler handler)/*-{
-		var jso = this.@com.emitrom.ti4j.mobile.client.core.ProxyObject::getJsObj()();
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.addEventListener(
 						@com.emitrom.ti4j.mobile.client.core.events.ui.tableview.TableViewEvent::SCROLL_END,
