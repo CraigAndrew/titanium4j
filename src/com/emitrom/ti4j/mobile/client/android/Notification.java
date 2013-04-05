@@ -1,27 +1,27 @@
 /**************************************************************************
-   Notification.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * Notification.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom
+ * LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.android;
 
-import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsDate;
 
 /**
- * The Titanium binding of an AndroidMedia Notification.
+ * The Titanium binding of an Androida Notification.
  * 
  * If you pass contentTitle and/or contentText into
  * Titanium.Android.createNotification, then setLatestEventInfo will
@@ -29,21 +29,17 @@ import com.google.gwt.core.client.JsDate;
  * separately unless you want to). You can also use a custom layout.xml wrapped
  * in a Titanium.Android.RemoteViews object in the contentView property, which
  * gives more fine grained control and customization to how the notification
- * actually behaves. Also see AndroidMedia's developer guide for Notifications
+ * actually behaves. Also see Androida's developer guide for Notifications
  */
 public class Notification extends EventDispatcher {
 
-    public Notification() {
-        jsObj = JsoHelper.createObject();
-    }
-
-    public Notification(JavaScriptObject obj) {
+    protected Notification(JavaScriptObject obj) {
         jsObj = obj;
     }
 
     /**
      * Sets the latest event info using the builtin Notification View for jso
-     * notification. See AndroidMedia's documentation for setLatestEventInfo
+     * notification. See Androida's documentation for setLatestEventInfo
      */
     public final native void setLatestEventInfo() /*-{
 		var jso = jso.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
@@ -66,7 +62,9 @@ public class Notification extends EventDispatcher {
     }-*/;
 
     public final native PendingIntent getContentIntent() /*-{
-		return jso.contentIntent;
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var obj = jso.contentIntent;
+		return @com.emitrom.ti4j.mobile.client.android.PendingIntent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
     /**
@@ -76,7 +74,9 @@ public class Notification extends EventDispatcher {
      * @param value
      */
     public final native void setContentIntent(PendingIntent value) /*-{
-		jso.contentIntent = value;
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.contentIntent = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		;
     }-*/;
 
     public final native String getContentText() /*-{
@@ -141,10 +141,10 @@ public class Notification extends EventDispatcher {
     }-*/;
 
     /**
-     * Set of flags for the notification, defaults to AndroidMedia.FLAG_AUTO_CANCEL.
-     * Possible values: AndroidMedia.FLAG_AUTO_CANCEL,AndroidMedia.FLAG_INSISTENT,
-     * AndroidMedia.FLAG_NO_CLEAR,FLAG_ONGOING_EVENT,
-     * AndroidMedia.FLAG_ONLY_ALERT_ONCE,AndroidMedia.FLAG_SHOW_LIGHTS
+     * Set of flags for the notification, defaults to Androida.FLAG_AUTO_CANCEL.
+     * Possible values: Androida.FLAG_AUTO_CANCEL,Androida.FLAG_INSISTENT,
+     * Androida.FLAG_NO_CLEAR,FLAG_ONGOING_EVENT,
+     * Androida.FLAG_ONLY_ALERT_ONCE,Androida.FLAG_SHOW_LIGHTS
      * 
      * @param value
      */
@@ -160,7 +160,7 @@ public class Notification extends EventDispatcher {
 
     /**
      * A resource id to an icon (the URL must be an image located in
-     * Resources/android/images/ or an AndroidMedia content URI)
+     * Resources/android/images/ or an Androida content URI)
      * 
      * @param value
      */
@@ -171,7 +171,7 @@ public class Notification extends EventDispatcher {
 
     /**
      * A URL to an icon (the URL must be an image located in
-     * Resources/android/images/ or an AndroidMedia content URI)
+     * Resources/android/images/ or an Androida content URI)
      * 
      * @param value
      */
@@ -247,7 +247,7 @@ public class Notification extends EventDispatcher {
     }-*/;
 
     /**
-     * Set a URL to the sound to play (supports AndroidMedia + Titanium URLs)
+     * Set a URL to the sound to play (supports Android + Titanium URLs)
      * 
      * @param value
      */

@@ -15,6 +15,7 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.android;
 
+import com.emitrom.ti4j.core.client.Function;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -117,6 +118,26 @@ public class ActionBar extends EventDispatcher {
     public native String getTitle() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.title;
+    }-*/;
+
+    /**
+     * Callback function called when the home icon is clicked.
+     */
+    public native void setOnHomeIconItemSelected(Function callback) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.onHomeIconItemSelected = function() {
+			callback.@com.emitrom.ti4j.core.client.Function::execute()();
+		};
+    }-*/;
+
+    /**
+     * Shows the action bar if it is currently hidden.
+     * <p>
+     * See also: show in the Android API Reference.
+     */
+    public native void show() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.show();
     }-*/;
 
 }

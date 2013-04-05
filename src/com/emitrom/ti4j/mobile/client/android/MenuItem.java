@@ -1,22 +1,22 @@
 /**************************************************************************
-   MenuItem.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * MenuItem.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.android;
 
-import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
+import com.emitrom.ti4j.mobile.client.core.handlers.ui.ClickHandler;
 import com.emitrom.ti4j.mobile.client.core.handlers.ui.InteractionHandler;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -25,11 +25,7 @@ import com.google.gwt.core.client.JavaScriptObject;
  */
 public class MenuItem extends EventDispatcher {
 
-    public MenuItem() {
-        jsObj = JsoHelper.createObject();
-    }
-
-    public MenuItem(JavaScriptObject obj) {
+    protected MenuItem(JavaScriptObject obj) {
         jsObj = obj;
     }
 
@@ -96,7 +92,8 @@ public class MenuItem extends EventDispatcher {
     /**
      * set the condensed title for the item
      * 
-     * @param value , new condensed title
+     * @param value
+     *            , new condensed title
      */
     public final native void setCondensedTitle(String value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
@@ -106,7 +103,8 @@ public class MenuItem extends EventDispatcher {
     /**
      * set the enabled state of the item
      * 
-     * @param value , true to enable item, false to disable
+     * @param value
+     *            , true to enable item, false to disable
      */
     public final native void setEnabled(boolean value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
@@ -116,7 +114,8 @@ public class MenuItem extends EventDispatcher {
     /**
      * set the icon for the item
      * 
-     * @param value , icon to use with the item
+     * @param value
+     *            , icon to use with the item
      */
     public final native void setIcon(Object value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
@@ -126,7 +125,8 @@ public class MenuItem extends EventDispatcher {
     /**
      * set the title for the item
      * 
-     * @param value , new title
+     * @param value
+     *            , new title
      */
     public final native void setTitle(String value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
@@ -136,7 +136,8 @@ public class MenuItem extends EventDispatcher {
     /**
      * set the visible state of the item
      * 
-     * @param value , true to show the item, false to hide
+     * @param value
+     *            , true to show the item, false to hide
      */
     public final native void setVisible(boolean value) /*-{
 		this.setVisible(value);
@@ -152,6 +153,7 @@ public class MenuItem extends EventDispatcher {
 		return jso.getOrder();
     }-*/;
 
+    @Deprecated
     public native void addClickHandler(InteractionHandler handler)/*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
@@ -161,6 +163,17 @@ public class MenuItem extends EventDispatcher {
 							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.InteractionEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
 							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.InteractionHandler::onClick(Lcom/emitrom/ti4j/mobile/client/core/events/ui/InteractionEvent;)(eventObject);
 						});
+    }-*/;
+
+    public native void addClickHandler(ClickHandler handler)/*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var listener = function(e) {
+			var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.ClickEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+			handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.ClickHandler::onClick(Lcom/emitrom/ti4j/mobile/client/core/events/ui/ClickEvent;)(eventObject);
+		};
+		var name = @com.emitrom.ti4j.mobile.client.core.events.ui.ClickEvent::EVENT_NAME;
+		var v = jso.addEventListener(name, listener);
+
     }-*/;
 
 }
