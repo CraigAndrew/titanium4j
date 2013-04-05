@@ -66,6 +66,16 @@ public class BroadcastReceiver extends EventDispatcher {
 		return jso.url;
     }-*/;
 
+    /**
+     * The function called when a broadcast is received.
+     */
+    public native void setOnReceived(Function callback) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.onReceived = function() {
+			callback.@com.emitrom.ti4j.core.client.Function::execute()();
+		};
+    }-*/;
+
     private native JavaScriptObject createPeer()/*-{
 		return Ti.Android.createBroadcastReceiver();
     }-*/;

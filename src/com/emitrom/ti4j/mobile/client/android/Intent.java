@@ -15,7 +15,6 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.android;
 
-import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -24,11 +23,7 @@ import com.google.gwt.core.client.JavaScriptObject;
  */
 public class Intent extends EventDispatcher {
 
-    public Intent() {
-        jsObj = JsoHelper.createObject();
-    }
-
-    public Intent(JavaScriptObject obj) {
+    protected Intent(JavaScriptObject obj) {
         jsObj = obj;
     }
 
