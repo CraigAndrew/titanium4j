@@ -15,12 +15,18 @@
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.core.events;
 
+import com.google.gwt.core.client.JavaScriptObject;
+
 public class UpdateEvent extends TiEvent {
 
     public static final String UPDATE = "update";
 
     protected UpdateEvent() {
 
+    }
+
+    protected UpdateEvent(JavaScriptObject obj) {
+        jsObj = obj;
     }
 
     /**

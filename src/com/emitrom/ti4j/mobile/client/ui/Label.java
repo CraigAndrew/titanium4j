@@ -1,22 +1,22 @@
 /**************************************************************************
-   Label.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * Label.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui;
 
+import com.emitrom.ti4j.core.client.Color;
 import com.emitrom.ti4j.core.client.ProxyObject;
-import com.emitrom.ti4j.mobile.client.ui.style.Color;
 import com.emitrom.ti4j.mobile.client.ui.style.Font;
 import com.emitrom.ti4j.mobile.client.ui.style.Position;
 import com.emitrom.ti4j.mobile.client.ui.style.ShadowOffset;
@@ -101,8 +101,10 @@ public class Label extends View implements HasText {
     /**
      * sets the backgroundPadding
      * 
-     * @param topBottom, value for top and bottom padding
-     * @param leftRight, value for left and right padding
+     * @param topBottom
+     *            , value for top and bottom padding
+     * @param leftRight
+     *            , value for left and right padding
      */
     public void setBackgroundPadding(int topBottom, int leftRight) {
         setBackgroundPaddingLeft(leftRight);
@@ -114,10 +116,14 @@ public class Label extends View implements HasText {
     /**
      * sets the backgroundPadding
      * 
-     * @param top, value for top padding
-     * @param left, value for the right padding
-     * @param bottom , value for the bottom padding
-     * @param right, value for the right padding
+     * @param top
+     *            , value for top padding
+     * @param left
+     *            , value for the right padding
+     * @param bottom
+     *            , value for the bottom padding
+     * @param right
+     *            , value for the right padding
      */
     public void setBackgroundPadding(int top, int right, int bottom, int left) {
         setBackgroundPaddingLeft(left);
@@ -163,7 +169,7 @@ public class Label extends View implements HasText {
     }-*/;
 
     public void setColor(Color color) {
-        setColor(color.getRgb());
+        setColor(color.getValue());
     }
 
     public native void setColor(String value) /*-{
@@ -256,7 +262,7 @@ public class Label extends View implements HasText {
     }-*/;
 
     public void setShadowColor(Color color) {
-        setShadowColor(color.getRgb());
+        setShadowColor(color.getValue());
     }
 
     /**
