@@ -143,9 +143,9 @@ public class Event extends EventDispatcher {
     }-*/;
 
     /**
-     * @return An array of
-     *         {@link org.urish.gwtit.titanium.android.calendar.reminder}
-     *         objects which are the reminders - if any - for this event.
+     * @return An array of link
+     *         com.emitrom.ti4j.mobile.client.android.calendar.Reminder} objects
+     *         which are the reminders - if any - for this event.
      */
     public ArrayList<Reminder> getReminders() {
         ArrayList<Reminder> reminders = new ArrayList<Reminder>();
@@ -192,8 +192,8 @@ public class Event extends EventDispatcher {
 
     /**
      * Create an alert for this event. pass a dictionary object containing
-     * attributes corresponding to properties of
-     * {@link org.urish.gwtit.titanium.android.calendar.alert}. returns the
+     * attributes corresponding to properties of link
+     * com.emitrom.ti4j.mobile.client.android.calendar.Alert}. returns the
      * created alert.
      * 
      * @param data
@@ -213,8 +213,8 @@ public class Event extends EventDispatcher {
     /**
      * Create a reminder for this event. pass a dictionary object containing
      * attributes corresponding to properties of
-     * {@link org.urish.gwtit.titanium.android.calendar.reminder}. returns the
-     * created reminder.
+     * {@link com.emitrom.ti4j.mobile.client.android.calendar.Reminder}. returns
+     * the created reminder.
      * 
      * @param data
      *            Properties for the new reminder, corresponding to properties

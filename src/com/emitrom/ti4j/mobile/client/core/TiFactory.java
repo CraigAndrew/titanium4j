@@ -199,4 +199,8 @@ public class TiFactory {
 		return Titanium.App.Properties;
     }-*/;
 
+    public static native JavaScriptObject createCalender()/*-{
+		return Titanium.Calendar;
+    }-*/;
+
 }

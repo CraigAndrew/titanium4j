@@ -1,5 +1,5 @@
 /**************************************************************************
- * AndroidCalendar.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom
+ * CalendarInstance.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom
  * LLC
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not

@@ -1,5 +1,6 @@
 /**************************************************************************
- * Reminder.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom LLC
+ * RecurrenceRule.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom
+ * LLC
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -47,7 +48,6 @@ public class Reminder extends EventDispatcher {
 
     /**
      * @return The reminder method. possible values are the method constants in
-     *         {@linkcom.ekambi.gwt.appcelerator.mobile.client.android.calendar.Calendar}
      * 
      */
     public native int getMethod() /*-{

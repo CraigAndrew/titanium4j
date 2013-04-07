@@ -74,7 +74,7 @@ public class Alert extends EventDispatcher {
     }-*/;
 
     /**
-     * Reminder notice period in minutes, that determines how long prior to the
+     * RecurrenceRule notice period in minutes, that determines how long prior to the
      * event this alert should trigger.
      */
     public native int getMinutes() /*-{
