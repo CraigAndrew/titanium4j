@@ -1,42 +1,70 @@
 /**************************************************************************
-   Person.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * Person.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.contacts;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.emitrom.ti4j.core.client.JsoHelper;
+import com.emitrom.ti4j.mobile.client.blob.Blob;
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.core.client.JsArray;
 
 /**
- * An object which represents a person in the contacts database.
+ * An object that represents a contact record for a person or organization in
+ * the system contacts address book.
  * <p>
- * There are two kinds of properties: single value and multivalue. Single value
- * properties are returned as a direct value, while mutlivalue properties are
- * returned as dictionary objects with keys which represent labels of the
- * property, with values that are arrays of all values in the property which
- * correspond to that label (e.g. {"home" : [address1, address2]})
+ * A person object is created using Titanium.Contacts.createPerson.
+ * <p>
+ * The following two kinds of properties exist for this object:
+ * <p>
+ * <ul>
+ * <li>single value - contains either a string or number type value, an array of
+ * string type values, or null if unset.
+ * <li>
+ * <li>multi-value - contains a dictionary with typical keys of home, work
+ * and/or other. Each key contains either a string type value, an array of
+ * string type values, or a dictionary containing key/value pairs with string
+ * type values.
+ * <li>
+ * </ul>
+ * <p>
+ * <b>Adding and Modifying Properties</b>
+ * <p>
+ * Support for adding and modifying properties is currently supported on iOS and
+ * Android.
+ * <p>
+ * <b>Keys as Address Book UI Labels</b>
+ * <p>
+ * Keys act as labels in the address book user interface.
+ * <p>
+ * Although there is limited support for custom, arbitrarily-named, keys when
+ * used with multi-value properties, there is no support them with single value
+ * properties.
+ * <p>
+ * On iOS, creating custom keys is not recommended, and will lead to undefined
+ * results.
+ * <p>
+ * If a label has been created by the user of the device and used with a
+ * multi-value property, it will exist as a key with the same name.
  */
 public class Person extends EventDispatcher {
 
-    public static Object URL = URL();
-
-    public Person() {
-        jsObj = JsoHelper.createObject();
-    }
-
-    public Person(JavaScriptObject obj) {
+    protected Person(JavaScriptObject obj) {
         jsObj = obj;
     }
 
@@ -44,14 +72,16 @@ public class Person extends EventDispatcher {
      * @return The addresses for the person. multi-value, valid labels are:
      *         home, work, other. values are dictionaries.
      */
-    public native Object getAddress() /*-{
+    public native Address getAddress() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.address;
+		var obj = jso.address;
+		return @com.emitrom.ti4j.mobile.client.contacts.Address::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
-    public native void setAddress(Object value) /*-{
+    public native void setAddress(Address value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.address = value;
+		jso.address = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		;
     }-*/;
 
     /**
@@ -82,14 +112,15 @@ public class Person extends EventDispatcher {
      *         `anniversary`. values are strings of format
      *         "yyyy-mm-dd't'hh:mm:ss'.'sss+0000"
      */
-    public native Object getDate() /*-{
+    public native PersonDate getDate() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.date;
+		var obj = jso.date;
+		return @com.emitrom.ti4j.mobile.client.contacts.PersonDate::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
-    public native void setDate(Object value) /*-{
+    public native void setDate(PersonDate value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.date = value;
+		jso.date = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
@@ -109,14 +140,15 @@ public class Person extends EventDispatcher {
      * @return The email addresses for the person. multi-value, valid labels
      *         are: home, work, other. values are strings.
      */
-    public native Object getEmail() /*-{
+    public native PersonEmail getEmail() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.email;
+		var obj = jso.email;
+		return @com.emitrom.ti4j.mobile.client.contacts.PersonEmail::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
-    public native void setEmail(Object value) /*-{
+    public native void setEmail(PersonEmail value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.email = value;
+		jso.email = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
@@ -162,14 +194,15 @@ public class Person extends EventDispatcher {
      * @return A blob object representing the image for the person. set to
      *         `null` to remove the image. single value
      */
-    public native Object getImage() /*-{
+    public native Blob getImage() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.image;
+		var obj = jso.image;
+		return @com.emitrom.ti4j.mobile.client.blob.Blob::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
-    public native void setImage(Object value) /*-{
+    public native void setImage(Blob value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.image = value;
+		jso.image = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
@@ -377,8 +410,21 @@ public class Person extends EventDispatcher {
 		jso.suffix = value;
     }-*/;
 
-    private static native Object URL() /*-{
-		return Titanium.Contacts.Person.URL;
-    }-*/;
+    static JavaScriptObject fromList(List<Person> values) {
+        JsArray<JavaScriptObject> peers = JsArray.createArray().cast();
+        for (Person rule : values) {
+            peers.push(rule.getJsObj());
+        }
+        return peers;
+    }
+
+    static List<Person> fromJsArray(JavaScriptObject obj) {
+        List<Person> toReturn = new ArrayList<Person>();
+        int size = JsoHelper.arrayLength(obj);
+        for (int i = 0; i < size; i++) {
+            toReturn.add(new Person(JsoHelper.getValueFromJavaScriptObjectArray(obj, i)));
+        }
+        return toReturn;
+    }
 
 }
