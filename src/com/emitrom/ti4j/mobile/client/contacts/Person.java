@@ -210,14 +210,15 @@ public class Person extends EventDispatcher {
      *         labels are: `aim`, `icq`, `jabber`, `msn`, `yahoo`. values are
      *         dictionaries.
      */
-    public native Object getInstantMessage() /*-{
+    public native PersonInstantMessage getInstantMessage() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.instantMessage;
+		var obj = jso.instantMessage;
+		return @com.emitrom.ti4j.mobile.client.contacts.PersonInstantMessage::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
-    public native void setInstantMessage(Object value) /*-{
+    public native void setInstantMessage(PersonInstantMessage value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.instantMessage = value;
+		jso.instantMessage = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
@@ -310,11 +311,6 @@ public class Person extends EventDispatcher {
 		return jso.modified;
     }-*/;
 
-    public native void setModified(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.modified = value;
-    }-*/;
-
     /**
      * @return The nickname of the person. single value
      */
@@ -359,14 +355,15 @@ public class Person extends EventDispatcher {
      *         home, work, other, mobile, pager, workfax, homefax, main, iphone.
      *         values are strings.
      */
-    public native Object getPhone() /*-{
+    public native Phone getPhone() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.phone;
+		var obj = jso.phone;
+		return @com.emitrom.ti4j.mobile.client.contacts.Phone::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
-    public native void setPhone(Object value) /*-{
+    public native void setPhone(Phone value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.phone = value;
+		jso.phone = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
@@ -375,11 +372,6 @@ public class Person extends EventDispatcher {
     public native String getPrefix() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.prefix;
-    }-*/;
-
-    public native void setPrefix(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.prefix = value;
     }-*/;
 
     /**
