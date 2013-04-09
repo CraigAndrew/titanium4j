@@ -1,17 +1,17 @@
 /**************************************************************************
-   ResultSet.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * ResultSet.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.database;
 
@@ -39,9 +39,12 @@ public class ResultSet extends EventDispatcher {
 		return jso.rowCount;
     }-*/;
 
-    public native void setRowCount(int value) /*-{
+    /**
+     * @return The number of columns in this result set.
+     */
+    public native int getFieldCount() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.rowCount = value;
+		return jso.fieldCount;
     }-*/;
 
     /**
@@ -50,11 +53,6 @@ public class ResultSet extends EventDispatcher {
     public native boolean getValidRow() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.validRow;
-    }-*/;
-
-    public native void setValidRow(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.validRow = value;
     }-*/;
 
     /**
@@ -69,7 +67,8 @@ public class ResultSet extends EventDispatcher {
     /**
      * Retrieve a row value by field index
      * 
-     * @param index column index (which is zero based)
+     * @param index
+     *            column index (which is zero based)
      */
     public native <T> T field(int index) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
@@ -79,8 +78,10 @@ public class ResultSet extends EventDispatcher {
     /**
      * Retrieve a row value by field index
      * 
-     * @param index column index (which is zero based)
-     * @param type One of (
+     * @param index
+     *            column index (which is zero based)
+     * @param type
+     *            One of (
      *            {@link com.emitrom.ti4j.mobile.client.database.Database.FIELD_TYPE_STRING}
      *            {@link com.emitrom.ti4j.mobile.client.database.Database.FIELD_TYPE_INT}
      *            {@link com.emitrom.ti4j.mobile.client.database.Database.FIELD_TYPE_FLOAT}
@@ -95,7 +96,8 @@ public class ResultSet extends EventDispatcher {
     /**
      * Retrieve a row value by field name
      * 
-     * @param name column name from SQL query
+     * @param name
+     *            column name from SQL query
      */
     public native <T> T fieldByName(String name) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
@@ -105,8 +107,10 @@ public class ResultSet extends EventDispatcher {
     /**
      * Retrieve a row value by field name
      * 
-     * @param name column name from SQL query
-     * @param type One of (
+     * @param name
+     *            column name from SQL query
+     * @param type
+     *            One of (
      *            {@link com.emitrom.ti4j.mobile.client.database.Database.FIELD_TYPE_STRING}
      *            {@link com.emitrom.ti4j.mobile.client.database.Database.FIELD_TYPE_INT}
      *            {@link com.emitrom.ti4j.mobile.client.database.Database.FIELD_TYPE_FLOAT}
@@ -129,7 +133,8 @@ public class ResultSet extends EventDispatcher {
     /**
      * Return the field name for field index
      * 
-     * @param index field name column index (which is zero based)
+     * @param index
+     *            field name column index (which is zero based)
      */
     public native String fieldName(int index) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();

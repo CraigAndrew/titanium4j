@@ -1,23 +1,24 @@
 /**************************************************************************
-   DB.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * DB.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.database;
 
 import java.util.List;
 
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
+import com.emitrom.ti4j.mobile.client.filesystem.File;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArrayString;
 
@@ -35,6 +36,16 @@ public class DB extends EventDispatcher {
     private DB(JavaScriptObject obj) {
         jsObj = obj;
     }
+
+    /**
+     * A File object representing the file where this database is stored. Must
+     * only be used for setting file properties.
+     */
+    public native File getFile() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var obj = jso.file;
+		return @com.emitrom.ti4j.mobile.client.filesystem.File::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
 
     /**
      * @return The last row identifier by the last insert query
@@ -87,7 +98,8 @@ public class DB extends EventDispatcher {
     /**
      * Execute a sql statement against the database and returns a resultset
      * 
-     * @param sql the SQL to execute
+     * @param sql
+     *            the SQL to execute
      */
     public native ResultSet execute(String sql) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
@@ -99,8 +111,10 @@ public class DB extends EventDispatcher {
     /**
      * Execute a sql statement against the database and returns a resultset
      * 
-     * @param sql the SQL to execute
-     * @param vararg one or more optional variable arguments passed to this
+     * @param sql
+     *            the SQL to execute
+     * @param vararg
+     *            one or more optional variable arguments passed to this
      *            function or an array of objects to be replaced in the query
      *            using `?` substitution.
      */
@@ -115,8 +129,10 @@ public class DB extends EventDispatcher {
     /**
      * Execute a sql statement against the database and returns a resultset
      * 
-     * @param sql the SQL to execute
-     * @param vararg one or more optional variable arguments passed to this
+     * @param sql
+     *            the SQL to execute
+     * @param vararg
+     *            one or more optional variable arguments passed to this
      *            function or an array of objects to be replaced in the query
      *            using `?` substitution.
      */
