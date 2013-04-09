@@ -470,6 +470,10 @@ public class UI extends TiModule {
 		return Ti.UI.createiPhone();
     }-*/;
 
+    static native JavaScriptObject createButtonBar() /*-{
+		return Ti.UI.createButtonBar();
+    }-*/;
+
     public static native final int FACE_DOWN() /*-{
 		return Ti.UI.FACE_DOWN ? Ti.UI.FACE_DOWN : 0;
     }-*/;

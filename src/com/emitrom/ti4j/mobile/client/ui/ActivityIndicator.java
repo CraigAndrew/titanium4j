@@ -1,20 +1,22 @@
 /**************************************************************************
-   ActivityIndicator.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * ActivityIndicator.java is part of Titanium4j Mobile 3.0. Copyright 2012
+ * Emitrom LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui;
 
+import com.emitrom.ti4j.core.client.Color;
 import com.emitrom.ti4j.core.client.ProxyObject;
 import com.emitrom.ti4j.mobile.client.core.handlers.EventHandler;
 import com.emitrom.ti4j.mobile.client.ui.interfaces.ColoredElement;
@@ -23,7 +25,6 @@ import com.emitrom.ti4j.mobile.client.ui.interfaces.HasColor;
 import com.emitrom.ti4j.mobile.client.ui.interfaces.HasExtremum;
 import com.emitrom.ti4j.mobile.client.ui.interfaces.HasFont;
 import com.emitrom.ti4j.mobile.client.ui.interfaces.HasStyle;
-import com.emitrom.ti4j.mobile.client.ui.style.Color;
 import com.emitrom.ti4j.mobile.client.ui.style.Font;
 import com.google.gwt.core.client.JavaScriptObject;
 
@@ -55,7 +56,7 @@ public class ActivityIndicator extends View implements HasFont, HasColor, Displa
     }-*/;
 
     public void setColor(Color color) {
-        setColor(color.getRgb());
+        setColor(color.getValue());
     }
 
     public native void setColor(String value) /*-{
