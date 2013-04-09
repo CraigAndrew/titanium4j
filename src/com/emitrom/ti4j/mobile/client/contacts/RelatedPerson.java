@@ -1,52 +1,78 @@
 package com.emitrom.ti4j.mobile.client.contacts;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.core.client.ProxyObject;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.core.client.JsArrayString;
 
 public class RelatedPerson extends ProxyObject {
+
+    public RelatedPerson() {
+        jsObj = JsoHelper.createObject();
+    }
 
     protected RelatedPerson(JavaScriptObject obj) {
         jsObj = obj;
     }
 
-    public String getHome() {
-        return JsoHelper.getAttribute(jsObj, "home");
-    }
+    public native void setMother(JsArrayString value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.mother = value
+    }-*/;
 
-    public String getWork() {
-        return JsoHelper.getAttribute(jsObj, "work");
-    }
+    public native void setFather(JsArrayString value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.father = value
+    }-*/;
 
-    public String getOther() {
-        return JsoHelper.getAttribute(jsObj, "other");
-    }
+    public native void setParent(JsArrayString value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.parent = value
+    }-*/;
 
-    public String getWorkFax() {
-        return JsoHelper.getAttribute(jsObj, "workFax");
-    }
+    public native void setBrother(JsArrayString value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.brother = value
+    }-*/;
 
-    public String getHomeFax() {
-        return JsoHelper.getAttribute(jsObj, "homeFax");
-    }
+    public native void setSister(JsArrayString value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.sister = value
+    }-*/;
 
-    public String geMain() {
-        return JsoHelper.getAttribute(jsObj, "main");
-    }
+    public native void setChild(JsArrayString value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.child = value
+    }-*/;
 
-    public String getIPhone() {
-        return JsoHelper.getAttribute(jsObj, "iPhone");
-    }
+    public native void setFriend(JsArrayString value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.friend = value
+    }-*/;
 
-    static List<RelatedPerson> fromJsArray(JavaScriptObject obj) {
-        List<RelatedPerson> toReturn = new ArrayList<RelatedPerson>();
-        int size = JsoHelper.arrayLength(obj);
-        for (int i = 0; i < size; i++) {
-            toReturn.add(new RelatedPerson(JsoHelper.getValueFromJavaScriptObjectArray(obj, i)));
-        }
-        return toReturn;
-    }
+    public native void setSpouse(JsArrayString value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.spouse = value
+    }-*/;
+
+    public native void setPartner(JsArrayString value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.partner = value
+    }-*/;
+
+    public native void setAssistant(JsArrayString value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.assistant = value
+    }-*/;
+
+    public native void setManager(JsArrayString value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.manager = value
+    }-*/;
+
+    public native void setOther(JsArrayString value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.other = value
+    }-*/;
+
 }

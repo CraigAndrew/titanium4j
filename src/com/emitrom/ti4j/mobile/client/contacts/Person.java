@@ -375,18 +375,35 @@ public class Person extends EventDispatcher {
     }-*/;
 
     /**
+     * @return Record identifier of the person. Single value.
+     */
+    public native int getRecordId() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.recordId;
+    }-*/;
+
+    /**
+     * Record identifier of the person. Single value.
+     */
+    public native void setRecordId(int value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.recordId = value
+    }-*/;
+
+    /**
      * @return The names of people the person is related to. multi-value, valid
      *         labels are: mother, father, parent, sister, brother, child,
      *         friend, spouse, partner, manager, assistant. values are strings.
      */
-    public native Object getRelatedNames() /*-{
+    public native RelatedPerson getRelatedNames() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.relatedNames;
+		var obj = jso.relatedNames;
+		return @com.emitrom.ti4j.mobile.client.contacts.RelatedPerson::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
-    public native void setRelatedNames(Object value) /*-{
+    public native void setRelatedNames(RelatedPerson value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.relatedNames = value;
+		jso.relatedNames = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     /**
@@ -397,9 +414,23 @@ public class Person extends EventDispatcher {
 		return jso.suffix;
     }-*/;
 
-    public native void setSuffix(String value) /*-{
+    /**
+     * URLs of webpages associated with the person.
+     * 
+     */
+    public native Url getUrl() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.suffix = value;
+		var obj = jso.url;
+		return @com.emitrom.ti4j.mobile.client.contacts.Url::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
+
+    /**
+     * URLs of webpages associated with the person.
+     * 
+     */
+    public native void setUrl(Url value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.url = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
     }-*/;
 
     static JavaScriptObject fromList(List<Person> values) {

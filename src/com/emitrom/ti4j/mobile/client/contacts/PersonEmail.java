@@ -10,6 +10,11 @@ public class PersonEmail extends ProxyObject {
         jsObj = obj;
     }
 
+    public native JsArrayString getHomePage()/*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.homepage;
+    }-*/;
+
     public native JsArrayString getHome()/*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.home;
