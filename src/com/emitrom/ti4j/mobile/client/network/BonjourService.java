@@ -1,17 +1,18 @@
 /**************************************************************************
-   BonjourService.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * BonjourService.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom
+ * LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.network;
 
@@ -37,7 +38,7 @@ import com.google.gwt.core.client.JavaScriptObject;
  * 
  * Available on iOs only
  */
-@SuppressWarnings("deprecation")
+
 public class BonjourService extends EventDispatcher {
 
     private BonjourService() {
@@ -85,21 +86,6 @@ public class BonjourService extends EventDispatcher {
     }-*/;
 
     /**
-     * @return The tcpsocket object that is used to connect to the service
-     */
-    public native TCPSocket getSocket() /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		var obj = jso.socket;
-		var toReturn = @com.emitrom.ti4j.mobile.client.network.TCPSocket::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-		return toReturn;
-    }-*/;
-
-    public native void setSocket(TCPSocket value) /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.socket = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-    }-*/;
-
-    /**
      * @return The type of the service
      */
     public native String getType() /*-{
@@ -115,7 +101,8 @@ public class BonjourService extends EventDispatcher {
     /**
      * Publish a bonjour service to the network. only works if islocal is true
      * 
-     * @param socket a TCPSocket object to associate with the Bonjour service.
+     * @param socket
+     *            a TCPSocket object to associate with the Bonjour service.
      */
     public native void publish(Object socket) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
@@ -127,7 +114,8 @@ public class BonjourService extends EventDispatcher {
      * attempting to access the service's socket information, if a remote
      * service. you cannot resolve a locally published service.
      * 
-     * @param timeout the timeout for service resolution, in seconds. Optional,
+     * @param timeout
+     *            the timeout for service resolution, in seconds. Optional,
      *            default is 120s.
      */
     public native void resolve(double timeout) /*-{

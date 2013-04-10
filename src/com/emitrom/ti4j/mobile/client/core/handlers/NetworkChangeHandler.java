@@ -1,5 +1,6 @@
 /**************************************************************************
- * ReadEvent.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom LLC
+ * ErrorHandler.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom
+ * LLC
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -13,24 +14,11 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  **************************************************************************/
-package com.emitrom.ti4j.mobile.client.core.events;
+package com.emitrom.ti4j.mobile.client.core.handlers;
 
-import com.emitrom.ti4j.mobile.client.blob.Blob;
+import com.emitrom.ti4j.mobile.client.core.events.NetworkChangeEvent;
+import com.google.gwt.event.shared.EventHandler;
 
-public class ReadEvent extends TiEvent {
-
-    public static final String READ = "read";
-
-    protected ReadEvent() {
-
-    }
-
-    /**
-     * a blob representing the data read, can be interpreted via toString
-     */
-    public final native Blob getData() /*-{
-		var obj = this.data;
-		var toReturn = @com.emitrom.ti4j.mobile.client.blob.Blob::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-		return toReturn;
-    }-*/;
+public interface NetworkChangeHandler extends EventHandler {
+    public void onNetworkChange(NetworkChangeEvent event);
 }

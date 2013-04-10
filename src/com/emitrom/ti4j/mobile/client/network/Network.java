@@ -1,17 +1,17 @@
 /**************************************************************************
-   Network.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * Network.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.network;
 
@@ -19,14 +19,17 @@ import com.emitrom.ti4j.mobile.client.core.TiFactory;
 import com.emitrom.ti4j.mobile.client.core.TiModule;
 import com.emitrom.ti4j.mobile.client.core.events.NetworkChangeEvent;
 import com.emitrom.ti4j.mobile.client.core.events.TiEventListener;
+import com.emitrom.ti4j.mobile.client.core.handlers.NetworkChangeHandler;
 import com.emitrom.ti4j.mobile.client.network.socket.Socket;
+import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.core.client.JsArrayNumber;
 import com.google.gwt.user.client.rpc.ServiceDefTarget;
 
 /**
  * The top level network module. the network module is used accessing networking
  * related functionality.
  */
-@SuppressWarnings("deprecation")
+
 public class Network extends TiModule {
 
     public static final String INADDR_ANY = INADDR_ANY();
@@ -37,15 +40,11 @@ public class Network extends TiModule {
     public static final int NETWORK_WIFI = NETWORK_WIFI();
     public static final int NOTIFICATION_TYPE_ALERT = NOTIFICATION_TYPE_ALERT();
     public static final int NOTIFICATION_TYPE_BADGE = NOTIFICATION_TYPE_BADGE();
+    public static final int NOTIFICATION_TYPE_NRWSSTAND = NOTIFICATION_TYPE_NEWSSTAND();
     public static final int NOTIFICATION_TYPE_SOUND = NOTIFICATION_TYPE_SOUND();
-    public static final int READ_MODE = READ_MODE();
-    public static final int READ_WRITE_MODE = READ_WRITE_MODE();
-    public static final int SOCKET_CLOSED = SOCKET_CLOSED();
-    public static final int SOCKET_CONNECTED = SOCKET_CONNECTED();
-    public static final int SOCKET_ERROR = SOCKET_ERROR();
-    public static final int SOCKET_INITIALIZED = SOCKET_INITIALIZED();
-    public static final int SOCKET_LISTENING = SOCKET_LISTENING();
-    public static final int WRITE_MODE = WRITE_MODE();
+    public static final int TLS_VERSION_1_0 = TLS_VERSION_1_0();
+    public static final int TLS_VERSION_1_1 = TLS_VERSION_1_1();
+    public static final int TLS_VERSION_1_2 = TLS_VERSION_1_2();
 
     private static Network instance = null;
 
@@ -68,11 +67,6 @@ public class Network extends TiModule {
 		return jso.networkType;
     }-*/;
 
-    public native void setNetworkType(int value) /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.networkType = value;
-    }-*/;
-
     /**
      * @return The network type name constant. returns one of `none`, `wifi`,
      *         `lan` or `mobile`.
@@ -80,11 +74,6 @@ public class Network extends TiModule {
     public native String getNetworkTypeName() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.networkTypeName;
-    }-*/;
-
-    public native void setNetworkTypeName(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.networkTypeName = value;
     }-*/;
 
     /**
@@ -107,23 +96,13 @@ public class Network extends TiModule {
 		return jso.remoteDeviceUUID;
     }-*/;
 
-    public native void setRemoteDeviceUUID(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.remoteDeviceUUID = value;
-    }-*/;
-
     /**
      * @return Returns an array of network type constants enabled for the
      *         application. only available on iphone.
      */
-    public native <T> T getRemoteNotificationTypes() /*-{
+    public native JsArrayNumber getRemoteNotificationTypes() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.remoteNotificationTypes;
-    }-*/;
-
-    public native void setRemoteNotificationTypes(Object value) /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.remoteNotificationTypes = value;
     }-*/;
 
     /**
@@ -133,11 +112,6 @@ public class Network extends TiModule {
     public native boolean isRemoteNotificationsEnabled() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.remoteNotificationsEnabled;
-    }-*/;
-
-    public native void setRemoteNotificationsEnabled(boolean value) /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.remoteNotificationsEnabled = value;
     }-*/;
 
     public native HTTPClient createHTTPClient() /*-{
@@ -213,7 +187,7 @@ public class Network extends TiModule {
      *            A dictionary object of properties defined in
      *            {@link com.emitrom.ti4j.mobile.client.network.BonjourBrowser}
      */
-    public native BonjourBrowser createBonjourBrowser(String serviceType, String domain, Object parameters) /*-{
+    public native BonjourBrowser createBonjourBrowser(String serviceType, String domain, JavaScriptObject parameters) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var obj = jso.createBonjourBrowser(serviceType, domain, parameters);
 		var toReturn = @com.emitrom.ti4j.mobile.client.network.BonjourBrowser::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
@@ -290,24 +264,6 @@ public class Network extends TiModule {
     }-*/;
 
     /**
-     * Create and return an instance of
-     * {@link com.emitrom.ti4j.mobile.client.network.TCPSocket}
-     * 
-     * @param hostName
-     *            the host name to connect to/listen on
-     * @param port
-     *            the port for the socket
-     * @param mode
-     *            the socket's mode
-     */
-    public native TCPSocket createTCPSocket(String hostName, int port, int mode, Object parameters) /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		var obj = jso.createTCPSocket(hostName, port, mode, parameters);
-		var toReturn = @com.emitrom.ti4j.mobile.client.network.TCPSocket::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-		return toReturn;
-    }-*/;
-
-    /**
      * Decode a uri component part using uri encoding
      * 
      * @param value
@@ -330,27 +286,51 @@ public class Network extends TiModule {
     }-*/;
 
     /**
-     * Register for push notifications with the apple push notification service.
-     * only available on iphone.
+     * Registers for push notifications with the Apple Push Notification
+     * Service.
+     * <p>
+     * This method should be called at application startup.
      * 
      * @param config
-     *            dictionary of the following: `types` is an array of type
-     *            constants that the application would like to receive,
-     *            `success` is a callback function that is called when the push
-     *            registration is successfully completed, `error` is a callback
-     *            function that is called when an error is received during
-     *            registration and `callback` is a callback function that is
-     *            invoked upon receiving a new push notification. This method
-     *            should be called at application startup.
+     * 
      */
-    public native void registerForPushNotifications(Object config) /*-{
+    public native void registerForPushNotifications(PushNotificationConfig config) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.registerForPushNotifications(config);
+		jso
+				.registerForPushNotifications(config.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
+    /**
+     * Unregisters the application for push notifications.
+     * <p>
+     * Per Apple's documentation, it is rarely necessary to call this method.
+     * See: unregisterForRemoteNotifications in the UIApplication Class
+     * Reference
+     * <p>
+     * For example, calling this method would be required if a new version of
+     * your application no longer supports push notifications.
+     */
+    public native void unregisterForPushNotifications() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.unregisterForPushNotifications();
+    }-*/;
+
+    @Deprecated
     public void addChangeHandler(TiEventListener<NetworkChangeEvent> handler) {
         addEventListener(NetworkChangeEvent.CHANGE, handler);
     }
+
+    public native void addChangeHandler(String event, NetworkChangeHandler handler) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso
+				.addEventListener(
+						@com.emitrom.ti4j.mobile.client.core.events.NetworkChangeEvent::CHANGE,
+						function(e) {
+							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.NetworkChangeEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+							handler.@com.emitrom.ti4j.mobile.client.core.handlers.NetworkChangeHandler::onNetworkChange(Lcom/emitrom/ti4j/mobile/client/core/events/NetworkChangeEvent;)(eventObject);
+
+						});
+    }-*/;
 
     /**
      * sets the Entrypoint of the given RPC service
@@ -395,40 +375,24 @@ public class Network extends TiModule {
 		return Titanium.Network.NOTIFICATION_TYPE_BADGE;
     }-*/;
 
+    private static native final int NOTIFICATION_TYPE_NEWSSTAND() /*-{
+		return Titanium.Network.NOTIFICATION_TYPE_NEWSSTAND;
+    }-*/;
+
     private static native final int NOTIFICATION_TYPE_SOUND() /*-{
 		return Titanium.Network.NOTIFICATION_TYPE_SOUND;
     }-*/;
 
-    private static native final int READ_MODE() /*-{
-		return Titanium.Network.READ_MODE;
+    private static native final int TLS_VERSION_1_0() /*-{
+		return Titanium.Network.TLS_VERSION_1_0;
     }-*/;
 
-    private static native final int READ_WRITE_MODE() /*-{
-		return Titanium.Network.READ_WRITE_MODE;
+    private static native final int TLS_VERSION_1_1() /*-{
+		return Titanium.Network.TLS_VERSION_1_1;
     }-*/;
 
-    private static native final int SOCKET_CLOSED() /*-{
-		return Titanium.Network.SOCKET_CLOSED;
-    }-*/;
-
-    private static native final int SOCKET_CONNECTED() /*-{
-		return Titanium.Network.SOCKET_CONNECTED;
-    }-*/;
-
-    private static native final int SOCKET_ERROR() /*-{
-		return Titanium.Network.SOCKET_ERROR;
-    }-*/;
-
-    private static native final int SOCKET_INITIALIZED() /*-{
-		return Titanium.Network.SOCKET_INITIALIZED;
-    }-*/;
-
-    private static native final int SOCKET_LISTENING() /*-{
-		return Titanium.Network.SOCKET_LISTENING;
-    }-*/;
-
-    private static native final int WRITE_MODE() /*-{
-		return Titanium.Network.WRITE_MODE;
+    private static native final int TLS_VERSION_1_2() /*-{
+		return Titanium.Network.TLS_VERSION_1_2;
     }-*/;
 
     @Override
