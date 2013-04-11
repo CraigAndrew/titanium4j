@@ -1,26 +1,30 @@
 /**************************************************************************
-   TableView.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * TableView.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.emitrom.ti4j.core.client.ProxyObject;
 import com.emitrom.ti4j.mobile.client.core.handlers.ui.CallbackRegistration;
 import com.emitrom.ti4j.mobile.client.core.handlers.ui.TableViewHandler;
 import com.emitrom.ti4j.mobile.client.data.TableViewBaseModel;
+import com.emitrom.ti4j.mobile.client.ui.android.SearchView;
+import com.emitrom.ti4j.mobile.client.ui.fx.TableViewAnimation;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 
@@ -31,9 +35,14 @@ import com.google.gwt.core.client.JsArray;
 public class TableView extends View {
 
     private List<? extends TableViewBaseModel> data;
+    private List<TableViewRow> rows;
+    private List<TableViewSection> sections;
 
     public TableView() {
         createPeer();
+        this.rows = new ArrayList<TableViewRow>();
+        this.sections = new ArrayList<TableViewSection>();
+
     }
 
     public TableView(List<? extends TableViewBaseModel> data) {
@@ -43,6 +52,31 @@ public class TableView extends View {
 
     TableView(JavaScriptObject obj) {
         jsObj = obj;
+    }
+
+    /**
+     * Add a row to this TableView's row collection. The row is not yet added to
+     * the UI component. You to call <code>layout()</code> for the row to be
+     * physically added
+     * 
+     * 
+     * @param row
+     *            , the row to add
+     */
+    public void addRow(TableViewRow row) {
+        this.rows.add(row);
+    }
+
+    public void addSection(TableViewSection section) {
+        this.sections.add(section);
+    }
+
+    public void layoutRows() {
+        this.setData(rows);
+    }
+
+    public void layoutSections() {
+        this.setSectionData(sections);
     }
 
     /**
@@ -76,9 +110,16 @@ public class TableView extends View {
      * @return The data array of objects to be used for the rows of the table
      *         view
      */
-    public native JsArray<JavaScriptObject> getData() /*-{
+    public native List<TableViewRow> getDataAsTableViewRow() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.data;
+		var obj = jso.data;
+		return @com.emitrom.ti4j.mobile.client.ui.TableViewRow::fromJsArray(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
+
+    public native List<TableViewSection> getDataAsTableViewSection() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var obj = jso.data;
+		return @com.emitrom.ti4j.mobile.client.ui.TableViewSection::fromJsArray(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
     public void setDataFromModel(List<? extends TableViewBaseModel> data) {
@@ -98,9 +139,38 @@ public class TableView extends View {
         _setData(values);
     }
 
+    public void setData(List<? extends TableViewRow> rows, TableViewAnimation animation) {
+        JsArray<JavaScriptObject> values = JsArray.createArray().cast();
+        for (TableViewRow row : rows) {
+            values.push(row.getJsObj());
+        }
+        _setData(values, animation.getJsObj());
+    }
+
+    public void setSectionData(List<? extends TableViewSection> sections, TableViewAnimation animation) {
+        JsArray<JavaScriptObject> values = JsArray.createArray().cast();
+        for (TableViewSection section : sections) {
+            values.push(section.getJsObj());
+        }
+        _setData(values, animation.getJsObj());
+    }
+
+    public void setSectionData(List<? extends TableViewSection> sections) {
+        JsArray<JavaScriptObject> values = JsArray.createArray().cast();
+        for (TableViewSection section : sections) {
+            values.push(section.getJsObj());
+        }
+        _setData(values);
+    }
+
     private native void _setData(Object value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.data = value;
+    }-*/;
+
+    private native void _setData(Object value, JavaScriptObject animation) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.setData(value, animation);
     }-*/;
 
     /**
@@ -238,15 +308,20 @@ public class TableView extends View {
      * @return An array of objects (with title and index properties) to control
      *         the table view index
      */
-    public native <T> T getIndex() /*-{
+    public native List<TableViewIndexEntry> getIndex() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.index;
+		var obj = jso.index;
+		return @com.emitrom.ti4j.mobile.client.ui.TableViewIndexEntry::fromJsArray(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
-    public native void setIndex(JsArray<JavaScriptObject> value) /*-{
+    public native void setIndex(List<TableViewIndexEntry> values) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.index = value;
+		jso.index = @com.emitrom.ti4j.mobile.client.ui.TableViewIndexEntry::fromList(Ljava/util/List;)(values);
     }-*/;
+
+    public void setIndex(TableViewIndexEntry... values) {
+        setIndex(Arrays.asList(values));
+    }
 
     /**
      * @return Max row height for table view rows
@@ -302,6 +377,52 @@ public class TableView extends View {
     }-*/;
 
     /**
+     * One of Titanium.UI.Android.OVER_SCROLL_ALWAYS,
+     * Titanium.UI.Android.OVER_SCROLL_IF_CONTENT_SCROLLS, or
+     * Titanium.UI.Android.OVER_SCROLL_NEVER.
+     * <p>
+     * Default: Titanium.UI.Android.OVER_SCROLL_ALWAYS
+     */
+    public native int getOverScrollMode() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.overScrollMode;
+    }-*/;
+
+    /**
+     * One of Titanium.UI.Android.OVER_SCROLL_ALWAYS,
+     * Titanium.UI.Android.OVER_SCROLL_IF_CONTENT_SCROLLS, or
+     * Titanium.UI.Android.OVER_SCROLL_NEVER.
+     * <p>
+     * Default: Titanium.UI.Android.OVER_SCROLL_ALWAYS
+     */
+    public native void setOverScrollMode(double value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.overScrollMode = value;
+    }-*/;
+
+    /**
+     * Style of the scrollbar, specified using one of the constants from
+     * Titanium.UI.iPhone.ScrollIndicatorStyle.
+     * <p>
+     * Default: Titanium.UI.iPhone.ScrollIndicatorStyle.DEFAULT
+     */
+    public native int getScrollIndocatorStyle() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.scrollIndicatorStyle;
+    }-*/;
+
+    /**
+     * Style of the scrollbar, specified using one of the constants from
+     * Titanium.UI.iPhone.ScrollIndicatorStyle.
+     * <p>
+     * Default: Titanium.UI.iPhone.ScrollIndicatorStyle.DEFAULT
+     */
+    public native void setScrollIndocatorStyle(double value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.scrollIndicatorStyle = value;
+    }-*/;
+
+    /**
      * @return True (default) if tableview can be scrolled
      */
     public native boolean isScrollable() /*-{
@@ -317,14 +438,46 @@ public class TableView extends View {
     /**
      * @return The search field to use for the table view
      */
-    public native <T> T getSearch() /*-{
+    public native View getSearch() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.search;
+		var obj = jso.search;
+		return @com.emitrom.ti4j.mobile.client.ui.View::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
     public native void setSearch(SearchBar value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.search = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+    }-*/;
+
+    public native void setSearch(SearchView value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.search = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+    }-*/;
+
+    /**
+     * Determines whether the SearchBar or SearchView appears as part of the
+     * TableView.
+     * <p>
+     * Set to false if the search view will be displayed in the action bar.
+     * <p>
+     * Default: true
+     */
+    public native boolean searchAsChild() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.searchAsChild;
+    }-*/;
+
+    /**
+     * Determines whether the SearchBar or SearchView appears as part of the
+     * TableView.
+     * <p>
+     * Set to false if the search view will be displayed in the action bar.
+     * <p>
+     * Default: true
+     */
+    public native void setSearchAsChild(boolean value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.searchAsChild = value;
     }-*/;
 
     /**
@@ -338,6 +491,14 @@ public class TableView extends View {
     public native void setSearchHidden(boolean value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.searchHidden = value;
+    }-*/;
+
+    /**
+     * Number of sections in this table view.
+     */
+    public native int getSectionCount() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.sectionCount;
     }-*/;
 
     /**
@@ -368,6 +529,37 @@ public class TableView extends View {
     }-*/;
 
     /**
+     * Sections of this table.
+     * <p>
+     * In Release 3.0, this property is read-only on Android.
+     * <p>
+     * Due to a known issue, TIMOB-12616, the sections property should not be
+     * used for adding sections on iOS.
+     */
+    public native List<TableViewSection> getSections() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var obj = jso.sections;
+		return @com.emitrom.ti4j.mobile.client.ui.TableViewSection::fromJsArray(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
+
+    /**
+     * Sections of this table.
+     * <p>
+     * In Release 3.0, this property is read-only on Android.
+     * <p>
+     * Due to a known issue, TIMOB-12616, the sections property should not be
+     * used for adding sections on iOS.
+     */
+    public native void setSections(List<TableViewSection> values) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.sections = @com.emitrom.ti4j.mobile.client.ui.TableViewSection::fromList(Ljava/util/List;)(values);
+    }-*/;
+
+    public void setSection(TableViewSection... values) {
+        setSections(Arrays.asList(values));
+    }
+
+    /**
      * @return Whether tableview displays vertical scroll indicator (ios only)
      *         Available only on iOs
      */
@@ -396,6 +588,14 @@ public class TableView extends View {
 		jso.style = value;
     }-*/;
 
+    public void appendRow(TableViewRow... rows) {
+        appendRow(Arrays.asList(rows));
+    }
+
+    public void appendRow(TableViewAnimation animation, TableViewRow... rows) {
+        appendRow(Arrays.asList(rows), animation);
+    }
+
     /**
      * Append a row to the table, optionally with animation
      * 
@@ -404,12 +604,64 @@ public class TableView extends View {
      * @param properties
      *            animation properties
      */
-    public native void appendRow(TableViewRow row, Object properties) /*-{
+    public native void appendRow(List<TableViewRow> rows) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso
+				.appendRow(@com.emitrom.ti4j.mobile.client.ui.TableViewRow::fromList(Ljava/util/List;)(rows));
+    }-*/;
+
+    /**
+     * Append a row to the table, optionally with animation
+     * 
+     * @param row
+     *            row to append
+     * @param animation
+     *            animation properties
+     */
+    public native void appendRow(List<TableViewRow> rows, TableViewAnimation animation) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.appendRow(
-						row.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
-						properties);
+						@com.emitrom.ti4j.mobile.client.ui.TableViewRow::fromList(Ljava/util/List;)(rows),
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    public void appendSection(TableViewSection... sections) {
+        appendSection(Arrays.asList(sections));
+    }
+
+    public void appendSection(TableViewAnimation animation, TableViewSection... sections) {
+        appendSection(Arrays.asList(sections), animation);
+    }
+
+    /**
+     * Append a section to the table, optionally with animation
+     * 
+     * @param row
+     *            row to append
+     * @param properties
+     *            animation properties
+     */
+    public native void appendSection(List<TableViewSection> sections) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso
+				.appendSection(@com.emitrom.ti4j.mobile.client.ui.TableViewSection::fromList(Ljava/util/List;)(sections));
+    }-*/;
+
+    /**
+     * Append a section to the table, optionally with animation
+     * 
+     * @param row
+     *            row to append
+     * @param animation
+     *            animation properties
+     */
+    public native void appendSection(List<TableViewSection> sections, TableViewAnimation animation) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso
+				.appendSection(
+						@com.emitrom.ti4j.mobile.client.ui.TableViewSection::fromList(Ljava/util/List;)(sections),
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -417,12 +669,39 @@ public class TableView extends View {
      * 
      * @param row
      *            index of row to delete
-     * @param properties
+     * @param animation
      *            animation properties
      */
-    public native void deleteRow(int row, Object properties) /*-{
+    public native void deleteRow(int row, TableViewAnimation animation) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.deleteRow(row, properties);
+		jso
+				.deleteRow(
+						row,
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    /**
+     * Delete an existing row, optionally with animation
+     * 
+     * @param row
+     *            index of row to delete
+     */
+    public native void deleteRow(int row) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.deleteRow(row);
+    }-*/;
+
+    public native void deleteSection(int section, TableViewAnimation animation) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso
+				.deleteSection(
+						section,
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    public native void deleteSection(int section) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.deleteSection(section);
     }-*/;
 
     /**
@@ -443,16 +722,22 @@ public class TableView extends View {
      *            index
      * @param row
      *            row to insert
-     * @param properties
+     * @param animation
      *            animation properties
      */
-    public native void insertRowAfter(int index, TableViewRow row, Object properties) /*-{
+    public native void insertRowAfter(int index, TableViewRow row, TableViewAnimation animation) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.insertRowAfter(
 						index,
 						row.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
-						properties);
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    public native void insertRowAfter(int index, TableViewRow row) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.insertRowAfter(index,
+				row.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -465,9 +750,53 @@ public class TableView extends View {
      * @param properties
      *            animation properties
      */
-    public native void insertRowBefore(int index, TableViewRow row, Object properties) /*-{
+    public native void insertRowBefore(int index, TableViewRow row, TableViewAnimation animation) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.insertRowBefore(index, row, properties);
+		jso
+				.insertRowBefore(
+						index,
+						row.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    public native void insertRowBefore(int index, TableViewRow row) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.insertRowBefore(index,
+				row.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    public native void insertSectionBefore(int index, TableViewSection section, TableViewAnimation animation) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso
+				.insertSectionBefore(
+						index,
+						section.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    public native void insertSectionBefore(int index, TableViewSection section) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso
+				.insertSectionBefore(
+						index,
+						section.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    public native void insertSectionAfter(int index, TableViewSection section, TableViewAnimation animation) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso
+				.insertSectionAfter(
+						index,
+						section.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    public native void insertSectionAfter(int index, TableViewSection section) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso
+				.insertSectionAfter(
+						index,
+						section.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     /**
@@ -475,15 +804,29 @@ public class TableView extends View {
      * 
      * @param index
      *            index
-     * @param properties
+     * @param animation
      *            animation properties. 'position' property controls the
      *            position constant to use for position (on iPhone, use
      *            constants from com.emitrom.ti4j.mobile.client.ui.iphone.
      *            TableViewScrollPosition).
      */
-    public native void scrollToIndex(int index, Object properties) /*-{
+    public native void scrollToIndex(int index, TableViewAnimation animation) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.scrollToIndex(index, properties);
+		jso
+				.scrollToIndex(
+						index,
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    /**
+     * Scroll to a specific row index and ensure that that row is on screen
+     * 
+     * @param index
+     *            index
+     */
+    public native void scrollToIndex(int index) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.scrollToIndex(index);
     }-*/;
 
     /**
@@ -492,14 +835,22 @@ public class TableView extends View {
      * 
      * @param top
      *            y position
-     * @param properties
+     * @param animation
      *            optional dictionary with the key `animated` (default, true) as
      *            boolean to indicate if the scroll should be animated or
      *            immediate
      */
-    public native void scrollToTop(double top, Object properties) /*-{
+    public native void scrollToTop(double top, TableViewAnimation animation) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.scrollToTop(top, properties);
+		jso
+				.scrollToTop(
+						top,
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    public native void scrollToTop(double top) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.scrollToTop(top);
     }-*/;
 
     /**
@@ -545,12 +896,21 @@ public class TableView extends View {
      */
     public native void setContentInsets(TableViewEdgeInsets value, boolean animate) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso
-				.setContentInsets(
-						value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
-						{
-							animated : animate
-						});
+		jso.setContentInsets(
+				value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
+				{
+					animated : animate
+				});
+    }-*/;
+
+    public native void setContentInsets(TableViewEdgeInsets value, boolean animate, int animationDuration) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.setContentInsets(
+				value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
+				{
+					animated : animate,
+					duration : animationDuration
+				});
     }-*/;
 
     /**
@@ -578,34 +938,50 @@ public class TableView extends View {
      * 
      * @param row
      *            row data to update
-     * @param properties
+     * @param animation
      *            animation properties
      */
-    public native void updateRow(TableViewRow row, Object properties) /*-{
+    public native void updateRow(TableViewRow row, TableViewAnimation animation) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso
 				.updateRow(
 						row.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
-						properties);
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    public native void updateRow(TableViewRow row) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso
+				.updateRow(row.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    public native void updateSection(TableViewSection section, TableViewAnimation animation) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso
+				.updateSection(
+						section.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()(),
+						animation.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
+    }-*/;
+
+    public native void updateSection(TableViewSection section) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso
+				.updateSection(section.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()());
     }-*/;
 
     public native CallbackRegistration addRowSelectionHandler(TableViewHandler handler)
     /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		var listener = function(e) {
-							var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.tableview.TableViewEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
-							handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.TableViewHandler::onEvent(Lcom/emitrom/ti4j/mobile/client/core/events/ui/tableview/TableViewEvent;)(eventObject);
-						};
+			var eventObject = @com.emitrom.ti4j.mobile.client.core.events.ui.tableview.TableViewEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(e);
+			handler.@com.emitrom.ti4j.mobile.client.core.handlers.ui.TableViewHandler::onEvent(Lcom/emitrom/ti4j/mobile/client/core/events/ui/tableview/TableViewEvent;)(eventObject);
+		};
 		var name = @com.emitrom.ti4j.mobile.client.core.events.ui.ClickEvent::EVENT_NAME;
-		var v = jso
-				.addEventListener(
-						name,
-						listener);
+		var v = jso.addEventListener(name, listener);
 		var toReturn = @com.emitrom.ti4j.mobile.client.core.handlers.ui.CallbackRegistration::new(Lcom/emitrom/ti4j/mobile/client/ui/UIObject;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)(this,name,listener);
 		return toReturn;
-						
-	}-*/;
-    
+
+    }-*/;
 
     public native void addDeleteHandler(TableViewHandler handler)/*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
@@ -654,6 +1030,23 @@ public class TableView extends View {
     @Override
     public void createPeer() {
         jsObj = UI.createTableView();
+    }
+
+    @Override
+    public void add(View view) {
+        if (view instanceof TableViewRow) {
+            TableViewRow toAdd = (TableViewRow) view;
+            this.addRow(toAdd);
+            this.layoutRows();
+        } else if (view instanceof TableViewSection) {
+            TableViewSection section = (TableViewSection) view;
+            this.addSection(section);
+            this.layoutSections();
+        } else {
+            // throw new
+            // IllegalArgumentException("TableView can only take a TableViewRow or a TableViewSection as child");
+            super.add(view);
+        }
     }
 
     public static TableView from(ProxyObject obj) {

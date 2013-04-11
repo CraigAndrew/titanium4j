@@ -16,8 +16,10 @@
 package com.emitrom.ti4j.mobile.client.android;
 
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
+import com.emitrom.ti4j.mobile.client.core.handlers.EventHandler;
 import com.emitrom.ti4j.mobile.client.core.handlers.ui.ClickHandler;
 import com.emitrom.ti4j.mobile.client.core.handlers.ui.InteractionHandler;
+import com.emitrom.ti4j.mobile.client.ui.View;
 import com.google.gwt.core.client.JavaScriptObject;
 
 /**
@@ -30,13 +32,47 @@ public class MenuItem extends EventDispatcher {
     }
 
     /**
+     * Custom view that replaces the default menu item button.
+     * <p>
+     * Action-bar specific. Only used on Android 3.0 (API level 11) or later.
+     */
+    public native View getActionView() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var obj = jso.actionView;
+		return @com.emitrom.ti4j.mobile.client.ui.View::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
+
+    /**
+     * Custom view that replaces the default menu item button.
+     * <p>
+     * Action-bar specific. Only used on Android 3.0 (API level 11) or later.
+     */
+    public native void setActionView(View vieww) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.actionView = view.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+    }-*/;
+
+    /**
+     * True if this menu item's action view has been expanded.
+     */
+    public native String isActionViewExpanded() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.actionViewExpanded;
+    }-*/;
+
+    /**
      * retrieve the condensed title of the item
      * 
      * @return
      */
-    public final native String getCondensedTitle() /*-{
+    public native String getTitleCondensed() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.getCondensedTitle();
+		return jso.titleCondensed;
+    }-*/;
+
+    public native void setTitleCondensed(String value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.titleCondensed = value;
     }-*/;
 
     /**
@@ -44,7 +80,7 @@ public class MenuItem extends EventDispatcher {
      * 
      * @return
      */
-    public final native int getGroupId() /*-{
+    public native int getGroupId() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getGroupId();
     }-*/;
@@ -54,7 +90,7 @@ public class MenuItem extends EventDispatcher {
      * 
      * @return
      */
-    public final native int getItemId() /*-{
+    public native int getItemId() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getItemId();
     }-*/;
@@ -64,7 +100,7 @@ public class MenuItem extends EventDispatcher {
      * 
      * @return
      */
-    public final native String getTitle() /*-{
+    public native String getTitle() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getTitle();
     }-*/;
@@ -74,7 +110,7 @@ public class MenuItem extends EventDispatcher {
      * 
      * @return
      */
-    public final native boolean isEnable() /*-{
+    public native boolean isEnable() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.isEnable();
     }-*/;
@@ -84,7 +120,7 @@ public class MenuItem extends EventDispatcher {
      * 
      * @return
      */
-    public final native boolean isVisible() /*-{
+    public native boolean isVisible() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.isVisible();
     }-*/;
@@ -95,7 +131,7 @@ public class MenuItem extends EventDispatcher {
      * @param value
      *            , new condensed title
      */
-    public final native void setCondensedTitle(String value) /*-{
+    public native void setCondensedTitle(String value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setCondensedTitle(value);
     }-*/;
@@ -106,9 +142,14 @@ public class MenuItem extends EventDispatcher {
      * @param value
      *            , true to enable item, false to disable
      */
-    public final native void setEnabled(boolean value) /*-{
+    public native void setEnabled(boolean value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setEnabled(value);
+    }-*/;
+
+    public native boolean isEnabled()/*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.enabled;
     }-*/;
 
     /**
@@ -117,9 +158,54 @@ public class MenuItem extends EventDispatcher {
      * @param value
      *            , icon to use with the item
      */
-    public final native void setIcon(Object value) /*-{
+    public native void setIcon(int value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setIcon(value);
+    }-*/;
+
+    public native void setIcon(String value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.setIcon(value);
+    }-*/;
+
+    public native String getIcon() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.icon;
+    }-*/;
+
+    public native int getIconAsInt() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.icon;
+    }-*/;
+
+    public native boolean isCheckable() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.checkable;
+    }-*/;
+
+    public native int setCheckable() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.checkable = value;
+    }-*/;
+
+    public native boolean isChecked() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.checked;
+    }-*/;
+
+    public native void setChecked() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.checked = value;
+    }-*/;
+
+    public native int getShowsAsAction() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.showsAsAction;
+    }-*/;
+
+    public native void setShowsAsAction(int value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.showsAsAction = value;
     }-*/;
 
     /**
@@ -128,7 +214,7 @@ public class MenuItem extends EventDispatcher {
      * @param value
      *            , new title
      */
-    public final native void setTitle(String value) /*-{
+    public native void setTitle(String value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.setTitle(value);
     }-*/;
@@ -139,8 +225,9 @@ public class MenuItem extends EventDispatcher {
      * @param value
      *            , true to show the item, false to hide
      */
-    public final native void setVisible(boolean value) /*-{
-		this.setVisible(value);
+    public native void setVisible(boolean value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.setVisible(value);
     }-*/;
 
     /**
@@ -148,7 +235,7 @@ public class MenuItem extends EventDispatcher {
      * 
      * @return
      */
-    public final native int getOrder() /*-{
+    public native int getOrder() /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.getOrder();
     }-*/;
@@ -175,5 +262,13 @@ public class MenuItem extends EventDispatcher {
 		var v = jso.addEventListener(name, listener);
 
     }-*/;
+
+    public void addExpandHandler(EventHandler handler) {
+        this.addEventHandler("expand", handler);
+    }
+
+    public void addCollapseHandler(EventHandler handler) {
+        this.addEventHandler("collapse", handler);
+    }
 
 }

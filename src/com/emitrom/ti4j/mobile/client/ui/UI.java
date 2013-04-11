@@ -197,6 +197,31 @@ public class UI extends TiModule {
 		jso.backgroundColor;
     }-*/;
 
+    /**
+     * The currently active tab, if a tab group is open.
+     * <p>
+     * If no tab group is open, this value is undefined.
+     */
+    public native Tab getCurrentTab()/*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var obj = obj.currentTab;
+		return @com.emitrom.ti4j.mobile.client.ui.Tab::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
+
+    public native void setCurrentTab(Tab tab)/*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		obj.currentTab = tab.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+    }-*/;
+
+    /**
+     * The active window associated with the executing JavaScript context.
+     */
+    public native Window getCurrentWindow()/*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var obj = obj.currentWindow;
+		return @com.emitrom.ti4j.mobile.client.ui.Window::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+    }-*/;
+
     public native void setBackgroundColor(String value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.backgroundColor = value;
@@ -472,6 +497,18 @@ public class UI extends TiModule {
 
     static native JavaScriptObject createButtonBar() /*-{
 		return Ti.UI.createButtonBar();
+    }-*/;
+
+    static native JavaScriptObject createListItem() /*-{
+		return Ti.UI.createListItem();
+    }-*/;
+
+    static native JavaScriptObject createListView() /*-{
+		return Ti.UI.createListView();
+    }-*/;
+
+    static native JavaScriptObject createListSection() /*-{
+		return Ti.UI.createListSection();
     }-*/;
 
     public static native final int FACE_DOWN() /*-{
@@ -770,42 +807,101 @@ public class UI extends TiModule {
     }-*/;
 
     public static native final int LIST_ACCESSSSORY_TYPE_CHECKMARK() /*-{
-		return Ti.UI.LIST_ACCESSSSORY_TYPE_CHECKMARK ? Ti.LIST_ACCESSSSORY_TYPE_CHECKMARK
+		return Ti.UI.LIST_ACCESSSSORY_TYPE_CHECKMARK ? Ti.UI.LIST_ACCESSSSORY_TYPE_CHECKMARK
 				: 0;
     }-*/;
 
     public static native final int LIST_ACCESSSSORY_TYPE_DETAIL() /*-{
-		return Ti.UI.LIST_ACCESSSSORY_TYPE_DETAIL ? Ti.LIST_ACCESSSSORY_TYPE_DETAIL
+		return Ti.UI.LIST_ACCESSSSORY_TYPE_DETAIL ? Ti.UI.LIST_ACCESSSSORY_TYPE_DETAIL
 				: 0;
     }-*/;
 
     public static native final int LIST_ACCESSSSORY_TYPE_DISCLOSURE() /*-{
-		return Ti.UI.LIST_ACCESSSSORY_TYPE_DISCLOSURE ? Ti.LIST_ACCESSSSORY_TYPE_DISCLOSURE
+		return Ti.UI.LIST_ACCESSSSORY_TYPE_DISCLOSURE ? Ti.UI.LIST_ACCESSSSORY_TYPE_DISCLOSURE
 				: 0;
     }-*/;
 
     public static native final int LIST_ACCESSSSORY_TYPE_NONE() /*-{
-		return Ti.UI.LIST_ACCESSSSORY_TYPE_NONE ? Ti.LIST_ACCESSSSORY_TYPE_NONE
+		return Ti.UI.LIST_ACCESSSSORY_TYPE_NONE ? Ti.UI.LIST_ACCESSSSORY_TYPE_NONE
 				: 0;
     }-*/;
 
     public static native final int LIST_ITEM_TEMPLATE_CONTACTS() /*-{
-		return Ti.UI.LIST_ITEM_TEMPLATE_CONTACTS ? Ti.LIST_ITEM_TEMPLATE_CONTACTS
+		return Ti.UI.LIST_ITEM_TEMPLATE_CONTACTS ? Ti.UI.LIST_ITEM_TEMPLATE_CONTACTS
 				: 0;
     }-*/;
 
     public static native final int LIST_ITEM_TEMPLATE_DEFAULT() /*-{
-		return Ti.UI.LIST_ITEM_TEMPLATE_DEFAULT ? Ti.LIST_ITEM_TEMPLATE_DEFAULT
+		return Ti.UI.LIST_ITEM_TEMPLATE_DEFAULT ? Ti.UI.LIST_ITEM_TEMPLATE_DEFAULT
 				: 0;
     }-*/;
 
     public static native final int LIST_ITEM_TEMPLATE_SETTINGS() /*-{
-		return Ti.UI.LIST_ITEM_TEMPLATE_SETTINGS ? Ti.LIST_ITEM_TEMPLATE_SETTINGS
+		return Ti.UI.LIST_ITEM_TEMPLATE_SETTINGS ? Ti.UI.LIST_ITEM_TEMPLATE_SETTINGS
 				: 0;
     }-*/;
 
     public static native final int LIST_ITEM_TEMPLATE_SUBTITLE() /*-{
-		return Ti.UI.LIST_ITEM_TEMPLATE_SUBTITLE ? Ti.LIST_ITEM_TEMPLATE_SUBTITLE
+		return Ti.UI.LIST_ITEM_TEMPLATE_SUBTITLE ? Ti.UI.LIST_ITEM_TEMPLATE_SUBTITLE
 				: 0;
     }-*/;
+
+    public static native final String UNIT_CM() /*-{
+		return Ti.UI.UNIT_CM ? Ti.UI.UNIT_CM : "";
+    }-*/;
+
+    public static native final String UNIT_DIP() /*-{
+		return Ti.UI.UNIT_DIP ? Ti.UI.UNIT_DIP : "";
+    }-*/;
+
+    public static native final String UNIT_IN() /*-{
+		return Ti.UI.UNIT_IN ? Ti.UI.UNIT_IN : "";
+    }-*/;
+
+    public static native final String UNIT_MM() /*-{
+		return Ti.UI.UNIT_MM ? Ti.UI.UNIT_MM : "";
+    }-*/;
+
+    public static native final String UNIT_PX() /*-{
+		return Ti.UI.UNIT_PX ? Ti.UI.UNIT_PX : "";
+    }-*/;
+
+    public static native final int URL_ERROR_BAR_URL() /*-{
+		return Ti.UI.URL_ERROR_BAR_URL ? Ti.UI.URL_ERROR_BAR_URL : 0;
+    }-*/;
+
+    public static native final int URL_ERROR_CONNECT() /*-{
+		return Ti.UI.URL_ERROR_CONNECT ? Ti.UI.URL_ERROR_CONNECT : 0;
+    }-*/;
+
+    public static native final int URL_ERROR_FILE() /*-{
+		return Ti.UI.URL_ERROR_FILE ? Ti.UI.URL_ERROR_FILE : 0;
+    }-*/;
+
+    public static native final int URL_ERROR_FILE_NOT_FOUND() /*-{
+		return Ti.UI.URL_ERROR_FILE_NOT_FOUND ? Ti.UI.URL_ERROR_FILE_NOT_FOUND
+				: 0;
+    }-*/;
+
+    public static native final int URL_ERROR_HOST_LOOKUP() /*-{
+		return Ti.UI.URL_ERROR_HOST_LOOKUP ? Ti.UI.URL_ERROR_HOST_LOOKUP : 0;
+    }-*/;
+
+    public static native final int URL_ERROR_SSL_FAILED() /*-{
+		return Ti.UI.URL_ERROR_SSL_FAILED ? Ti.UI.URL_ERROR_SSL_FAILED : 0;
+    }-*/;
+
+    public static native final int URL_ERROR_TIMEOUT() /*-{
+		return Ti.UI.URL_ERROR_TIMEOUT ? Ti.UI.URL_ERROR_TIMEOUT : 0;
+    }-*/;
+
+    public static native final int URL_ERROR_UNKNOWN() /*-{
+		return Ti.UI.URL_ERROR_UNKNOWN ? Ti.UI.URL_ERROR_UNKNOWN : 0;
+    }-*/;
+
+    public static native final int URL_ERROR_UNSUPPORTED_SCHEME() /*-{
+		return Ti.UI.URL_ERROR_UNSUPPORTED_SCHEME ? Ti.UI.URL_ERROR_UNSUPPORTED_SCHEME
+				: 0;
+    }-*/;
+
 }

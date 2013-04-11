@@ -17,7 +17,7 @@ package com.emitrom.ti4j.mobile.client.android;
 
 import com.emitrom.ti4j.mobile.client.core.events.EventDispatcher;
 import com.emitrom.ti4j.mobile.client.core.events.TiEventListener;
-import com.emitrom.ti4j.mobile.client.core.handlers.EventHandler;
+import com.emitrom.ti4j.mobile.client.core.handlers.MenuActionHandler;
 import com.emitrom.ti4j.mobile.client.core.handlers.activity.CreateHandler;
 import com.emitrom.ti4j.mobile.client.core.handlers.activity.DestroyHandler;
 import com.emitrom.ti4j.mobile.client.core.handlers.activity.PauseHandler;
@@ -271,11 +271,11 @@ public class Activity extends EventDispatcher {
         setOncreateOptionsMenu(listener.getJsoPeer());
     }
 
-    public native void setOncreateOptionsMenu(EventHandler callback) /*-{
+    public native void setOncreateOptionsMenu(MenuActionHandler callback) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.oncreateOptionsMenu = function(e) {
-			var event = @com.emitrom.ti4j.mobile.client.core.events.TiEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-			callback.@com.emitrom.ti4j.mobile.client.core.handlers.EventHandler::onEvent(Lcom/emitrom/ti4j/mobile/client/core/events/TiEvent;)(event);
+			var event = @com.emitrom.ti4j.mobile.client.core.events.MenuEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+			callback.@com.emitrom.ti4j.mobile.client.core.handlers.MenuActionHandler::onEvent(Lcom/emitrom/ti4j/mobile/client/core/events/MenuEvent;)(event);
 		};
     }-*/;
 
@@ -306,11 +306,11 @@ public class Activity extends EventDispatcher {
      * 
      * @param listener
      */
-    public native void setOnPrepareOptionsMenu(EventHandler callback) /*-{
+    public native void setOnPrepareOptionsMenu(MenuActionHandler callback) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.onPrepareOptionsMenu = function(e) {
-			var event = @com.emitrom.ti4j.mobile.client.core.events.TiEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
-			callback.@com.emitrom.ti4j.mobile.client.core.handlers.EventHandler::onEvent(Lcom/emitrom/ti4j/mobile/client/core/events/TiEvent;)(event);
+			var event = @com.emitrom.ti4j.mobile.client.core.events.MenuEvent::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
+			callback.@com.emitrom.ti4j.mobile.client.core.handlers.MenuActionHandler::onEvent(Lcom/emitrom/ti4j/mobile/client/core/events/MenuEvent;)(event);
 		};
     }-*/;
 

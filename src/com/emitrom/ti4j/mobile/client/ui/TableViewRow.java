@@ -1,22 +1,29 @@
 /**************************************************************************
-   TableViewRow.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * TableViewRow.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom
+ * LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.emitrom.ti4j.core.client.JsoHelper;
 import com.emitrom.ti4j.mobile.client.ui.interfaces.HasTitle;
+import com.emitrom.ti4j.mobile.client.ui.style.Font;
 import com.google.gwt.core.client.JavaScriptObject;
+import com.google.gwt.core.client.JsArray;
 
 /**
  * A tableview row object created by the method
@@ -41,6 +48,24 @@ public class TableViewRow extends View implements HasTitle {
     TableViewRow(JavaScriptObject obj) {
         jsObj = obj;
     }
+
+    /**
+     * A succint label associated with the table row for the device's
+     * accessibility service.
+     */
+    public native String getAccessibilityLabel() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.accessibilityLabel;
+    }-*/;
+
+    /**
+     * A succint label associated with the table row for the device's
+     * accessibility service.
+     */
+    public native void setAccessibilityLabel(String value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.accessibilityLabel = value;
+    }-*/;
 
     /**
      * @return The class name of the table. each table view cell must have a
@@ -70,6 +95,59 @@ public class TableViewRow extends View implements HasTitle {
     public native void setColor(String value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.color = value;
+    }-*/;
+
+    /**
+     * Determines the rows' editable behavior, which allows them to be deleted
+     * by the user when the table is in editing or moving mode.
+     * <p>
+     * If this property is not explicitly set, it will return undefined and the
+     * row's editable behavior will be determined by its parent table's editable
+     * property.
+     * <p>
+     * See the Titanium.UI.TableView description section for a full explanation
+     * of the TableView's row editing and moving modes.
+     */
+    public native boolean isEditable() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.editable;
+    }-*/;
+
+    /**
+     * Determines the rows' editable behavior, which allows them to be deleted
+     * by the user when the table is in editing or moving mode.
+     * <p>
+     * If this property is not explicitly set, it will return undefined and the
+     * row's editable behavior will be determined by its parent table's editable
+     * property.
+     * <p>
+     * See the Titanium.UI.TableView description section for a full explanation
+     * of the TableView's row editing and moving modes.
+     */
+    public native void setEditable(boolean value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.editable = value;
+    }-*/;
+
+    /**
+     * Font to use for the row title.
+     * <p>
+     * Default: System default font.
+     */
+    public native void setFont(Font value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.font = value.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+    }-*/;
+
+    /**
+     * Font to use for the row title.
+     * <p>
+     * Default: System default font.
+     */
+    public native Font getFont() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		var obj = jso.font;
+		return @com.emitrom.ti4j.mobile.client.ui.style.Font::new(Lcom/google/gwt/core/client/JavaScriptObject;)(obj);
     }-*/;
 
     /**
@@ -118,26 +196,13 @@ public class TableViewRow extends View implements HasTitle {
      * @return The indention level for the cell (defaults to 0)
      */
     public native int getIndentionLevel() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		return jso.indentionLevel;
     }-*/;
 
     public native void setIndentionLevel(int value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.indentionLevel = value;
-    }-*/;
-
-    /**
-     * @return The layout algorithm to use for the layout. either absolute
-     *         (default) or vertical.
-     */
-    public native String getLayout() /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.layout;
-    }-*/;
-
-    public native void setLayout(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.layout = value;
     }-*/;
 
     /**
@@ -164,6 +229,38 @@ public class TableViewRow extends View implements HasTitle {
     public native void setRightImage(String value) /*-{
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.rightImage = value;
+    }-*/;
+
+    /**
+     * Determines the rows' moveable behavior, which allows them to be
+     * re-ordered by the user when the table is in editing or moving mode.
+     * <p>
+     * If this property is not explicitly set, it will return undefined and the
+     * row's moveable behavior will be determined by its parent table's moveable
+     * property.
+     * <p>
+     * See the Titanium.UI.TableView description section for a full explanation
+     * of the TableView's row editing and moving modes.
+     */
+    public native boolean isMoveable() /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		return jso.moveable;
+    }-*/;
+
+    /**
+     * Determines the rows' moveable behavior, which allows them to be
+     * re-ordered by the user when the table is in editing or moving mode.
+     * <p>
+     * If this property is not explicitly set, it will return undefined and the
+     * row's moveable behavior will be determined by its parent table's moveable
+     * property.
+     * <p>
+     * See the Titanium.UI.TableView description section for a full explanation
+     * of the TableView's row editing and moving modes.
+     */
+    public native void setMoveable(boolean value) /*-{
+		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
+		jso.moveable = value;
     }-*/;
 
     /**
@@ -220,16 +317,6 @@ public class TableViewRow extends View implements HasTitle {
 		jso.selectionStyle = value;
     }-*/;
 
-    public native void setFilter(String value) /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		jso.filter = value;
-    }-*/;
-
-    public native String getFilter() /*-{
-		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
-		return jso.filter;
-    }-*/;
-
     /**
      * @return The title cell value. do not specify if using views as children
      *         of the row
@@ -243,6 +330,23 @@ public class TableViewRow extends View implements HasTitle {
 		var jso = this.@com.emitrom.ti4j.core.client.ProxyObject::getJsObj()();
 		jso.title = value;
     }-*/;
+
+    static JavaScriptObject fromList(List<TableViewRow> values) {
+        JsArray<JavaScriptObject> peers = JsArray.createArray().cast();
+        for (TableViewRow rule : values) {
+            peers.push(rule.getJsObj());
+        }
+        return peers;
+    }
+
+    static List<TableViewRow> fromJsArray(JavaScriptObject obj) {
+        List<TableViewRow> toReturn = new ArrayList<TableViewRow>();
+        int size = JsoHelper.arrayLength(obj);
+        for (int i = 0; i < size; i++) {
+            toReturn.add(new TableViewRow(JsoHelper.getValueFromJavaScriptObjectArray(obj, i)));
+        }
+        return toReturn;
+    }
 
     @Override
     public void createPeer() {
