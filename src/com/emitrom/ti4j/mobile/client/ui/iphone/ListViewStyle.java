@@ -1,6 +1,6 @@
 /**************************************************************************
- * ActivityIndicatorStyle.java is part of Titanium4j Mobile 3.0. Copyright 2012
- * Emitrom LLC
+ * AnimationStyle.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom
+ * LLC
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -17,28 +17,23 @@
 package com.emitrom.ti4j.mobile.client.ui.iphone;
 
 /**
- * A set of constants for the styles available for
- * {@link com.emitrom.ti4j.mobile.client.ui.ActivityIndicator} objects.
+ * A set of constants for the style that can be used for the style property of
+ * Titanium.UI.ListView.
  */
-public class ActivityIndicatorStyle {
+public class ListViewStyle {
 
-    public static final int ACTIVITIY_INDICATIOR_STYLE_BIG = BIG();
-    public static final int ACTIVITIY_INDICATIOR_STYLE_DARK = DARK();
-    public static final int ACTIVITIY_INDICATIOR_STYLE_PLAIN = PLAIN();
+    public static final int LISTVIEW_STYLE_GROUPED = GROUPED();
+    public static final int LISTVIEW_STYLE_PLAIN = PLAIN();
 
-    private ActivityIndicatorStyle() {
+    private ListViewStyle() {
     }
 
-    public static native final int BIG() /*-{
-		return Titanium.UI.iPhone.ActivityIndicatorStyle.BIG;
-    }-*/;
-
-    public static native final int DARK() /*-{
-		return Titanium.UI.iPhone.ActivityIndicatorStyle.DARK;
+    public static native final int GROUPED() /*-{
+		return Titanium.UI.iPhone.ListViewStyle.GROUPED;
     }-*/;
 
     public static native final int PLAIN() /*-{
-		return Titanium.UI.iPhone.ActivityIndicatorStyle.PLAIN;
+		return Titanium.UI.iPhone.ListViewStyle.PLAIN;
     }-*/;
 
 }

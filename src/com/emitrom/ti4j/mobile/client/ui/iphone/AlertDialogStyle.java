@@ -20,25 +20,30 @@ package com.emitrom.ti4j.mobile.client.ui.iphone;
  * A set of constants for the styles available for
  * {@link com.emitrom.ti4j.mobile.client.ui.ActivityIndicator} objects.
  */
-public class ActivityIndicatorStyle {
+public class AlertDialogStyle {
 
-    public static final int ACTIVITIY_INDICATIOR_STYLE_BIG = BIG();
-    public static final int ACTIVITIY_INDICATIOR_STYLE_DARK = DARK();
-    public static final int ACTIVITIY_INDICATIOR_STYLE_PLAIN = PLAIN();
+    public static final int ALERT_DIALOG_STYLE_DEFAULT = DEFAULT();
+    public static final int ALERT_DIALOG_STYLE_LOGIN_AND_PASSOWRD_INPUT = LOGIN_AND_PASSWORD_INPUT();
+    public static final int ACTIVITIY_INDICATIOR_STYLE_PLAIN_TEXT_INPUT = PLAIN_TEXT_INPUT();
+    public static final int ACTIVITIY_INDICATIOR_STYLE_SECURE_TEXT_INPUT = SECURE_TEXT_INPUT();
 
-    private ActivityIndicatorStyle() {
+    private AlertDialogStyle() {
     }
 
-    public static native final int BIG() /*-{
-		return Titanium.UI.iPhone.ActivityIndicatorStyle.BIG;
+    public static native final int DEFAULT() /*-{
+		return Titanium.UI.iPhone.AlertDialogStyle.DEFAULT;
     }-*/;
 
-    public static native final int DARK() /*-{
-		return Titanium.UI.iPhone.ActivityIndicatorStyle.DARK;
+    public static native final int LOGIN_AND_PASSWORD_INPUT() /*-{
+		return Titanium.UI.iPhone.AlertDialogStyle.LOGIN_AND_PASSWORD_INPUT;
     }-*/;
 
-    public static native final int PLAIN() /*-{
-		return Titanium.UI.iPhone.ActivityIndicatorStyle.PLAIN;
+    public static native final int PLAIN_TEXT_INPUT() /*-{
+		return Titanium.UI.iPhone.AlertDialogStyle.PLAIN_TEXT_INPUT;
+    }-*/;
+
+    public static native final int SECURE_TEXT_INPUT() /*-{
+		return Titanium.UI.iPhone.AlertDialogStyle.SECURE_TEXT_INPUT;
     }-*/;
 
 }

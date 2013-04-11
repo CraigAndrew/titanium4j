@@ -1,17 +1,17 @@
 /**************************************************************************
-   Window.java is part of Titanium4j Mobile 3.0.  Copyright 2012 Emitrom LLC
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+ * Window.java is part of Titanium4j Mobile 3.0. Copyright 2012 Emitrom LLC
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
  **************************************************************************/
 package com.emitrom.ti4j.mobile.client.ui;
 
@@ -190,8 +190,8 @@ public class Window extends View {
      *         represents the top of the device being at the 270 degree position
      *         but other devices may (based on camera position for example)
      *         treat jso position as
-     *         {@link com.emitrom.ti4j.mobile.client.ui.UI.LANDSCAPE_RIGHT} .
-     *         In general, applications for android that need to be aware of
+     *         {@link com.emitrom.ti4j.mobile.client.ui.UI.LANDSCAPE_RIGHT} . In
+     *         general, applications for android that need to be aware of
      *         orientation should try and limit their orientation logic to
      *         handling either portrait or landscape rather than worrying about
      *         the reverse modes. jso approach will allow the orientation modes
@@ -202,15 +202,13 @@ public class Window extends View {
      * 
      *         1) ( {@link com.emitrom.ti4j.mobile.client.ui.UI.PORTRAIT} or
      *         {@link com.emitrom.ti4j.mobile.client.ui.UI.UPSIDE_PORTRAIT} )
-     *         and (
-     *         {@link com.emitrom.ti4j.mobile.client.ui.UI.LANDSCAPE_LEFT} or
-     *         {@link com.emitrom.ti4j.mobile.client.ui.UI.LANDSCAPE_RIGHT} )
+     *         and ( {@link com.emitrom.ti4j.mobile.client.ui.UI.LANDSCAPE_LEFT}
+     *         or {@link com.emitrom.ti4j.mobile.client.ui.UI.LANDSCAPE_RIGHT} )
      *         - enables full sensor which lets the operating system control the
      *         orientation of the screen based on the sensor inside the device.<br/>
      *         2)
      *         {@linkcom.ekambi.gwt.appcelerator.mobile.client.ui.UI.UPSIDE_PORTRAIT}
-     *         or
-     *         {@link com.emitrom.ti4j.mobile.client.ui.UI.UPSIDE_PORTRAIT} -
+     *         or {@link com.emitrom.ti4j.mobile.client.ui.UI.UPSIDE_PORTRAIT} -
      *         enables sensor portrait mode on android 2.3 and above. sensor
      *         portrait mode on android means the screen will shift between both
      *         portrait modes according to the sensor inside the device. if the
@@ -218,8 +216,7 @@ public class Window extends View {
      *         locked.
      * 
      * <br/>
-     *         3) {@link com.emitrom.ti4j.mobile.client.ui.UI.LANDSCAPE_LEFT}
-     *         or
+     *         3) {@link com.emitrom.ti4j.mobile.client.ui.UI.LANDSCAPE_LEFT} or
      *         {@link com.emitrom.ti4j.mobile.client.ui.UI.LANDSCAPE_RIGHT} -
      *         enables sensor landscape mode on android 2.3 and above. sensor
      *         landscape mode on android means the screen will shift between
@@ -228,8 +225,8 @@ public class Window extends View {
      *         mode is locked.
      * 
      * <br/>
-     *         4) {@link com.emitrom.ti4j.mobile.client.ui.UI.PORTRAIT} -
-     *         locks screen orientation to portrait mode 5)
+     *         4) {@link com.emitrom.ti4j.mobile.client.ui.UI.PORTRAIT} - locks
+     *         screen orientation to portrait mode 5)
      *         {@link com.emitrom.ti4j.mobile.client.ui.UI.LANDSCAPE} - locks
      *         screen orientation to landscape mode 6) empty array - resets the
      *         orientation to default sensor control
@@ -585,43 +582,43 @@ public class Window extends View {
         grid(spacing, "#dedede");
     }
 
-    public void addAndroidBackHander(UIEventHandler handler) {
+    public void addAndroidBackHandler(UIEventHandler handler) {
         this.addEventHandler(UIEvent.ANDROID_BACK, handler);
     }
 
-    public void addAndroidCameraHander(UIEventHandler handler) {
+    public void addAndroidCameraHandler(UIEventHandler handler) {
         this.addEventHandler(UIEvent.ANDROID_CAMERA, handler);
     }
 
-    public void addAndroidFocusHander(UIEventHandler handler) {
+    public void addAndroidFocusHandler(UIEventHandler handler) {
         this.addEventHandler(UIEvent.ANDROID_FOCUS, handler);
     }
 
-    public void addAndroidSearchHander(UIEventHandler handler) {
+    public void addAndroidSearchHandler(UIEventHandler handler) {
         this.addEventHandler(UIEvent.ANDROID_SEARCH, handler);
     }
 
-    public void addAndroidVolumeDownHander(UIEventHandler handler) {
+    public void addAndroidVolumeDownHandler(UIEventHandler handler) {
         this.addEventHandler(UIEvent.ANDROID_VOL_DOWN, handler);
     }
 
-    public void addAndroidVolumeUpHander(UIEventHandler handler) {
+    public void addAndroidVolumeUpHandler(UIEventHandler handler) {
         this.addEventHandler(UIEvent.ANDROID_VOL_UP, handler);
     }
 
-    public void addAndroidBlurHander(UIEventHandler handler) {
+    public void addAndroidBlurHandler(UIEventHandler handler) {
         this.addEventHandler(UIEvent.BLUR, handler);
     }
 
-    public void addCloseHander(UIEventHandler handler) {
+    public void addCloseHandler(UIEventHandler handler) {
         this.addEventHandler(UIEvent.CLOSE, handler);
     }
 
-    public void addFocusHander(UIEventHandler handler) {
+    public void addFocusHandler(UIEventHandler handler) {
         this.addEventHandler(UIEvent.FOCUS, handler);
     }
 
-    public void addOpenHander(UIEventHandler handler) {
+    public void addOpenHandler(UIEventHandler handler) {
         this.addEventHandler(UIEvent.OPEN, handler);
     }
 

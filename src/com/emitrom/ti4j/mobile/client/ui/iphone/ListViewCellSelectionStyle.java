@@ -19,35 +19,25 @@ package com.emitrom.ti4j.mobile.client.ui.iphone;
 /**
  * A set of constants for the animation styles used for transitions.
  */
-public class AnimationStyle {
+public class ListViewCellSelectionStyle {
 
-    public static final int ANIMATON_STYLE_CURL_DOWN = CURL_DOWN();
-    public static final int ANIMATON_STYLE_CURL_UP = CURL_UP();
-    public static final int ANIMATON_STYLE_FLIP_FROM_LEFT = FLIP_FROM_LEFT();
-    public static final int ANIMATON_STYLE_FLIP_FROM_RIGHT = FLIP_FROM_RIGHT();
-    public static final int ANIMATON_STYLE_NONE = NONE();
+    public static final int LISTVIEW_CELL_SELECTION_STYLE_BLUE = BLUE();
+    public static final int LISTVIEW_CELL_SELECTION_STYLE_GRAY = GRAY();
+    public static final int LISTVIEW_CELL_SELECTION_STYLE_NONE = NONE();
 
-    private AnimationStyle() {
+    private ListViewCellSelectionStyle() {
     }
 
-    public static native final int CURL_DOWN() /*-{
-		return Titanium.UI.iPhone.AnimationStyle.CURL_DOWN;
+    public static native final int BLUE() /*-{
+		return Titanium.UI.iPhone.ListViewCellSelectionStyle.BLUE;
     }-*/;
 
-    public static native final int CURL_UP() /*-{
-		return Titanium.UI.iPhone.AnimationStyle.CURL_UP;
-    }-*/;
-
-    public static native final int FLIP_FROM_LEFT() /*-{
-		return Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT;
-    }-*/;
-
-    public static native final int FLIP_FROM_RIGHT() /*-{
-		return Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_RIGHT;
+    public static native final int GRAY() /*-{
+		return Titanium.UI.iPhone.ListViewCellSelectionStyle.GRAY;
     }-*/;
 
     public static native final int NONE() /*-{
-		return Titanium.UI.iPhone.AnimationStyle.NONE;
+		return Titanium.UI.iPhone.ListViewCellSelectionStyle.NONE;
     }-*/;
 
 }
